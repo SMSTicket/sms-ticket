@@ -5,3 +5,5 @@ android:
     - build-tools-21.1.2
     - android-21
     - extra-android-m2repository
+    - extra-google-google_play_services
+    - extra-google-m2repository
