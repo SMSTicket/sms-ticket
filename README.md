@@ -25,7 +25,7 @@ In 2014 Inmite got acquired by Avast. We continued to learn new things with the 
 
 ## How to contribute to the app
 
-We analyzed our code and identified places for improvements. All of them are added to [issues](issues). We also added common feature requests from our users.
+We analyzed our code and identified places for improvements. All of them are added to [issues](https://github.com/avast/sms-ticket/issues). We also added common feature requests from our users.
 
 **Pull requests are welcomed!**
 
@@ -35,11 +35,11 @@ PS: Contributing to our projects increases your chances in being hired at Avast!
 
 ## How to add a new city or modify data about tickets
 
-The data are open-source as well! Have a look at them at [tickets2.json](blob/master/mobile/src/main/assets/tickets2.json)
+The data are open-source as well! Have a look at them at [tickets2.json](mobile/src/main/assets/tickets2.json)
 
-We encourage you to modify the tickets2.json file and send a pull request. Make sure you also increase version in [version2.json](blob/master/mobile/src/main/assets/version2.json) file.
+We encourage you to modify the tickets2.json file and send a pull request. Make sure you also increase version in [version2.json](mobile/src/main/assets/version2.json) file.
 
-We also created [unit tests for testing parsing of the data](tree/master/mobile/src/test/java/eu/inmite/apps/smsjizdenka). When you are adding a new ticket, write test as well to make sure it correctly parses = works in the app.
+We also created [unit tests for testing parsing of the data](mobile/src/test/java/eu/inmite/apps/smsjizdenka). When you are adding a new ticket, write test as well to make sure it correctly parses = works in the app.
 
 ## How to build the code
 
@@ -59,4 +59,4 @@ Avast will still maintain release process, QA and deploying new versions of data
 
 ## License
 
-The app and data are used under Apache 2 License. That means that your work based on this app doesn't have to be open-source, but please give us attribution. Put a link to this repo to your About screen and [let us know](mailto:vavra@avast.com).
+The app and data are released under [Apache 2 License](LICENSE.txt). That means that your work based on this app doesn't have to be open-source, but please give us attribution. Put a link to this repo to your About screen and [let us know](mailto:vavra@avast.com).
