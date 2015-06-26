@@ -1,5 +1,5 @@
 language: android
-script: "./gradlew testDebug"
+script: "./gradlew assembleDebug testDebug"
 android:
   components:
     - build-tools-21.1.2
