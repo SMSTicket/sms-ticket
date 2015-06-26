@@ -1,10 +1,10 @@
 # SMS Ticket
-[![Build Status](https://travis-ci.org/avast/android-styled-dialogs.svg?branch=master)](https://travis-ci.org/avast/android-styled-dialogs) [![License](https://img.shields.io/badge/license-Apache%202-green.svg?style=flat)](https://github.com/avast/android-styled-dialogs/blob/master/LICENSE.txt)
+[![Build Status](https://travis-ci.org/avast/sms-ticket.svg?branch=master)](https://travis-ci.org/avast/sms-ticket) [![License](https://img.shields.io/badge/license-Apache%202-green.svg?style=flat)](https://github.com/avast/sms-ticket/blob/master/LICENSE.txt)
 
  ![Screenshot of the app](graphics/screenshot-small.png)
  ![Screenshot of the app](graphics/screenshot-wear.png)
 
-Get it:
+Install it:
 
 <a href="https://play.google.com/store/apps/details?id=eu.inmite.apps.smsjizdenka&hl=en"><img src="http://www.android.com/images/brand/get_it_on_play_logo_small.png" alt="Get it on Google Play" /></a>
 
