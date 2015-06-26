@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2015 AVAST Software s.r.o.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<manifest
+    package="eu.inmite.apps.smsjizdenka"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:installLocation="auto">
+
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.screen.landscape"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="true" />
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- only for LG Optimus Black, because of bug:
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    -->
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <application
+        android:name=".core.ProjectApp"
+        android:allowClearUserData="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/application_name"
+        android:logo="@drawable/actionbar_ic_app"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:configChanges="locale">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.CitiesActivity"
+            android:label="@string/cities_choose_city" />
+
+        <activity android:name=".activity.CityTicketsActivity" />
+
+        <activity
+            android:name=".activity.DetailActivity"
+            android:label="@string/application_name" />
+
+        <!-- public intent API -->
+        <activity-alias
+            android:name=".activity.SMSTicket"
+            android:targetActivity=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="${applicationId}.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity
+            android:name=".activity.AboutActivity"
+            android:label="@string/ab_menu_about" />
+
+        <service android:name=".service.UpdateService" />
+
+        <service android:name=".service.SmsReceiverService" />
+
+        <service android:name=".service.BootService" />
+
+        <receiver
+            android:name=".receiver.SmsReceiver"
+            android:enabled="true">
+            <intent-filter android:priority="2147483647"> <!-- 2147483639 is maximum which Avast ignores -->
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.SmsSent">
+            <intent-filter>
+                <action android:name="${applicationId}.SMS_SENT" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.SmsConfirmationSent">
+            <intent-filter>
+                <action android:name="${applicationId}.SMS_CONFIRMATION_SENT" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.SmsDelivered">
+            <intent-filter>
+                <action android:name="${applicationId}.SMS_DELIVERED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.TicketAlarmReceiver"></receiver>
+        <receiver android:name=".receiver.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name=".data.TicketProvider"
+            android:authorities="${applicationId}.ticket"
+            android:exported="false" />
+        <provider
+            android:name=".data.CityProvider"
+            android:authorities="${applicationId}.city"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <service
+            android:name=".service.WearableService"
+            tools:ignore="ExportedService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.BIND_LISTENER" />
+            </intent-filter>
+        </service>
+
+
+        <meta-data
+            android:name="com.crashlytics.ApiKey"
+            android:value="8b94355ff161c5ea345c0acdee83f64992e9e5a9" />
+    </application>
+
+</manifest>

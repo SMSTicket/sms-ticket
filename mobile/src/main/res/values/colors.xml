@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright 2015 AVAST Software s.r.o.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <color name="gray_1">#333333</color>
+    <color name="gray_2">#666666</color>
+    <color name="gray_3">#999999</color>
+    <color name="gray_4">#CCCCCC</color>
+    <color name="gray_5">#555555</color>
+    <color name="white">#FFFFFF</color>
+    <color name="bar">#2C2C2C</color>
+    <color name="orange_1">#E28C06</color>
+    <color name="orange_2">#F8A500</color>
+    <color name="red">#EB3300</color>
+    <color name="window_background">#141414</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- swipe to dismiss colors -->
+    <color name="btn_pressed">@color/orange_1</color>
+    <color name="btn_focused">@color/orange_2</color>
+
+    <!-- dialog colors -->
+
+    <color name="dialog_button_pressed">#99F8A500</color>
+    <!-- 60 % opacity -->
+    <color name="dialog_button_focused">#4CF8A500</color>
+    <!-- 30 % opacity -->
+    <color name="dialog_button_separator">#12FFFFFF</color>
+    <!-- 7% opacity -->
+    <color name="dialog_title_text">#F8A500</color>
+    <color name="dialog_title_separator">#F8A500</color>
+
+    <!-- Theme colors -->
+    <color name="accent">@color/orange_1</color>
+    <color name="colorPrimary">@color/bar</color>
+    <color name="colorPrimaryDark">@color/bar</color>
+
+    <!-- About -->
+    <color name="brand_pressed">#ffcc00</color>
+    <!-- 60 % opacity -->
+    <color name="brand_focused">#4Cffcc00</color>
+    <!-- 30 % opacity -->
+    <color name="text_normal_dark">#FFFFFF</color>
+    <color name="text_normal_light">#000000</color>
+
+</resources>

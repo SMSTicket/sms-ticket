@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2015 AVAST Software s.r.o.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<RelativeLayout
+    style="@style/group.ticket_outer"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:id="@+id/ticket"
+        style="@style/group.ticket.active" />
+
+    <LinearLayout
+        android:id="@+id/top_info"
+        style="@style/group">
+
+        <LinearLayout style="@style/group.ticket.top">
+
+            <FrameLayout style="@style/group.ticket_indicator.top">
+
+                <ImageView
+                    android:id="@+id/ticket_indicator"
+                    style="@style/image"
+                    android:contentDescription="@string/desc_ticket_status_indicator" />
+            </FrameLayout>
+
+            <LinearLayout style="@style/group.ticket_status">
+
+                <TextView
+                    android:id="@+id/ticket_status"
+                    style="@style/text.ticket_status" />
+
+                <TextView
+                    android:id="@+id/ticket_city"
+                    style="@style/text.ticket_city" />
+
+                <LinearLayout style="@style/group.wrap.horizontal.top3">
+
+                    <TextView
+                        android:id="@+id/ticket_valid_from_label"
+                        style="@style/text.ticket_active_detail.left"
+                        android:text="@string/tickets_valid_from" />
+
+                    <TextView
+                        android:id="@+id/ticket_valid_from"
+                        style="@style/text.ticket_active_detail" />
+
+                </LinearLayout>
+
+                <LinearLayout style="@style/group.wrap.horizontal">
+
+                    <TextView
+                        android:id="@+id/ticket_valid_to_label"
+                        style="@style/text.ticket_active_detail.left"
+                        android:text="@string/tickets_valid_to" />
+
+                    <TextView
+                        android:id="@+id/ticket_valid_to"
+                        style="@style/text.ticket_active_detail" />
+
+                </LinearLayout>
+
+                <LinearLayout style="@style/group.wrap.horizontal">
+
+                    <TextView
+                        android:id="@+id/ticket_code_label"
+                        style="@style/text.ticket_active_detail.left"
+                        android:text="@string/tickets_code" />
+
+                    <TextView
+                        android:id="@+id/ticket_code"
+                        style="@style/text.ticket_active_detail.bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/separator1"
+            style="@style/separator_horizontal" />
+
+        <LinearLayout style="@style/group.ticket_buttons">
+
+            <ImageButton
+                android:id="@+id/delete_button"
+                style="@style/image_button.left"
+                android:contentDescription="@string/desc_delete_ticket" />
+
+            <View
+                android:id="@+id/separator2"
+                style="@style/separator_vertical" />
+
+            <Button
+                android:id="@+id/sms_button"
+                style="@style/button.middle"
+                android:text="@string/tickets_show_sms" />
+
+            <View
+                android:id="@+id/separator3"
+                style="@style/separator_vertical" />
+
+            <ImageButton
+                android:id="@+id/collapse_button"
+                style="@style/image_button.right"
+                android:contentDescription="@string/desc_collapse_ticket" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

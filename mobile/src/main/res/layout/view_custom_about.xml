@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright 2015 AVAST Software s.r.o.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<LinearLayout
+    style="@style/group.wrap"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/layout_open_source"
+        style="@style/group.wrap.about"
+        android:layout_marginTop="@dimen/grid_11">
+
+        <TextView
+            style="@style/text.about"
+            android:layout_centerVertical="true"
+            android:text="@string/about_open_source" />
+        <!-- TODO: missing content description -->
+        <ImageView
+            style="@style/ImageView.RightArrowOrange"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_eula"
+        style="@style/group.wrap.about">
+
+        <TextView
+            style="@style/text.about"
+            android:layout_centerVertical="true"
+            android:text="@string/about_eula_full" />
+
+        <!-- TODO: missing content description -->
+        <ImageView
+            style="@style/ImageView.RightArrowOrange"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

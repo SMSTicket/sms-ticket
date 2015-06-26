@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2015 AVAST Software s.r.o.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <!-- framework configuration -->
+    <bool name="config_fw_allowForceDebug">true</bool>
+    <!-- Logging level for release builds, use NONE, VERBOSE, DEBUG, INFO, WARN, ERROR and ASSERT -->
+    <string name="config_fw_logLevelForNonDebugBuilds">WARN</string>
+    <string name="config_fw_logtag">inmite.smsjizdenka</string>
+
+    <!-- 3rd services configuration -->
+    <string name="config_crittercism_app_key">5135f787558d6a3aa3000012</string>
+
+    <!-- imt-ec-analytics -->
+    <string name="config_analytics_server">http://amanda.inmite.eu/imt-ec-server</string>
+    <bool name="config_analytics_track_uncaught_exceptions">true</bool>
+    <integer name="config_analytics_session_timeout">30</integer>
+    <!-- in seconds -->
+    <integer name="config_analytics_first_dispatch_delay">5</integer>
+    <!-- in seconds, <=0 means no first dispatch -->
+    <integer name="config_analytics_dispatch_period">10</integer>
+    <!-- in minutes, <=0 means no periodic dispatch -->
+    <integer name="config_analytics_connect_timeout">10</integer>
+    <!-- in seconds, HTTP connect timeout -->
+    <integer name="config_analytics_read_timeout">10</integer>
+    <!-- in seconds, HTTP read timeout -->
+
+</resources>

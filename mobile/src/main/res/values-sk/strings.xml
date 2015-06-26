@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright 2015 AVAST Software s.r.o.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+
+    <string name="application_name">SMS Lístok</string>
+
+    <!--  Common strings -->
+    <string name="cancel">Zrušiť</string>
+    <string name="undo">Späť</string>
+    <string name="undoall">Všetko späť</string>
+    <string name="set">Nastaviť</string>
+
+    <!--  Actionbar -->
+    <string name="ab_menu_settings">Nastavenie</string>
+    <string name="ab_menu_about">O aplikácií</string>
+    <string name="tab_tickets">Lístky</string>
+    <string name="tab_statistics">Štatistiky</string>
+    <string name="ab_menu_add_testing_ticket">Pridať test lístok</string>
+
+    <!-- Tickets tab -->
+    <string name="tickets_order_ticket">Objednať lístok</string>
+    <string name="tickets_no_tickets">Žiadne lístky</string>
+    <string name="tickets_top_help">Pozrite sa na zoznam lístkov alebo štatistiky</string>
+    <string name="tickets_bottom_help">Kúpte nový lístok oranžovým tlačidlom</string>
+    <string name="tickets_valid_from">Platný od</string>
+    <string name="tickets_code">Kód</string>
+    <string name="tickets_valid_to">Platný do</string>
+    <string name="tickets_waiting">Čaká sa</string>
+    <string name="tickets_expired">Neplatný</string>
+    <string name="tickets_valid_one_minute">%d minúta</string>
+    <string name="tickets_valid_few_minutes">%d minúty</string>
+    <string name="tickets_valid_many_minutes">%d minút</string>
+    <string name="tickets_valid_few_hours">%d hodiny</string>
+    <string name="tickets_valid_many_hours">%d hodín</string>
+    <string name="tickets_show_sms">UKÁZAŤ SMS</string>
+    <string name="tickets_sms_text">Text SMS lístka</string>
+    <string name="tickets_close">Zavrieť</string>
+    <string name="tickets_buy_new">Kúpiť nový</string>
+    <string name="tickets_ticket_deleted">Lístok archivovaný</string>
+    <string name="tickets_tickets_deleted">Archivované lístky: %d</string>
+	<string name="tickets_waiting_info">Na príchod lístky môžete čakať az 5 min. Zmazaním tohto
+		nezrušíte odoslaný SMS lístok.
+	</string>
+
+    <!-- Cities screen -->
+    <string name="cities_update_completed">Definície lístkov boli aktualizované na verziu %1$d.</string>
+    <string name="cities_nearest">NAJBLIŽŠIE</string>
+    <string name="cities_recently_purchased">NEDÁVNO KÚPENÉ</string>
+    <string name="cities_all_tickets">VŠETKY MESTÁ</string>
+    <string name="cities_choose_city">Vyberte mesto</string>
+    <string name="cities_buy_ticket">Kúpiť lístok</string>
+    <string name="cities_ticket_bought_again_verification">Naozaj chcete kúpiť ďalší lístok?</string>
+    <string name="cities_ticket_bought_again_action">Tapnite pre kúpu alebo zrušte notifikáciu.</string>
+
+    <!-- Toasts -->
+    <string name="msg_sms_sent">SMS odoslaná.</string>
+	<string name="msg_sms_sent_error_radio_off">SMS správu so žiadosťou o nový lístok sa nepodarilo odoslať, pretože
+		telefonické spojenie je vypnuté.
+	</string>
+	<string name="msg_sms_sent_error_null_pdu">SMS správu so žiadosťou o nový lístok sa nepodarilo odoslať, pretože
+		neboli zadané data.
+	</string>
+    <string name="msg_sms_sent_error_generic">SMS správu so žiadosťou o nový lístok sa nepodarilo odoslať.</string>
+    <string name="msg_sms_confirm_sent">SMS správa s potvrdením žiadosti o nový lístok bola odoslaná.</string>
+	<string name="msg_sms_confirm_sent_error_radio_off">SMS správu s potvrdením žiadosti o nový lístok sa nepodarilo
+		odoslať, pretože telefonické spojenie je vypnuté.
+	</string>
+	<string name="msg_sms_confirm_sent_error_null_pdu">SMS správu s potvrdením žiadosti o nový lístok sa nepodarilo
+		odoslať, pretože neboli zadané dáta.
+	</string>
+	<string name="msg_sms_confirm_sent_error_generic">SMS správu s potvrdením žiadosti o nový lístok sa nepodarilo
+		odoslať.
+	</string>
+    <string name="msg_sms_delivered">SMS správa so žiadosťou o nový lístok bola doručená.</string>
+    <string name="msg_insert_ticket_failed">Nepodarilo sa uložiť lístok.</string>
+
+    <!-- Notifications -->
+    <string name="notif_valid_ticker">Platný lístok bol prijatý</string>
+    <string name="notif_valid_text">Lístok je platný do %s</string>
+    <string name="notif_expiring_ticker">Lístok bude o 10 minút neplatný</string>
+    <string name="notif_expiring_text">Lístok bude čoskoro neplatný (%s)</string>
+    <string name="notif_expired_ticker">Lístok je práve neplatný</string>
+    <string name="notif_expired_text">Lístok je neplatný od %s</string>
+    <string name="notif_show_sms">Ukázať SMS</string>
+
+    <!-- About -->
+    <string name="about_send_feedback">Kontaktujte nás</string>
+    <string name="about_email_subject">[SMS Lístok] Spätná väzba</string>
+    <string name="about_email_chooser">Vyberte e-mailového klienta:</string>
+    <string name="about_email_template">Aké máte zariadenie?\n%s\n\nPopíšte váš problém alebo návrh:\n\n</string>
+
+    <!-- Content description for accesibility -->
+    <string name="desc_inmite_logo">Inmite logo</string>
+    <string name="desc_arrow_up">Šipka hore</string>
+    <string name="desc_arrow_down">Šipka dole</string>
+    <string name="desc_ticket_status_indicator">Indikátor stavu lístka</string>
+    <string name="desc_delete_ticket">Archivovať lístok</string>
+    <string name="desc_collapse_ticket">Zbaliť lístok</string>
+
+    <!-- Statistics -->
+    <string name="stats_total_price">Celková cena</string>
+    <string name="stats_number_of_tickets">Počet lístkov</string>
+    <string name="stats_num_tickets_value_one">%d lístok</string>
+    <string name="stats_num_tickets_value_few">%d lístky</string>
+    <string name="stats_num_tickets_value_many">%d lístkov</string>
+    <string name="stats_period">Obdobie</string>
+    <string name="stats_all_cities">Všetky mestá</string>
+    <string name="stats_all_types">Všetky druhy</string>
+    <string name="stats_from_beginning">Od začiatku</string>
+    <string name="stats_until_today">Do dnes</string>
+    <string name="stats_from_date">Od %s</string>
+    <string name="stats_until_date">Do %s</string>
+    <string name="stats_from">Od</string>
+    <string name="stats_until">Do</string>
+
+    <!-- Preferences -->
+    <string name="pref_notification_category">Notifikácie</string>
+    <string name="pref_notify_before_expiration">Pred vypršaním</string>
+    <string name="pref_notify_before_expiration_summary">Notifikovať 10 minút pred vypršaním</string>
+    <string name="pref_notification_ringtone">Zvuk</string>
+    <string name="pref_cities_category">Lístky</string>
+    <string name="pref_cities_update_summary">Tapnite pre aktualizáciu predpisov</string>
+    <string name="pref_cities_update">Predpisy lístkov v. %s</string>
+    <string name="pref_vibrate">Vibrácie</string>
+    <string name="pref_keep_notifications">Uchovávať notifikácie</string>
+    <string name="pref_keep_notifications_summary">Nemazať platné notifikácie po tapnutí</string>
+    <string name="pref_keep_in_messaging">Uchovávať v Správach</string>
+    <string name="pref_keep_in_messaging_summary">Prijaté SMS aj v natívnej aplikácií</string>
+    <string name="pref_ringtone_none">Žiadny</string>
+    <string name="pref_downloading_definitions">Sťahovanie definícií …</string>
+    <string name="pref_restore_archived_tickets">Obnoviť archivované lístky</string>
+    <string name="pref_archived_tickets_restored">Archivované lístky obnovené</string>
+    <string name="pref_prefill_sms">Predvyplňovať SMS</string>
+    <string name="pref_prefill_sms_summary">Neposielať SMS touto aplikáciou</string>
+
+    <!-- Beta notice -->
+    <string name="beta_message">Beta program SMS Lístka skončil. Prosím aktualizujte z Obchodu Play.</string>
+    <string name="beta_update_now">Aktualizovať teraz</string>
+	<string name="incompatible_message">Aplikácia SMS Lístok môže pri spracovaní lístkov kolidovať s aplikáciou \'%s\'.
+                 Môže sa stať, že táto aplikácia odchytí sms správu skôr ako SMS lístok a lístky sa tak neobjaví.
+	</string>
+    <string name="incompatible_fix_button">Ako to spravit</string>
+
+    <!-- EULA dialog -->
+	<string name="eula_text">Aplikace SMS jízdenka usnadňuje a zpříjemňuje nakupování a správu SMS jízdenek, celý proces však funguje stejně, jako
+		když uživatel pošle SMS zprávu na dané číslo, aby obdržel požadovanou SMS jízdenku. Při nákupu a používání SMS jízdenky se uživatel řídí
+		smluvními a tarifními podmínkami nákupu a použití toho dopravního podniku, jehož SMS jízdenku používá. Společnost Inmite s.r.o. z aplikace nemá žádný finanční prospěch a neodpovídá za případné ztráty, škody ani nepříjemnosti vyplývající z použití aplikace SMS jízdenka.</string>
+    <string name="agree">Souhlasím</string>
+    <string name="disagree">Nesouhlasím</string>
+    <string name="dialog_ok">Zavřít</string>
+    <string name="eula_info">Pouze v anglickém znění:</string>
+
+    <!-- SIM dialog -->
+	<string name="sim_warning">Tato aplikace lze používat pouze s českou nebo slovenskou SIM kartou. SMS jízdenky
+        nejdou odesílat ze zahraničních SIM
+		karet
+		. Vložte českou nebo slovenskou SIM kartu a pusťte aplikaci znovu</string>
+
+    <string name="about_eula_full">Zrieknutie sa zodpovednosti</string>
+    <string name="about_open_source">Open source</string>
+
+</resources>

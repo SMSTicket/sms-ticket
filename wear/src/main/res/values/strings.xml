@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2015 AVAST Software s.r.o.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="sms">SMS</string>
+    <string name="app_name">SMS Ticket</string>
+    <string name="action_buy">Buy a ticket</string>
+    <string name="message_sent">Message sent</string>
+    <string name="buying">Buying...</string>
+
+    <string name="tickets_expired">Expired</string>
+    <string name="tickets_valid_one_minute">%d minute</string>
+    <string name="tickets_valid_few_minutes">%d minutes</string>
+    <string name="tickets_valid_many_minutes">%d minutes</string>
+    <string name="tickets_valid_few_hours">%d hours</string>
+    <string name="tickets_valid_many_hours">%d hours</string>
+
+    <string name="notif_expired_text">Expired at %s</string>
+    <string name="notif_expiring_text">Will expire at (%s)</string>
+    <string name="notif_valid_text">Valid till %s</string>
+
+    <!-- Error -->
+    <string name="error_general">Ooops. An error has occurred!</string>
+    <string name="error_zero_cities">Cities are not available. Please open phone app and than return back.</string>
+    <string name="error_please_connect">Please connect your Wear to your phone.</string>
+
+</resources>

@@ -1,0 +1,15 @@
+.gradle
+local.properties
+target
+.DS_Store
+
+#IntelliJ IDEA
+.idea
+*.iml
+build
+
+#Other
+.DS_Store
+tmp
+Thumbs.db
+crashlytics.properties

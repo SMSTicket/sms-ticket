@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright 2015 AVAST Software s.r.o.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+
+    <string name="sms">SMS</string>
+    <string name="app_name">SMS Jízdenka</string>
+    <string name="action_buy">Objednat jízdenku</string>
+    <string name="message_sent">Zpráva odeslána</string>
+    <string name="buying">Objednávám...</string>
+
+    <string name="tickets_expired">Expired</string>
+    <string name="tickets_valid_one_minute">%d minuta</string>
+    <string name="tickets_valid_few_minutes">%d minuty</string>
+    <string name="tickets_valid_many_minutes">%d minut</string>
+    <string name="tickets_valid_few_hours">%d hodiny</string>
+    <string name="tickets_valid_many_hours">%d hodin</string>
+
+    <string name="notif_expired_text">Vypršela v %s</string>
+    <string name="notif_expiring_text">Vyprší v (%s)</string>
+    <string name="notif_valid_text">Platná do %s</string>
+
+    <!-- Error -->
+    <string name="error_general">Ajéje. Nastala chyba!</string>
+    <string name="error_zero_cities">Města nejsou k dispozici. Pro stažení otevřete aplikaci.</string>
+    <string name="error_please_connect">Prosím připojte hodinky k telefonu.</string>
+
+</resources>

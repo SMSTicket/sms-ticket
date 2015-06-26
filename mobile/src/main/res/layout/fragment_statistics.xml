@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2015 AVAST Software s.r.o.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<RelativeLayout
+    style="@style/group"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ProgressBar
+        android:id="@android:id/progress"
+        style="@style/progress" />
+
+    <LinearLayout
+        android:id="@+id/content"
+        style="@style/group">
+
+        <ScrollView style="@style/group.content">
+
+            <LinearLayout style="@style/group">
+
+                <LinearLayout style="@style/group.list_item.header">
+
+                    <TextView
+                        style="@style/text.list_item.header"
+                        android:text="@string/stats_period" />
+                </LinearLayout>
+
+                <eu.inmite.apps.smsjizdenka.view.FromFilterView
+                    android:id="@+id/from_filter"
+                    style="@style/custom" />
+
+                <eu.inmite.apps.smsjizdenka.view.UntilFilterView
+                    android:id="@+id/until_filter"
+                    style="@style/custom" />
+
+                <LinearLayout style="@style/group.list_item.header">
+
+                    <TextView
+                        style="@style/text.list_item.header"
+                        android:text="@string/tab_tickets" />
+                </LinearLayout>
+
+                <eu.inmite.apps.smsjizdenka.view.CityFilterView
+                    android:id="@+id/city_filter"
+                    style="@style/custom" />
+
+                <eu.inmite.apps.smsjizdenka.view.TypeFilterView
+                    android:id="@+id/type_filter"
+                    style="@style/custom" />
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout style="@style/group.bottom">
+
+            <LinearLayout style="@style/group.horizontal.center">
+
+                <TextView
+                    style="@style/text.total_price"
+                    android:text="@string/stats_total_price" />
+
+                <TextView
+                    android:id="@+id/total_price"
+                    style="@style/text.city_ticket_price" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/group.horizontal.center">
+
+                <TextView
+                    style="@style/text.number_tickets"
+                    android:text="@string/stats_number_of_tickets" />
+
+                <TextView
+                    android:id="@+id/number_tickets"
+                    style="@style/text.number_tickets_value" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

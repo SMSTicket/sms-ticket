@@ -1,0 +1,125 @@
+buildscript {
+    repositories {
+        maven { url 'http://download.crashlytics.com/maven' }
+    }
+
+    dependencies {
+        classpath 'com.crashlytics.tools.gradle:crashlytics-gradle:1.+'
+    }
+}
+/*
+ * Copyright 2015 AVAST Software s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+apply plugin: 'com.android.application'
+apply plugin: 'crashlytics'
+
+repositories {
+    maven { url 'http://download.crashlytics.com/maven' }
+}
+
+apply plugin: 'android-command'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "eu.inmite.apps.smsjizdenka"
+        minSdkVersion project.MIN_SDK
+        targetSdkVersion project.TARGET_SDK
+        versionCode evalVersionCode() + Integer.parseInt(project.INITIAL_VERSION_CODE)
+        versionName evalVersionName()
+
+        if (!isIDEBuild()) {
+            println "Command-line build"
+            // We can't rename build during IDE build because AS can't handle situation
+            // if name is changed without Sync project with gradle files.
+            applicationVariants.all { variant ->
+                renameApk(variant)
+            }
+        }
+
+        applicationVariants.all { variant ->
+            variant.buildConfigField "String", "COMMIT_HASH", '"' + getGitHash() + '"'
+            variant.buildConfigField "boolean", "IDE_BUILD", isIDEBuild() ? "true" : "false"
+            variant.buildConfigField "boolean", "SNAPSHOT_BUILD", isSnapshotBuild() ? "true" : "false"
+        }
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    lintOptions {
+        abortOnError true
+        disable 'InvalidPackage'
+    }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+        // ButterKnife
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
+
+    signingConfigs {
+        release {
+            storeFile file(RELEASE_STORE_FILE)
+            storePassword RELEASE_STORE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+        }
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+        }
+        release {
+            minifyEnabled false
+            shrinkResources true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+}
+
+dependencies {
+    wearApp project(':wear')
+    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.google.android.gms:play-services-wearable:7.5.0'
+    compile 'com.avast:android-styled-dialogs:2.2.0'
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'Teleport:teleportlib:0.1.4'
+
+    testCompile 'org.json:json:20140107'
+    testCompile 'junit:junit:4.12'
+    compile 'com.crashlytics.android:crashlytics:1.+'
+
+}
+
+// hack to access assets in tests
+// TODO: update to latest Roboelectric which should allow this
+task copyAssetsToClasses(type: Copy) {
+    from "${projectDir}/src/main/assets"
+    into "${buildDir}/intermediates/classes/test/debug/assets"
+}
+
+assembleDebug.dependsOn(copyAssetsToClasses)
+

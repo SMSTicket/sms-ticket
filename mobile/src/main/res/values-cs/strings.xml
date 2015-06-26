@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright 2015 AVAST Software s.r.o.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+
+    <string name="application_name">SMS Jízdenka</string>
+
+    <!--  Common strings -->
+    <string name="cancel">Zrušit</string>
+    <string name="undo">Zpět</string>
+    <string name="undoall">Vše zpět</string>
+    <string name="set">Nastavit</string>
+
+    <!--  Actionbar -->
+    <string name="ab_menu_settings">Nastavení</string>
+    <string name="ab_menu_about">O aplikaci</string>
+    <string name="tab_tickets">Jízdenky</string>
+    <string name="tab_statistics">Statistiky</string>
+    <string name="ab_menu_add_testing_ticket">Přidat test jízdenku</string>
+
+    <!-- Tickets tab -->
+    <string name="tickets_order_ticket">Objednat jízdenku</string>
+    <string name="tickets_no_tickets">Žádné jízdenky</string>
+    <string name="tickets_top_help">Podívejte se na seznam jízdenek nebo statistiky</string>
+    <string name="tickets_bottom_help">Kupte novou jízdenku oranžovým tlačítkem</string>
+    <string name="tickets_valid_from">Platná od</string>
+    <string name="tickets_code">Kód</string>
+    <string name="tickets_valid_to">Platná do</string>
+    <string name="tickets_waiting">Čeká se</string>
+    <string name="tickets_expired">Neplatná</string>
+    <string name="tickets_valid_one_minute">%d minuta</string>
+    <string name="tickets_valid_few_minutes">%d minuty</string>
+    <string name="tickets_valid_many_minutes">%d minut</string>
+    <string name="tickets_valid_few_hours">%d hodiny</string>
+    <string name="tickets_valid_many_hours">%d hodin</string>
+    <string name="tickets_show_sms">UKÁZAT SMS</string>
+    <string name="tickets_sms_text">Text SMS jízdenky</string>
+    <string name="tickets_close">Zavřít</string>
+    <string name="tickets_buy_new">Koupit novou</string>
+    <string name="tickets_ticket_deleted">Jízdenka archivována</string>
+    <string name="tickets_tickets_deleted">Archivované jízdenky: %d</string>
+	<string name="tickets_waiting_info">Na příchod jízdenky můžete čekat až 5 min. Smazáním tohoto
+		nezrušíte odeslanou SMS jízdenku.
+	</string>
+
+    <!-- Cities screen -->
+    <string name="cities_update_completed">Definice jízdenek byly aktualizovány na verzi %1$d.</string>
+    <string name="cities_nearest">NEJBLIŽŠÍ</string>
+    <string name="cities_recently_purchased">NEDÁVNO KOUPENÉ</string>
+    <string name="cities_all_tickets">VŠECHNA MĚSTA</string>
+    <string name="cities_choose_city">Vyberte město</string>
+    <string name="cities_buy_ticket">Koupit jízdenku</string>
+    <string name="cities_ticket_bought_again_verification">Opravdu chcete koupit další jízdenku?</string>
+    <string name="cities_ticket_bought_again_action">Tapněte pro koupi nebo zrušte notifikaci.</string>
+
+    <!-- Toasts -->
+    <string name="msg_sms_sent">SMS odeslána.</string>
+	<string name="msg_sms_sent_error_radio_off">SMS zprávu se žádostí o novou jízdenku se nepodařilo odeslat, protože
+		telefonické spojení je vypnuto.
+	</string>
+	<string name="msg_sms_sent_error_null_pdu">SMS zprávu se žádostí o novou jízdenku se nepodařilo odeslat, protože
+		nebyla zadána data.
+	</string>
+    <string name="msg_sms_sent_error_generic">SMS zprávu se žádostí o novou jízdenku se nepodařilo odeslat.</string>
+    <string name="msg_sms_confirm_sent">SMS zpráva s potvrzením žádosti o novou jízdenku byla odeslána.</string>
+	<string name="msg_sms_confirm_sent_error_radio_off">SMS zpráva s potvrzením žádosti o novou jízdenku se nepodařilo
+		odeslat, protože telefonické spojení je vypnuto.
+	</string>
+	<string name="msg_sms_confirm_sent_error_null_pdu">SMS zpráva s potvrzením žádosti o novou jízdenku se nepodařilo
+		odeslat, protože nebyla zadána data.
+	</string>
+	<string name="msg_sms_confirm_sent_error_generic">SMS zpráva s potvrzením žádosti o novou jízdenku se nepodařilo
+		odeslat.
+	</string>
+    <string name="msg_sms_delivered">SMS zpráva se žádostí o novou jízdenku byla doručena.</string>
+    <string name="msg_insert_ticket_failed">Nepodařilo se uložit jízdenku.</string>
+
+    <!-- Notifications -->
+    <string name="notif_valid_ticker">Platná jízdenka byla přijata</string>
+    <string name="notif_valid_text">Jízdenka je platná do %s</string>
+    <string name="notif_expiring_ticker">Jízdenka bude za 10 minut neplatná</string>
+    <string name="notif_expiring_text">Jízdenka bude brzy neplatná (%s)</string>
+    <string name="notif_expired_ticker">Jízdenka je právě neplatná</string>
+    <string name="notif_expired_text">Jízdenka je neplatná od %s</string>
+    <string name="notif_show_sms">Ukázat SMS</string>
+
+    <!-- About -->
+    <string name="about_send_feedback">Kontaktujte nás</string>
+    <string name="about_email_subject">[SMS Jízdenka] Zpětná vazba</string>
+    <string name="about_email_chooser">Vyberte e-mailového klienta:</string>
+    <string name="about_email_template">Jaké máte zařízení?\n%s\n\nPopište váš problém nebo návrh:\n\n</string>
+
+    <!-- Content description for accesibility -->
+    <string name="desc_inmite_logo">Inmite logo</string>
+    <string name="desc_arrow_up">Šipka nahoru</string>
+    <string name="desc_arrow_down">Šipka dolů</string>
+    <string name="desc_ticket_status_indicator">Indikátor stavu jízdenky</string>
+    <string name="desc_delete_ticket">Archivovat jízdenku</string>
+    <string name="desc_collapse_ticket">Sbalit jízdenku</string>
+
+    <!-- Statistics -->
+    <string name="stats_total_price">Celková cena</string>
+    <string name="stats_number_of_tickets">Počet jízdenek</string>
+    <string name="stats_num_tickets_value_one">%d jízdenka</string>
+    <string name="stats_num_tickets_value_few">%d jízdenky</string>
+    <string name="stats_num_tickets_value_many">%d jízdenek</string>
+    <string name="stats_period">Období</string>
+    <string name="stats_all_cities">Všechna města</string>
+    <string name="stats_all_types">Všechny druhy</string>
+    <string name="stats_from_beginning">Od začátku</string>
+    <string name="stats_until_today">Po dnešek</string>
+    <string name="stats_from_date">Od %s</string>
+    <string name="stats_until_date">Do %s</string>
+    <string name="stats_from">Od</string>
+    <string name="stats_until">Do</string>
+
+    <!-- Preferences -->
+    <string name="pref_notification_category">Notifikace</string>
+    <string name="pref_notify_before_expiration">Před vypršením</string>
+    <string name="pref_notify_before_expiration_summary">Notifikovat 10 minut před vypršením</string>
+    <string name="pref_notification_ringtone">Zvuk</string>
+    <string name="pref_cities_category">Jízdenky</string>
+    <string name="pref_cities_update_summary">Tapněte pro aktualizaci předpisů</string>
+    <string name="pref_cities_update">Předpisy jízdenek v. %s</string>
+    <string name="pref_vibrate">Vibrace</string>
+    <string name="pref_keep_notifications">Nechávat notifikace</string>
+    <string name="pref_keep_notifications_summary">Nemazat platné notifikace po tapnutí</string>
+    <string name="pref_keep_in_messaging">Nechávat ve Zprávách</string>
+    <string name="pref_keep_in_messaging_summary">Přijaté SMS také v nativní aplikaci</string>
+    <string name="pref_ringtone_none">Žádný</string>
+    <string name="pref_downloading_definitions">Stahování definic …</string>
+    <string name="pref_restore_archived_tickets">Obnovit archivované jízdenky</string>
+    <string name="pref_archived_tickets_restored">Archivované jízdenky obnoveny</string>
+    <string name="pref_prefill_sms">Předvyplňovat SMS</string>
+    <string name="pref_prefill_sms_summary">Neposílat SMS touto aplikací</string>
+
+    <!-- Beta notice -->
+    <string name="beta_message">Beta program SMS Jízdenky skončil. Prosím aktualizujte z Obchodu Play.</string>
+    <string name="beta_update_now">Aktualizovat teď</string>
+
+	<string name="incompatible_message">Aplikace SMS Jízdenka může při zpracování jízdenek kolidovat s aplikací \'%s\'.
+		Může se stát, že tato aplikace odchytí sms zprávu dříve než SMS Jízdenka a jízdenka se tak neobjeví.
+	</string>
+    <string name="incompatible_fix_button">Jak to spravit</string>
+
+    <!-- EULA dialog -->
+	<string name="eula_text">Aplikace SMS jízdenka usnadňuje a zpříjemňuje nakupování a správu SMS jízdenek, celý proces však funguje stejně, jako
+		když uživatel pošle SMS zprávu na dané číslo, aby obdržel požadovanou SMS jízdenku. Při nákupu a používání SMS jízdenky se uživatel řídí
+		smluvními a tarifními podmínkami nákupu a použití toho dopravního podniku, jehož SMS jízdenku používá. Společnost Inmite s.r.o. z aplikace nemá žádný finanční prospěch a neodpovídá za případné ztráty, škody ani nepříjemnosti vyplývající z použití aplikace SMS jízdenka.</string>
+    <string name="agree">Souhlasím</string>
+    <string name="disagree">Nesouhlasím</string>
+    <string name="dialog_ok">Zavřít</string>
+    <string name="eula_info">Aplikace je vydaná a poskytovaná jako opensource dle licence níže a uživatel nese plnou zodpovědnost za používání aplikace a veškeré její projevy. Autoři této aplikaci zároveň nejsou provozovateli nákupního systemu. Při nákupu a používání SMS jízdenky se uživatel řídí smluvními a tarifními podmínkami nákupu a použití toho dopravního podniku, jehož SMS jízdenku používá.</string>
+
+
+    <!-- SIM dialog -->
+	<string name="sim_warning">Tato aplikace lze používat pouze s českou nebo slovenskou SIM kartou. SMS jízdenky nejdou odesílat ze zahraničních SIM
+		karet
+		. Vložte českou nebo slovenskou SIM kartu a pusťte aplikaci znovu</string>
+
+    <string name="about_eula_full">Zřeknutí se odpovědnosti</string>
+    <string name="about_open_source">Open source</string>
+
+</resources>

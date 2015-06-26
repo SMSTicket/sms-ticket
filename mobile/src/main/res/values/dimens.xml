@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2015 AVAST Software s.r.o.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <!-- grid size -->
+    <dimen name="grid_1">4dp</dimen>
+    <!-- one squere in grid -->
+    <dimen name="grid_2">8dp</dimen>
+    <dimen name="grid_3">12dp</dimen>
+    <dimen name="grid_4">16dp</dimen>
+    <dimen name="grid_5">20dp</dimen>
+    <dimen name="grid_6">24dp</dimen>
+    <dimen name="grid_7">28dp</dimen>
+    <dimen name="grid_8">32dp</dimen>
+    <dimen name="grid_9">36dp</dimen>
+    <dimen name="grid_10">40dp</dimen>
+    <dimen name="grid_11">44dp</dimen>
+    <dimen name="grid_12">48dp</dimen>
+    <dimen name="grid_13">52dp</dimen>
+    <dimen name="grid_14">56dp</dimen>
+    <dimen name="grid_15">60dp</dimen>
+    <dimen name="grid_16">64dp</dimen>
+    <dimen name="grid_17">68dp</dimen>
+    <dimen name="grid_18">72dp</dimen>
+    <dimen name="grid_20">80dp</dimen>
+    <dimen name="grid_26">104dp</dimen>
+    <dimen name="grid_27">108dp</dimen>
+    <dimen name="grid_28">112dp</dimen>
+    <dimen name="grid_43">172dp</dimen>
+    <dimen name="grid_44">176dp</dimen>
+    <dimen name="grid_45">180dp</dimen>
+    <dimen name="grid_46">184dp</dimen>
+    <dimen name="grid_55">220dp</dimen>
+    <dimen name="grid_57">228dp</dimen>
+    <dimen name="grid_58">232dp</dimen>
+    <dimen name="grid_90">360dp</dimen>
+
+    <dimen name="text_xxxlarge">24sp</dimen>
+    <dimen name="text_xxlarge">22sp</dimen>
+    <dimen name="text_xlarge">20sp</dimen>
+    <dimen name="text_large">18sp</dimen>
+    <dimen name="text_medium">16sp</dimen>
+    <dimen name="text_small">14sp</dimen>
+    <dimen name="text_xsmall">12sp</dimen>
+    <dimen name="text_xxsmall">10sp</dimen>
+</resources>

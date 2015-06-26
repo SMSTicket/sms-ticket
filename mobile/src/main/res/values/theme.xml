@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2015 AVAST Software s.r.o.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme is the default theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat">
+        <!-- TODO: ActionBar styling is deprecated, we should use Toolbar -->
+        <!-- ActionBar -->
+        <!--<item name="actionBarStyle">@style/Widget.Styled.ActionBar</item>-->
+        <item name="actionOverflowButtonStyle">@style/Widget.Styled.ActionBar.Overflow</item>
+        <item name="actionBarItemBackground">@drawable/actionbar_btn_action</item>
+        <item name="dropDownListViewStyle">@style/Widget.Styled.ActionBar.OverflowItem</item>
+        <item name="actionBarTabStyle">@style/Widget.Styled.ActionBar.TabView</item>
+        <item name="actionBarTabBarStyle">@style/Widget.Styled.ActionBar.TabBar</item>
+        <item name="actionBarTabTextStyle">@style/Widget.Styled.ActionBar.TabText</item>
+        <!-- ActionBar v14 -->
+        <!--<item name="android:actionBarStyle">@style/Widget.Styled.ActionBar</item>-->
+        <item name="android:actionOverflowButtonStyle" tools:ignore="NewApi">@style/Widget.Styled.ActionBar.Overflow</item>
+        <item name="android:actionBarItemBackground" tools:ignore="NewApi">@drawable/actionbar_btn_action</item>
+        <item name="android:dropDownListViewStyle">@style/Widget.Styled.ActionBar.OverflowItem</item>
+        <item name="android:actionBarTabStyle" tools:ignore="NewApi">@style/Widget.Styled.ActionBar.TabView</item>
+        <item name="android:actionBarTabBarStyle" tools:ignore="NewApi">@style/Widget.Styled.ActionBar.TabBar</item>
+        <item name="android:windowContentOverlay">@drawable/actionbar_shadow_top</item>
+        <item name="android:actionBarTabTextStyle" tools:ignore="NewApi">@style/Widget.Styled.ActionBar.TabText</item>
+        <!-- Other styles: -->
+        <item name="android:windowBackground">@color/window_background</item>
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/accent</item>
+
+    </style>
+
+    <!-- Actionbar child styles: -->
+
+    <style name="Widget.Styled.ActionBar" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@drawable/actionbar_bg_solid</item>
+        <item name="background">@drawable/actionbar_bg_solid</item>
+        <item name="android:windowActionBarOverlay" tools:ignore="NewApi">false</item>
+        <item name="windowActionBarOverlay">false</item>
+        <item name="android:titleTextStyle" tools:ignore="NewApi">@style/Widget.Styled.ActionBar.TitleText</item>
+        <item name="titleTextStyle">@style/Widget.Styled.ActionBar.TitleText</item>
+    </style>
+
+    <style name="Widget.Styled.ActionBar.Overflow" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_menu_white</item>
+    </style>
+
+    <style name="Widget.Styled.ActionBar.OverflowItem" parent="Base.Widget.AppCompat.ListView.DropDown">
+        <item name="android:listSelector">@drawable/actionbar_btn_action</item>
+    </style>
+
+    <style name="Widget.Styled.ActionBar.TitleText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Widget.Styled.ActionBar.TabView" parent="Widget.AppCompat.ActionBar.TabView">
+        <item name="background">@drawable/tabbar_tab</item>
+        <item name="android:background">@drawable/tabbar_tab</item>
+        <item name="android:textColor">@color/orange_2</item>
+    </style>
+
+    <style name="Widget.Styled.ActionBar.TabBar" parent="Widget.AppCompat.ActionBar.TabBar">
+        <item name="android:showDividers" tools:ignore="NewApi">middle</item>
+        <item name="divider">@null</item>
+        <item name="android:divider">@null</item>
+    </style>
+
+    <style name="Widget.Styled.ActionBar.TabText" parent="Widget.AppCompat.ActionBar.TabText">
+        <item name="android:textColor">@color/tab_text</item>
+    </style>
+
+    <style name="ImageView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+</resources>

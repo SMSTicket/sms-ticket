@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2015 AVAST Software s.r.o.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<LinearLayout
+    style="@style/group"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout style="@style/group.content">
+
+        <ListView
+            android:id="@android:id/list"
+            style="@style/list" />
+
+        <ProgressBar
+            android:id="@android:id/progress"
+            style="@style/progress" />
+
+        <!-- empty view -->
+        <LinearLayout
+            android:id="@android:id/empty"
+            style="@style/group.ticket_outer">
+
+            <LinearLayout style="@style/group.content.top">
+
+                <LinearLayout
+                    android:id="@+id/top_help"
+                    style="@style/group.wrap.help">
+
+                    <ImageView
+                        style="@style/image.top3"
+                        android:contentDescription="@string/desc_arrow_up"
+                        android:src="@drawable/content_help_arrows_up" />
+
+                    <eu.inmite.apps.smsjizdenka.view.SegoePrintTextView
+                        style="@style/text.help"
+                        android:text="@string/tickets_top_help" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/group.ticket.initial">
+
+                <TextView
+                    style="@style/text.initial"
+                    android:text="@string/tickets_no_tickets" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/group.content.bottom">
+
+                <LinearLayout
+                    android:id="@+id/bottom_help"
+                    style="@style/group.wrap.help">
+
+                    <eu.inmite.apps.smsjizdenka.view.SegoePrintTextView
+                        style="@style/text.help"
+                        android:text="@string/tickets_bottom_help" />
+
+                    <ImageView
+                        style="@style/image.bottom3"
+                        android:contentDescription="@string/desc_arrow_down"
+                        android:src="@drawable/content_help_arrows_down" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout style="@style/group.bottom">
+
+        <Button
+            android:id="@+id/buy"
+            style="@style/button"
+            android:text="@string/tickets_order_ticket" />
+    </LinearLayout>
+</LinearLayout>

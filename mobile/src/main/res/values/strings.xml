@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright 2015 AVAST Software s.r.o.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+
+    <string name="application_name">SMS Ticket</string>
+
+    <!--  Common strings -->
+    <string name="cancel">Cancel</string>
+    <string name="undo">Undo</string>
+    <string name="undoall">Undo all</string>
+    <string name="set">Set</string>
+
+    <!--  Actionbar -->
+    <string name="ab_menu_settings">Settings</string>
+    <string name="ab_menu_about">About</string>
+    <string name="tab_tickets">Tickets</string>
+    <string name="tab_statistics">Statistics</string>
+    <string name="ab_menu_add_testing_ticket">Add Testing Ticket</string>
+
+    <!-- Tickets tab -->
+    <string name="tickets_order_ticket">Order ticket</string>
+    <string name="tickets_no_tickets">No tickets</string>
+    <string name="tickets_top_help">You can choose to look at the list of tickets or statistics</string>
+    <string name="tickets_bottom_help">Buy a new ticket using the orange button</string>
+    <string name="tickets_valid_from">Valid from</string>
+    <string name="tickets_code">Code</string>
+    <string name="tickets_valid_to">Valid to</string>
+    <string name="tickets_waiting">Waiting</string>
+    <string name="tickets_expired">Expired</string>
+    <string name="tickets_valid_one_minute">%d minute</string>
+    <string name="tickets_valid_few_minutes">%d minutes</string>
+    <string name="tickets_valid_many_minutes">%d minutes</string>
+    <string name="tickets_valid_few_hours">%d hours</string>
+    <string name="tickets_valid_many_hours">%d hours</string>
+    <string name="tickets_show_sms">SHOW SMS</string>
+    <string name="tickets_sms_text">Text of SMS ticket</string>
+    <string name="tickets_close">Close</string>
+    <string name="tickets_buy_new">Buy New</string>
+    <string name="tickets_ticket_deleted">Ticket archived</string>
+    <string name="tickets_tickets_deleted">Archived tickets: %d</string>
+	<string name="tickets_waiting_info">It can take up to 5 min. before SMS arrives. Deleting this doesn\'t cancel
+		your pending SMS ticket.
+	</string>
+
+    <!-- Cities screen -->
+    <string name="cities_update_completed">Ticket definitions have been updated to version %1$d.</string>
+    <string name="cities_nearest">NEAREST</string>
+    <string name="cities_recently_purchased">RECENTLY PURCHASED</string>
+    <string name="cities_all_tickets">ALL CITIES</string>
+    <string name="cities_choose_city">Choose city</string>
+    <string name="cities_buy_ticket">Buy ticket</string>
+    <string name="cities_ticket_bought_again_verification">Are you sure to buy another ticket?</string>
+    <string name="cities_ticket_bought_again_action">Tap to buy it or dismiss to ignore.</string>
+
+    <!-- Toasts -->
+    <string name="msg_sms_sent">SMS sent.</string>
+    <string name="msg_sms_sent_error_radio_off">Cannot send SMS check signal.</string>
+    <string name="msg_sms_sent_error_null_pdu">Cannot send SMS there are no data provided.</string>
+    <string name="msg_sms_sent_error_generic">Cannot send SMS</string>
+    <string name="msg_sms_confirm_sent">Confirmation sent.</string>
+    <string name="msg_sms_confirm_sent_error_radio_off">Cannot send confirmation check signal.</string>
+    <string name="msg_sms_confirm_sent_error_null_pdu">Cannot send confirmation there are no data provided.</string>
+    <string name="msg_sms_confirm_sent_error_generic">Cannot send confirmation</string>
+    <string name="msg_insert_ticket_failed">Cannot save ticket.</string>
+    <string name="msg_sms_delivered">SMS delivered.</string>
+
+    <!-- Notifications -->
+    <string name="notif_valid_ticker">Valid ticket was received</string>
+    <string name="notif_valid_text">Ticket is valid till %s</string>
+    <string name="notif_expiring_ticker">Ticket will expire in 10 minutes</string>
+    <string name="notif_expiring_text">Ticket will expire soon (%s)</string>
+    <string name="notif_expired_ticker">Ticket has just expired</string>
+    <string name="notif_expired_text">Ticket expired at %s</string>
+    <string name="notif_show_sms">Show SMS</string>
+
+    <!-- About -->
+    <string name="about_send_feedback">Send feedback</string>
+    <string name="about_email_subject">[SMS Ticket] Feedback</string>
+    <string name="about_email_chooser">Choose e-mail app:</string>
+	<string name="about_email_template">What device do you have?\n%s\n\nDescribe your problem or feature
+		request:\n\n
+	</string>
+    <string name="about_opensource_libraries">Open-source libraries</string>
+    <string name="about_library_by">by %s</string>
+    <string name="about_project_web">Project web</string>
+
+    <string name="desc_app_icon">App icon</string>
+
+    <!-- Content description for accesibility -->
+    <string name="desc_inmite_logo">Inmite logo</string>
+    <string name="desc_arrow_up">Arrow up</string>
+    <string name="desc_arrow_down">Arrow down</string>
+    <string name="desc_ticket_status_indicator">Ticket status indicator</string>
+    <string name="desc_delete_ticket">Archive ticket</string>
+    <string name="desc_collapse_ticket">Collapse ticket</string>
+
+    <!-- Statistics -->
+    <string name="stats_total_price">Total price</string>
+    <string name="stats_number_of_tickets">Number of tickets</string>
+    <string name="stats_num_tickets_value_one">%d ticket</string>
+    <string name="stats_num_tickets_value_few">%d tickets</string>
+    <string name="stats_num_tickets_value_many">%d tickets</string>
+    <string name="stats_period">Period</string>
+    <string name="stats_all_cities">All cities</string>
+    <string name="stats_all_types">All types</string>
+    <string name="stats_from_beginning">From the beginning</string>
+    <string name="stats_until_today">Until today</string>
+    <string name="stats_from_date">From %s</string>
+    <string name="stats_until_date">Until %s</string>
+    <string name="stats_from">From</string>
+    <string name="stats_until">Until</string>
+
+    <!-- Preferences -->
+    <string name="pref_notification_category">Notifications</string>
+    <string name="pref_notify_before_expiration">Notify before expiration</string>
+    <string name="pref_notify_before_expiration_summary">Notification 10 minutes before expiration</string>
+    <string name="pref_notification_ringtone">Sound</string>
+    <string name="pref_cities_category">Tickets</string>
+    <string name="pref_cities_update_summary">Tap to update ticket definitions</string>
+    <string name="pref_cities_update">Ticket definitions v. %s</string>
+    <string name="pref_vibrate">Vibration</string>
+    <string name="pref_keep_notifications">Keep notifications</string>
+    <string name="pref_keep_notifications_summary">Don\'t dismiss valid and expiring notifications</string>
+    <string name="pref_keep_in_messaging">Keep in Messaging</string>
+    <string name="pref_keep_in_messaging_summary">Keep SMS in the native app</string>
+    <string name="pref_ringtone_none">None</string>
+    <string name="pref_downloading_definitions">Downloading definitions …</string>
+    <string name="pref_restore_archived_tickets">Restore archived tickets</string>
+    <string name="pref_archived_tickets_restored">Archived tickets restored</string>
+    <string name="pref_prefill_sms">Prefill SMS</string>
+    <string name="pref_prefill_sms_summary">Don\'t send SMS in this app</string>
+
+    <!-- Beta notice -->
+    <string name="beta_message">SMS Ticket beta has finished. Please update from Play Store.</string>
+    <string name="beta_update_now">Update now</string>
+
+    <!-- Incompatible app notice -->
+	<string name="incompatible_message">The app SMS Ticket might not show sms tickets properly because another
+        app \'%s\' will be notified about incoming text message before SMS Ticket.
+	</string>
+    <string name="incompatible_fix_button">How to fix it</string>
+
+    <!-- EULA dialog -->
+	<string name="eula_text">This app makes buying SMS tickets easier. But the process is the same as if you send SMS by yourself. You should
+		follow the rules of buying and using tickets of the respective travel company. Company Inmite s.r.o doesn\'t have any financial gain from the
+		tickets and isn\'t responsible for losses or problems with the tickets caused by this app.</string>
+    <string name="agree">Agree</string>
+    <string name="disagree">Disagree</string>
+    <string name="dialog_ok">Close</string>
+    <string name="eula_info">Application is provided under Open Source license disclosed below and user is fully responsible for use of the features within the application and the subsequent actions. The developers of the application do not control the transaction functionality of the system, i.e. purchasing and using SMS ticket, and the user agrees to the terms of the service issued by the local public transportation company providing the particular SMS ticket.</string>
+
+    <!-- SIM dialog -->
+	<string name="sim_warning">This app can be used only with Czech or Slovak SIM card. SMS Tickets doesn\'t work
+        with foreign SIM cards. Insert
+		Czech or Slovak
+		SIM card and launch the app again.</string>
+
+    <!-- Errors -->
+    <string name="error_zero_cities" translatable="false">Cities are not available. Please open phone app and than return back.</string>
+
+    <!-- About -->
+    <string name="about_eula_full">Disclaimer</string>
+    <string name="about_open_source">Open source</string>
+
+</resources>

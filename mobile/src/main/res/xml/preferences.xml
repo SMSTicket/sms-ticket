@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2015 AVAST Software s.r.o.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/pref_notification_category">
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="notification_vibrate"
+            android:title="@string/pref_vibrate" />
+
+        <RingtonePreference
+            android:key="notification_ringtone"
+            android:ringtoneType="notification"
+            android:showDefault="true"
+            android:showSilent="true"
+            android:title="@string/pref_notification_ringtone" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="notify_before_expiration"
+            android:summary="@string/pref_notify_before_expiration_summary"
+            android:title="@string/pref_notify_before_expiration" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="keep_notifications"
+            android:summary="@string/pref_keep_notifications_summary"
+            android:title="@string/pref_keep_notifications" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="ticket_category"
+        android:title="@string/pref_cities_category">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="keep_in_messaging"
+            android:summary="@string/pref_keep_in_messaging_summary"
+            android:title="@string/pref_keep_in_messaging" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="prefill_sms"
+            android:summary="@string/pref_prefill_sms_summary"
+            android:title="@string/pref_prefill_sms" />
+        <Preference
+            android:key="update_cities"
+            android:summary="@string/pref_cities_update_summary" />
+        <Preference
+            android:key="restore_archived"
+            android:title="@string/pref_restore_archived_tickets" />
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2015 AVAST Software s.r.o.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- groups -->
+
+    <style name="group">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="group.horizontal">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="group.horizontal.content">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="group.horizontal.center">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="group.horizontal.undo">
+        <item name="android:layout_height">@dimen/grid_16</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/undo_bg</item>
+    </style>
+
+    <style name="group.wrap">
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="group.wrap.horizontal">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="group.wrap.horizontal.top3">
+        <item name="android:layout_marginTop">@dimen/grid_3</item>
+    </style>
+
+    <style name="group.center">
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="group.wrap.help">
+        <item name="android:layout_marginLeft">@dimen/grid_10</item>
+        <item name="android:layout_marginRight">@dimen/grid_10</item>
+        <item name="android:gravity">center</item>
+        <item name="android:visibility">invisible</item>
+    </style>
+
+    <style name="group.content">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="group.content.top">
+        <item name="android:gravity">top</item>
+    </style>
+
+    <style name="group.content.bottom">
+        <item name="android:gravity">bottom</item>
+    </style>
+
+    <style name="group.bottom">
+        <item name="android:layout_height">@dimen/grid_15</item>
+        <item name="android:background">@drawable/bottombar_bg_solid</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">@dimen/grid_4</item>
+        <item name="android:paddingRight">@dimen/grid_4</item>
+    </style>
+
+    <style name="group.ticket">
+        <item name="android:layout_height">@dimen/grid_27</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="group.ticket.normal">
+        <item name="android:padding">@dimen/grid_6</item>
+    </style>
+
+    <style name="group.ticket.initial">
+        <item name="android:background">@drawable/content_ticket_bg_initial</item>
+    </style>
+
+    <style name="group.ticket.active">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_height">229dp</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
+    <style name="group.ticket.top">
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:layout_height">@dimen/grid_43</item>
+        <item name="android:paddingLeft">@dimen/grid_4</item>
+        <item name="android:paddingTop">29dp</item>
+        <item name="android:paddingRight">@dimen/grid_8</item>
+        <item name="android:paddingBottom">@dimen/grid_5</item>
+        <item name="android:layout_marginLeft">0dp</item>
+        <item name="android:layout_marginRight">0dp</item>
+    </style>
+
+    <style name="group.ticket_outer">
+        <item name="android:paddingLeft">@dimen/grid_4</item>
+        <item name="android:paddingRight">@dimen/grid_4</item>
+    </style>
+
+    <style name="group.ticket_status">
+        <item name="android:paddingLeft">@dimen/grid_4</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_vertical|left</item>
+    </style>
+
+    <style name="group.ticket_buttons">
+        <item name="android:layout_height">@dimen/grid_14</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="group.list_item">
+        <item name="android:minHeight">@dimen/grid_14</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/content_list</item>
+        <item name="android:gravity">center_vertical|left</item>
+    </style>
+
+    <style name="group.list_item.horizontal">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="group.list_item.header">
+        <item name="android:minHeight">@dimen/grid_10</item>
+        <item name="android:background">@drawable/content_list_header</item>
+        <item name="android:gravity">bottom|left</item>
+    </style>
+
+    <style name="group.city_ticket">
+        <item name="android:layout_height">@dimen/grid_17</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical|left</item>
+    </style>
+
+    <style name="group.ticket_price">
+        <item name="android:layout_marginRight">@dimen/grid_2</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:gravity">center_vertical|right</item>
+    </style>
+
+    <style name="group.ticket_indicator">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:background">@drawable/content_ticket_indicator_bg</item>
+    </style>
+
+    <style name="group.ticket_indicator.top">
+        <item name="android:layout_marginTop">13dp</item>
+        <item name="android:layout_gravity">top|left</item>
+    </style>
+
+    <style name="group.wrap.about">
+        <item name="android:background">@drawable/list_selector</item>
+        <item name="android:padding">@dimen/grid_4</item>
+    </style>
+
+    <!-- widgets -->
+
+    <!-- TODO: styling the standard Android resources is deprecated. AppCompat can tint them for us. It would allow us to remove many resources and shrink the app -->
+    <!-- TODO: there are a lot of unused resources, filter them by Lint and remove -->
+    <!-- TODO: use sp instead of dp for text sizes -->
+    <style name="checkbox" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@drawable/checkbox</item>
+    </style>
+
+    <style name="button" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">@dimen/grid_46</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/btn_basic</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">@dimen/grid_3</item>
+    </style>
+
+    <style name="button.minor">
+        <item name="android:background">@drawable/about_btn</item>
+        <item name="android:layout_marginTop">@dimen/grid_10</item>
+        <item name="android:layout_marginBottom">@dimen/grid_4</item>
+    </style>
+
+    <style name="button.middle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/content_ticket_btn_middle</item>
+    </style>
+
+    <style name="button.undo">
+        <item name="android:layout_width">@dimen/grid_26</item>
+        <item name="android:layout_height">@dimen/grid_14</item>
+        <item name="android:background">@drawable/undo_btn_back</item>
+        <item name="android:textColor">@color/gray_3</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:drawableLeft">@drawable/undo_ic_back</item>
+    </style>
+
+    <style name="text" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="text.initial">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/gray_3</item>
+    </style>
+
+    <style name="text.help">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/gray_5</item>
+    </style>
+
+    <style name="text.ticket_status">
+        <item name="android:textSize">22dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="text.ticket_city">
+        <item name="android:textSize">13dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/gray_2</item>
+    </style>
+
+    <style name="text.ticket_when_expired">
+        <item name="android:textSize">13dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/gray_3</item>
+        <item name="android:singleLine">false</item>
+    </style>
+
+    <style name="text.ticket_active_detail">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/gray_1</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:maxLines">2</item>
+    </style>
+
+    <style name="text.ticket_active_detail.bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="text.ticket_active_detail.left">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:maxLines">3</item>
+    </style>
+
+    <style name="text.list_item">
+        <item name="android:layout_marginLeft">@dimen/grid_2</item>
+        <item name="android:textColor">@color/list_item_text</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="text.list_item.header">
+        <item name="android:textColor">@color/orange_2</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginBottom">@dimen/grid_1</item>
+        <item name="android:textAllCaps" tools:ignore="NewApi">true</item>
+    </style>
+
+    <style name="text.list_item.left">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="text.city_ticket_price">
+        <item name="android:textColor">@color/orange_2</item>
+        <item name="android:textSize">21dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="text.city_ticket_price_note">
+        <item name="android:textColor">@color/gray_2</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:layout_marginTop">@dimen/grid_1</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="text.city_ticket_note">
+        <item name="android:layout_marginLeft">@dimen/grid_2</item>
+        <item name="android:textColor">@color/gray_4</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:layout_marginBottom">@dimen/grid_3</item>
+    </style>
+
+    <style name="text.total_price">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">17dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="text.number_tickets">
+        <item name="android:textColor">@color/gray_4</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="text.number_tickets_value">
+        <item name="android:textColor">@color/gray_2</item>
+        <item name="android:textSize">13dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="text.undo">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginLeft">@dimen/grid_6</item>
+    </style>
+
+    <style name="image" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="image.top3">
+        <item name="android:layout_marginTop">@dimen/grid_3</item>
+    </style>
+
+    <style name="image.bottom3">
+        <item name="android:layout_marginBottom">@dimen/grid_3</item>
+    </style>
+
+    <style name="image.dropdown">
+        <item name="android:src">@drawable/content_dropdown</item>
+        <item name="android:layout_marginRight">@dimen/grid_2</item>
+        <item name="android:layout_marginBottom">@dimen/grid_2</item>
+        <item name="android:layout_gravity">bottom</item>
+    </style>
+
+    <style name="image_button" parent="@android:style/Widget.ImageButton">
+        <item name="android:layout_width">@dimen/grid_18</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="image_button.left">
+        <item name="android:background">@drawable/content_ticket_btn_left</item>
+    </style>
+
+    <style name="image_button.right">
+        <item name="android:background">@drawable/content_ticket_btn_right</item>
+    </style>
+
+    <style name="list" parent="@android:style/Widget.ListView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fadeScrollbars">true</item>
+        <item name="android:cacheColorHint">@null</item>
+        <item name="android:divider">@null</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:listSelector">@android:color/transparent</item>
+        <item name="android:fastScrollEnabled">true</item>
+    </style>
+
+    <style name="list.divider">
+        <item name="android:divider">@drawable/abs__list_divider_holo_dark</item>
+    </style>
+
+    <style name="progress" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:indeterminate">true</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+
+    <style name="separator_horizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
+
+    <style name="separator_vertical">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginBottom">1dp</item>
+    </style>
+
+    <style name="space">
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="space.4">
+        <item name="android:layout_height">@dimen/grid_4</item>
+    </style>
+
+    <style name="custom">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="datepicker">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:spinnersShown" tools:ignore="NewApi">true</item>
+        <item name="android:calendarViewShown" tools:ignore="NewApi">false</item>
+    </style>
+
+    <style name="animation_popup">
+        <item name="@android:windowEnterAnimation">@anim/popup_show</item>
+        <item name="@android:windowExitAnimation">@anim/popup_hide</item>
+    </style>
+
+    <!-- About -->
+
+    <style name="AB.Image">
+        <item name="android:layout_marginTop">@dimen/grid_8</item>
+        <item name="android:background">@drawable/list_selector</item>
+        <item name="android:layout_height">@dimen/grid_26</item>
+        <item name="android:layout_width">@dimen/grid_26</item>
+    </style>
+
+    <style name="AB.TextView" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_normal_dark</item>
+    </style>
+
+    <style name="ImageView.RightArrowOrange">
+        <item name="android:src">@drawable/ic_arrow_right_orange</item>
+    </style>
+
+    <style name="text.about">
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/text_normal_dark</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AB" />
+
+    <style name="AB.Group">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="AB.Group.Scroll"></style>
+
+    <style name="AB.Group.Center">
+        <item name="android:gravity">center</item>
+    </style>
+
+
+    <style name="AB.Group.ListItem">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/grid_20</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="AB.Space">
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="AB.Space.4">
+        <item name="android:layout_height">@dimen/grid_4</item>
+    </style>
+
+    <style name="AB.Button" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/grid_4</item>
+    </style>
+
+    <style name="AB.TextView.Version">
+        <item name="android:fontFamily" tools:ignore="NewApi">sans-serif-light</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:layout_marginTop">@dimen/grid_1</item>
+    </style>
+
+    <style name="AB.TextView.Name">
+        <item name="android:layout_marginTop">@dimen/grid_5</item>
+        <item name="android:fontFamily" tools:ignore="NewApi">sans-serif-light</item>
+        <item name="android:textSize">@dimen/text_xxxlarge</item>
+    </style>
+
+    <style name="AB.TextView.Link" />
+
+    <style name="AB.ListView">
+        <item name="android:listSelector">@null</item>
+    </style>
+
+    <style name="AB.TextView.LibraryName">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+</resources>
