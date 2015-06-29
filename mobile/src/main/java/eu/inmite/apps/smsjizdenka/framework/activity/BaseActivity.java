@@ -20,7 +20,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import eu.inmite.apps.smsjizdenka.framework.interfaces.IBackReceiver;
@@ -30,9 +30,8 @@ import eu.inmite.apps.smsjizdenka.framework.interfaces.IBackReceiver;
  * This class shouldn't be used directly; instead, activities should
  * inherit from {@link BaseSinglePaneActivity}.
  * <p/>
- * TODO: replace ActionBarActivity with AppCompatActivity
  */
-public abstract class BaseActivity extends ActionBarActivity {
+public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * Converts an intent into a {@link android.os.Bundle} suitable for use as fragment arguments.
