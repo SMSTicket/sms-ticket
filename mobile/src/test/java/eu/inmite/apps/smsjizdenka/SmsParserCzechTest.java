@@ -83,9 +83,9 @@ public class SmsParserCzechTest {
     // ------ Usti nad Labem
     @Test
     public void testDpj() {
-        Ticket ticket = sSmsParser.parse("90206018", "849tYQEec/014268/Of9 DP m. Usti n/L a.s. Jizdenka prestupni 18,- Kc, Platnost od: 11.6.13 18:55 do: 11.6.13 19:55 Plati v zonach 101, 111, 121, 122.");
+        Ticket ticket = sSmsParser.parse("90206020", "849tYQEec/014268/Of9 DP m. Usti n/L a.s. Jizdenka prestupni 20,- Kc, Platnost od: 11.6.13 18:55 do: 11.6.13 19:55 Plati v zonach 101, 111, 121, 122.");
         Assert.assertEquals("Ústí nad Labem", ticket.city);
-        Assert.assertEquals(18, ticket.price, 0);
+        Assert.assertEquals(20, ticket.price, 0);
         Assert.assertEquals("849tYQEec/014268/Of9", ticket.hash);
         Assert.assertEquals(new Date("Jun 11, 2013, 18:55:00"), ticket.validFrom);
         Assert.assertEquals(new Date("Jun 11, 2013, 19:55:00"), ticket.validTo);

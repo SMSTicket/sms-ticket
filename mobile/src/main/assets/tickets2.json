@@ -131,7 +131,7 @@
       "lon": 14.0329968,
       "validity": 60,
       "note": "",
-      "price": 18,
+      "price": 20,
       "currency": "CZK",
       "currency_ces": "Kč",
       "priceNote": " + price for SMS",
@@ -139,8 +139,8 @@
       "request": "MDJ",
       "number": "90206",
       "additionalNumbers": [
-        "9020618",
-        "90206018"
+        "9020620",
+        "90206020"
       ],
       "identification": ".*DP m\\. Usti n/L",
       "pDateFrom": "od: (.*)[; ]+do:",
