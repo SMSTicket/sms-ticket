@@ -979,6 +979,56 @@
       "pDateTo": "do: (.*)\\.",
       "pHash": "do: .*\\..*\\..*:.*\\. (.*)$",
       "dateFormat": "dd.MM.yy HH:mm"
+    },
+    {
+      "id": 39,
+      "country": "cz",
+      "city": "Tábor",
+      "city_pubtran": "Tabor",
+      "lat": 49.4188553,
+      "lon": 14.6152597,
+      "validity": 70,
+      "note": "",
+      "price": 18,
+      "currency": "CZK",
+      "currency_ces": "Kč",
+      "priceNote": " + price for SMS",
+      "priceNote_ces": " + cena SMS",
+      "request": "COM",
+      "number": "90206",
+      "additionalNumbers": [
+        "90206018"
+      ],
+      "identification": "COMETT PLUS",
+      "pDateFrom": "od: (.*) do:",
+      "pDateTo": "do: (.*) ",
+      "pHash": "do: .* .* (.* / .*)$",
+      "dateFormat": "dd.MM.yy HH:mm"
+    },
+    {
+      "id": 40,
+      "country": "cz",
+      "city": "Tábor",
+      "city_pubtran": "Tabor",
+      "lat": 49.4188553,
+      "lon": 14.6152597,
+      "validity": 70,
+      "note": "zlevněná",
+      "price": 10,
+      "currency": "CZK",
+      "currency_ces": "Kč",
+      "priceNote": " + price for SMS",
+      "priceNote_ces": " + cena SMS",
+      "request": "COMZ",
+      "number": "90206",
+      "additionalNumbers": [
+        "90206010"
+      ],
+      "identification": "COMETT PLUS",
+      "pDateFrom": "od: (.*) do:",
+      "pDateTo": "do: (.*) ",
+      "pHash": "do: .* .* (.* / .*)$",
+      "dateFormat": "dd.MM.yy HH:mm"
     }
   ]
 }

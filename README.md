@@ -41,6 +41,8 @@ We encourage you to modify the tickets2.json file and send a pull request. Make 
 
 We also created [unit tests for testing parsing of the data](mobile/src/test/java/eu/inmite/apps/smsjizdenka). When you are adding a new ticket, write a test as well to make sure it correctly parses = works in the app.
 
+Run ```./gradlew testDebug``` before submitting a PR.
+
 ## How to build the code
 
 First add these constants into your `home/.gradle/gradle.properties` file:

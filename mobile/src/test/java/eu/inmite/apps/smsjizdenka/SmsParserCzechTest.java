@@ -293,5 +293,29 @@ public class SmsParserCzechTest {
         Assert.assertEquals(new Date("February 3, 2015, 23:59:00"), ticket.validTo);
     }
 
+    // ----- Tábor
+    @Test
+    public void testTabor() {
+        Ticket ticket = sSmsParser.parse("90206018", "COMETT PLUS, spol. s r. o. Jizdenka plnocenna 18 Kc. Platnost " +
+            "od: 19.11.15 8:29 do: 19.11.15 9:39 9QYHzAXWU / 310224");
+        Assert.assertEquals("Tábor", ticket.city);
+        Assert.assertEquals(18, ticket.price, 0);
+        Assert.assertEquals("9QYHzAXWU / 310224", ticket.hash);
+        Assert.assertEquals(new Date("November 19, 2015, 8:29:00"), ticket.validFrom);
+        Assert.assertEquals(new Date("November 19, 2015, 9:39:00"), ticket.validTo);
+    }
+
+
+    @Test
+    public void testTaborZ() {
+        Ticket ticket = sSmsParser.parse("90206010", "COMETT PLUS, spol. s r. o. Jizdenka zlevnena 10 Kc. Platnost " +
+            "od: 19.11.15 16:52 do: 19.11.15 18:02 adCpmNz8o / 806098");
+        Assert.assertEquals("Tábor", ticket.city);
+        Assert.assertEquals(10, ticket.price, 0);
+        Assert.assertEquals("adCpmNz8o / 806098", ticket.hash);
+        Assert.assertEquals(new Date("November 19, 2015, 16:52:00"), ticket.validFrom);
+        Assert.assertEquals(new Date("November 19, 2015, 18:02:00"), ticket.validTo);
+    }
+
 
 }
