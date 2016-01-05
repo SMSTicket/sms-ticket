@@ -28,8 +28,7 @@ public class Constants {
     public static final int BROADCAST_SMS_SENT = 1;
     public static final int BROADCAST_SMS_DELIVERED = 2;
 
-    // TODO: move data from Inmite servers somewhere alse
-    public static final String DATA_URL_BASE = "http://data.inmite.eu/projects/sms-jizdenka/";
+    public static final String DATA_URL_BASE = "https://raw.githubusercontent.com/avast/sms-ticket/master/mobile/src/main/assets/";
 
     public static final int LOADER_TICKETS = 1;
     public static final int LOADER_CITIES = 2;
