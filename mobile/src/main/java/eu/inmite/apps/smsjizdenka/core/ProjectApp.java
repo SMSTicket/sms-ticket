@@ -17,8 +17,8 @@
 package eu.inmite.apps.smsjizdenka.core;
 
 import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 
-import eu.inmite.apps.smsjizdenka.R;
 import eu.inmite.apps.smsjizdenka.data.DatabaseHelper;
 import eu.inmite.apps.smsjizdenka.data.model.CityManager;
 import eu.inmite.apps.smsjizdenka.framework.App;
@@ -58,7 +58,7 @@ public class ProjectApp extends App {
     public void onCreate() {
         super.onCreate();
         if (!isDebugBuild()) {
-            Crashlytics.start(this);
+            Fabric.with(this, new Crashlytics());
         }
     }
 }
