@@ -20,6 +20,7 @@ import java.io.IOException;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.text.Html;
@@ -111,7 +112,7 @@ public class EulaDialogFragment extends SimpleDialogFragment {
 
             @Override
             public void doInBackground() {
-                eula = getStringFromAssets(getActivity(), "eula.html");
+                eula = getStringFromAssets(App.getInstance(), "eula.html");
                 spannedEula = Html.fromHtml(eula);
             }
 
@@ -127,7 +128,7 @@ public class EulaDialogFragment extends SimpleDialogFragment {
         return customView;
     }
 
-    public String getStringFromAssets(Context context, String data) {
+    public String getStringFromAssets(@NonNull Context context, String data) {
         try {
             return StreamUtils.streamToString(context.getResources().getAssets().open(data));
         } catch (IOException e) {

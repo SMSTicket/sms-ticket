@@ -25,6 +25,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.v4.app.NotificationCompat;
 import android.text.TextUtils;
 
@@ -54,7 +55,7 @@ public class NotificationUtil {
      * @param c context to post notification
      * @param t new ticket
      */
-    public static void notifyTicket(Context c, Ticket t, boolean keepNotification) {
+    public static void notifyTicket(Context c, @NonNull Ticket t, boolean keepNotification) {
         String text;
         String ticker;
         int smallIcon;

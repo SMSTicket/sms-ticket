@@ -292,25 +292,29 @@ public class UpdateService extends IntentService {
                 throw new IOException("requested addr " + addr + " not found");
             }
 
-            HttpURLConnection connection = (HttpURLConnection)url.openConnection();
-            connection.setReadTimeout(30000);
-            connection.setRequestMethod("GET");
-            connection.setDoInput(true);
-            connection.setDoOutput(false);
+            try {
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setReadTimeout(30000);
+                connection.setRequestMethod("GET");
+                connection.setDoInput(true);
+                connection.setDoOutput(false);
 
-            if (connection.getResponseCode() != 200) {
-                connection.disconnect();
+                if (connection.getResponseCode() != 200) {
+                    connection.disconnect();
 
-                throw new IOException("status " + connection.getResponseCode() + " received");
+                    throw new IOException("status " + connection.getResponseCode() + " received");
+                }
+
+                if (addr == URL_VERSION_ID) {
+                    DebugLog.i("Downloading definition version info...");
+                } else if (addr == URL_TICKETS_ID) {
+                    DebugLog.i("Downloading new tickets definition...");
+                }
+
+                return connection.getInputStream();
+            } catch (SecurityException e) {
+                throw new IOException("Internet access denied");
             }
-
-            if (addr == URL_VERSION_ID) {
-                DebugLog.i("Downloading definition version info...");
-            } else if (addr == URL_TICKETS_ID) {
-                DebugLog.i("Downloading new tickets definition...");
-            }
-
-            return connection.getInputStream();
         }
     }
 }

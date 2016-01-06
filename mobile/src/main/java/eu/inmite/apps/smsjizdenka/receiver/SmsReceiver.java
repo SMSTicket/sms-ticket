@@ -24,6 +24,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.telephony.SmsMessage;
 
 import eu.inmite.apps.smsjizdenka.data.Preferences;
@@ -76,14 +77,16 @@ public class SmsReceiver extends BroadcastReceiver {
         }
         SmsMessage[] messages = getMessages(intent);
         try {
-            for (int n = 0; n < messages.length; n++) {
+            for (SmsMessage message : messages) {
                 try {
-                    DebugLog.i("receiving sms from " + messages[n].getDisplayOriginatingAddress());
+                    DebugLog.i("receiving sms from " + message.getDisplayOriginatingAddress());
                 } catch (Exception e) {
                     // ignore
                 }
 
-                processTicket(c, messages[n]);
+                if (message != null) {
+                    processTicket(c, message);
+                }
             }
         } catch (ParseException e) {
             DebugLog.e("received sms cannot be parsed because of " + e.getMessage());
@@ -99,13 +102,18 @@ public class SmsReceiver extends BroadcastReceiver {
     public synchronized SmsMessage[] getMessages(Intent intent) {
         Bundle bundle = intent.getExtras();
 
-        Object messages[] = (Object[])bundle.get("pdus");
+        Object messages[] = (Object[]) bundle.get("pdus");
         if (messages != null) {
-            SmsMessage[] smsMessages = new SmsMessage[messages.length];
-            for (int i = 0; i < messages.length; i++) {
-                smsMessages[i] = SmsMessage.createFromPdu((byte[])messages[i]);
+            try {
+                SmsMessage[] smsMessages = new SmsMessage[messages.length];
+                for (int i = 0; i < messages.length; i++) {
+                    smsMessages[i] = SmsMessage.createFromPdu((byte[]) messages[i]);
+                }
+                return smsMessages;
+            } catch (SecurityException e) {
+                DebugLog.w("SMS parsing forbidden");
+                return new SmsMessage[0];
             }
-            return smsMessages;
         } else {
             return new SmsMessage[0];
         }
@@ -118,8 +126,12 @@ public class SmsReceiver extends BroadcastReceiver {
      * @return parsed new ticket or null if ticket already exists in database
      * @throws java.text.ParseException
      */
-    public synchronized void processTicket(Context c, SmsMessage m) throws ParseException {
-        final String message = m.getDisplayMessageBody().replaceAll("[\n\r]", " ");
+    public synchronized void processTicket(Context c, @NonNull SmsMessage m) throws ParseException {
+        String displayMessageBody = m.getDisplayMessageBody();
+        if (displayMessageBody == null) {
+            return;
+        }
+        final String message = displayMessageBody.replaceAll("[\n\r]", " ");
 
         DebugLog.i("receiving sms from " + m.getOriginatingAddress() + " with text " + message);
 

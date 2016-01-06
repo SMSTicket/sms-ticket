@@ -45,19 +45,23 @@ public class TicketAlarmReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context c, Intent intent) {
         try {
-            final Ticket t = (Ticket)intent.getParcelableExtra(EXTRA_TICKET);
+            final Ticket t = intent.getParcelableExtra(EXTRA_TICKET);
 
-            if (INTENT_TICKET_ALARM_EXPIRING.equals(intent.getAction())) {
-                NotificationUtil.notifyTicket(c, t, Preferences.getBoolean(c, Preferences.KEEP_NOTIFICATIONS,
-                    true));
-                DebugLog.i("Receiving alarm for expiring ticket " + t);
-            }
-            if (INTENT_TICKET_ALARM_EXPIRED.equals(intent.getAction())) {
-                NotificationUtil.notifyTicket(c, t, false);
-                DebugLog.i("Receiving alarm for expired ticket " + t);
+            if (t == null) {
+                DebugLog.w("Scheduled ticket is null");
+            } else {
+                if (INTENT_TICKET_ALARM_EXPIRING.equals(intent.getAction())) {
+                    NotificationUtil.notifyTicket(c, t, Preferences.getBoolean(c, Preferences.KEEP_NOTIFICATIONS,
+                        true));
+                    DebugLog.i("Receiving alarm for expiring ticket " + t);
+                }
+                if (INTENT_TICKET_ALARM_EXPIRED.equals(intent.getAction())) {
+                    NotificationUtil.notifyTicket(c, t, false);
+                    DebugLog.i("Receiving alarm for expired ticket " + t);
+                }
             }
         } catch (BadParcelableException e) {
-            // ticket was bought in the old version and alarm received in the new version, ignoring
+            DebugLog.i("ticket was bought in the old version and alarm received in the new version, ignoring");
         }
     }
 }

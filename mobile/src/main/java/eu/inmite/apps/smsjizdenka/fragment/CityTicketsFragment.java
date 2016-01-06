@@ -57,7 +57,7 @@ public class CityTicketsFragment extends ProjectBaseFragment implements LoaderMa
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        vList = (ListView)view.findViewById(android.R.id.list);
+        vList = (ListView) view.findViewById(android.R.id.list);
         vList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -94,7 +94,7 @@ public class CityTicketsFragment extends ProjectBaseFragment implements LoaderMa
             return;
         }
         if (loader.getId() == Constants.LOADER_CITY_TICKETS) {
-            final List<City> cities = (List<City>)data;
+            final List<City> cities = (List<City>) data;
             mAdapter = new CityTicketsAdapter(c, cities);
             vList.setAdapter(mAdapter);
             int minutes = getArguments().getInt(CityTicketsActivity.EXTRA_MINUTES, -1);
@@ -144,6 +144,8 @@ public class CityTicketsFragment extends ProjectBaseFragment implements LoaderMa
     }
 
     private void showBuyTicketDialog(City item) {
-        BuyTicketDialogFragment.newInstance(item.id).show(getFragmentManager(), BuyTicketDialogFragment.TAG);
+        if (isAdded()) {
+            BuyTicketDialogFragment.newInstance(item.id).show(getFragmentManager(), BuyTicketDialogFragment.TAG);
+        }
     }
 }

@@ -15,14 +15,29 @@
  */
 package eu.inmite.apps.smsjizdenka.view;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 import android.content.Context;
 import android.graphics.Rect;
 import android.os.Handler;
 import android.os.Message;
-import android.view.*;
-import android.widget.*;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.VelocityTracker;
+import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.AbsListView;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.AnimatorListenerAdapter;
@@ -117,9 +132,9 @@ public final class SwipeDismissList implements View.OnTouchListener {
         mDensity = mListView.getResources().getDisplayMetrics().density;
 
         // -- Load undo popup --
-        LayoutInflater inflater = (LayoutInflater)mListView.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = (LayoutInflater) mListView.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View v = inflater.inflate(R.layout.popup_undo, null);
-        mUndoButton = (Button)v.findViewById(R.id.undo);
+        mUndoButton = (Button) v.findViewById(R.id.undo);
         mUndoButton.setOnClickListener(new UndoHandler());
         mUndoButton.setOnTouchListener(new View.OnTouchListener() {
             public boolean onTouch(View v, MotionEvent event) {
@@ -128,22 +143,22 @@ public final class SwipeDismissList implements View.OnTouchListener {
                 return false;
             }
         });
-        mUndoText = (TextView)v.findViewById(R.id.text);
+        mUndoText = (TextView) v.findViewById(R.id.text);
 
         mUndoPopup = new PopupWindow(v);
         mUndoPopup.setAnimationStyle(R.style.animation_popup);
         // Get scren width in dp and set width respectively
-        int xdensity = (int)(mListView.getContext().getResources().getDisplayMetrics().widthPixels / mDensity);
+        int xdensity = (int) (mListView.getContext().getResources().getDisplayMetrics().widthPixels / mDensity);
         if (xdensity < 300) {
-            mUndoPopup.setWidth((int)(mDensity * 280));
+            mUndoPopup.setWidth((int) (mDensity * 280));
         } else if (xdensity < 350) {
-            mUndoPopup.setWidth((int)(mDensity * 300));
+            mUndoPopup.setWidth((int) (mDensity * 300));
         } else if (xdensity < 500) {
-            mUndoPopup.setWidth((int)(mDensity * 330));
+            mUndoPopup.setWidth((int) (mDensity * 330));
         } else {
-            mUndoPopup.setWidth((int)(mDensity * 450));
+            mUndoPopup.setWidth((int) (mDensity * 450));
         }
-        mUndoPopup.setHeight((int)(mDensity * 56));
+        mUndoPopup.setHeight((int) (mDensity * 56));
         // -- END Load undo popu --
 
         listView.setOnTouchListener(this);
@@ -251,8 +266,8 @@ public final class SwipeDismissList implements View.OnTouchListener {
                 int childCount = mListView.getChildCount();
                 int[] listViewCoords = new int[2];
                 mListView.getLocationOnScreen(listViewCoords);
-                int x = (int)motionEvent.getRawX() - listViewCoords[0];
-                int y = (int)motionEvent.getRawY() - listViewCoords[1];
+                int x = (int) motionEvent.getRawX() - listViewCoords[0];
+                int y = (int) motionEvent.getRawY() - listViewCoords[1];
                 View child;
                 for (int i = 0; i < childCount; i++) {
                     child = mListView.getChildAt(i);
@@ -264,12 +279,14 @@ public final class SwipeDismissList implements View.OnTouchListener {
                 }
 
                 if (mDownView != null) {
-                    boolean enabled = (Boolean)mDownView.getTag(eu.inmite.apps.smsjizdenka.R.id.swipe_enabled);
+                    boolean enabled = (Boolean) mDownView.getTag(eu.inmite.apps.smsjizdenka.R.id.swipe_enabled);
                     if (!enabled) {
                         break;
                     }
                     mDownX = motionEvent.getRawX();
-                    mDownPosition = mListView.getPositionForView(mDownView);
+                    if (mDownView != null && mListView != null) {
+                        mDownPosition = mListView.getPositionForView(mDownView);
+                    }
 
                     mVelocityTracker = VelocityTracker.obtain();
                     mVelocityTracker.addMovement(motionEvent);
@@ -394,7 +411,7 @@ public final class SwipeDismissList implements View.OnTouchListener {
             animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    lp.height = (Integer)valueAnimator.getAnimatedValue();
+                    lp.height = (Integer) valueAnimator.getAnimatedValue();
                     dismissView.setLayoutParams(lp);
                 }
             });
@@ -431,7 +448,7 @@ public final class SwipeDismissList implements View.OnTouchListener {
                     // Show undo popup
                     mUndoPopup.showAtLocation(mListView,
                         Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM,
-                        0, (int)(mDensity * 17 * 4));
+                        0, (int) (mDensity * 17 * 4));
                 } catch (WindowManager.BadTokenException e) {
                     // activity is no longer running
                     return;
