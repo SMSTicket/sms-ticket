@@ -64,10 +64,10 @@ android {
 
     signingConfigs {
         release {
-            storeFile file(RELEASE_STORE_FILE)
-            storePassword RELEASE_STORE_PASSWORD
-            keyAlias RELEASE_KEY_ALIAS
-            keyPassword RELEASE_KEY_PASSWORD
+            storeFile file(AVAST_LABS_KEYSTORE_FILE)
+            storePassword AVAST_LABS_KEYSTORE_PASSWORD
+            keyAlias AVAST_LABS_KEY_ALIAS
+            keyPassword AVAST_LABS_KEY_PASSWORD
         }
     }
 
