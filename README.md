@@ -1,8 +1,8 @@
 # SMS Ticket
 [![Build Status](https://travis-ci.org/avast/sms-ticket.svg?branch=master)](https://travis-ci.org/avast/sms-ticket) [![License](https://img.shields.io/badge/license-Apache%202-green.svg?style=flat)](https://github.com/avast/sms-ticket/blob/master/LICENSE.txt)
 
- ![Screenshot of the app](graphics/screenshot-small.png)
- ![Screenshot of the app](graphics/screenshot-wear.png)
+ ![Screenshot of the app](meta/screenshots/screenshot-small.png)
+ ![Screenshot of the app](meta/screenshots/screenshot-wear.png)
 
 Install it:
 
