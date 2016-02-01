@@ -16,6 +16,10 @@
 
 package eu.inmite.apps.smsjizdenka.fragment;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
@@ -25,10 +29,13 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
+import android.telephony.SubscriptionInfo;
+import android.telephony.SubscriptionManager;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
@@ -56,6 +63,9 @@ public class SettingsFragment extends PreferenceListFragment {
                 updateRingtoneSummary(getPreferenceScreen());
             } else if (key.equals(Preferences.DATA_VERSION)) {
                 updateDataVersion(getPreferenceScreen());
+            } else if (key.equals(Preferences.DUALSIM_SIM)) {
+                ListPreference preference = (ListPreference) getPreferenceScreen().findPreference(Preferences.DUALSIM_SIM);
+                preference.setSummary(preference.getEntry());
             }
         }
     };
@@ -75,7 +85,7 @@ public class SettingsFragment extends PreferenceListFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ((ProjectBaseActivity)getActivity()).getSupportActionBar().setTitle(R.string.ab_menu_settings);
+        ((ProjectBaseActivity) getActivity()).getSupportActionBar().setTitle(R.string.ab_menu_settings);
         PreferenceManager.getDefaultSharedPreferences(mContext).registerOnSharedPreferenceChangeListener(listener);
     }
 
@@ -104,9 +114,36 @@ public class SettingsFragment extends PreferenceListFragment {
         updateDataVersion(preferenceScreen);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            PreferenceCategory pref = (PreferenceCategory)preferenceScreen.findPreference("ticket_category");
+            PreferenceCategory pref = (PreferenceCategory) preferenceScreen.findPreference("sms_category");
             pref.removePreference(pref.findPreference(Preferences.KEEP_IN_MESSAGING));
         }
+        boolean dualSim = Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1 && SubscriptionManager.from(getActivity()).getActiveSubscriptionInfoCount() >= 2;
+        if (!dualSim) {
+            PreferenceCategory pref = (PreferenceCategory) preferenceScreen.findPreference("sms_category");
+            pref.removePreference(pref.findPreference(Preferences.DUALSIM_SIM));
+        } else {
+            fillDualSimList(preferenceScreen);
+        }
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP_MR1)
+    private void fillDualSimList(PreferenceScreen preferenceScreen) {
+        PreferenceCategory category = (PreferenceCategory) preferenceScreen.findPreference("sms_category");
+        ListPreference preference = (ListPreference) category.findPreference(Preferences.DUALSIM_SIM);
+        List<String> simIds = new ArrayList<>();
+        List<String> simNames = new ArrayList<>();
+        simIds.add(String.valueOf(Preferences.VALUE_DEFAULT_SIM));
+        simNames.add(getString(R.string.sim_default));
+        SubscriptionManager subscriptionManager = SubscriptionManager.from(getActivity());
+        for (SubscriptionInfo subscriptionInfo : subscriptionManager.getActiveSubscriptionInfoList()) {
+            simIds.add(String.valueOf(subscriptionInfo.getSubscriptionId()));
+            simNames.add(getString(R.string.sim_name, subscriptionInfo.getSimSlotIndex() + 1, subscriptionInfo
+                .getDisplayName()));
+        }
+        preference.setEntries(simNames.toArray(new String[simNames.size()]));
+        preference.setEntryValues(simIds.toArray(new String[simIds.size()]));
+        preference.setDefaultValue(String.valueOf(Preferences.VALUE_DEFAULT_SIM));
+        preference.setSummary(preference.getEntry());
     }
 
     private void updateRingtoneSummary(PreferenceScreen preferenceScreen) {
@@ -123,7 +160,7 @@ public class SettingsFragment extends PreferenceListFragment {
         preferenceScreen.findPreference(Preferences.NOTIFICATION_RINGTONE).setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
             @Override
             public boolean onPreferenceChange(Preference preference, Object newValue) {
-                String v = (String)newValue;
+                String v = (String) newValue;
                 preference.setSummary(v);
                 return true;
             }

@@ -16,12 +16,16 @@
 
 package eu.inmite.apps.smsjizdenka.dialog;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.telephony.SmsManager;
 import android.text.format.Time;
 import android.view.View;
@@ -32,7 +36,6 @@ import eu.inmite.apps.smsjizdenka.R;
 import eu.inmite.apps.smsjizdenka.activity.MainActivity;
 import eu.inmite.apps.smsjizdenka.adapter.CityTicketsAdapter;
 import eu.inmite.apps.smsjizdenka.core.Constants;
-import eu.inmite.apps.smsjizdenka.core.ProjectBaseActivity;
 import eu.inmite.apps.smsjizdenka.data.Preferences;
 import eu.inmite.apps.smsjizdenka.data.TicketProvider.Tickets;
 import eu.inmite.apps.smsjizdenka.data.model.City;
@@ -62,21 +65,24 @@ public class BuyTicketDialogFragment extends BaseDialogFragment {
     /**
      * Order ticket in new thread.
      */
-    public static synchronized void orderNewTicket(final City city, final Activity c, String analyticsSource) {
+    public static synchronized void orderNewTicket(final City city, final Context context) {
         if (city == null) {
             return;
         }
         // make sure sms cannot be saved twice
-        Preferences.set(c, Preferences.LAST_ORDER_TIME, System.currentTimeMillis());
-        //SL.get(AnalyticsService.class).trackEvent("order-ticket", analyticsSource, "city", city.city, "price", city.price);
+        Preferences.set(context, Preferences.LAST_ORDER_TIME, System.currentTimeMillis());
 
-        if (Preferences.getBoolean(c, Preferences.PREFILL_SMS, false)) {
+        if (Preferences.getBoolean(context, Preferences.PREFILL_SMS, false)) {
             // prefill SMS
             final Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + city.number));
             i.putExtra("sms_body", city.request);
-            c.startActivity(i);
+            if (!(context instanceof Activity)) {
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            }
+            context.startActivity(i);
         } else {
             new Thread(new Runnable() {
+                @SuppressLint("NewApi")
                 @Override
                 public void run() {
 
@@ -91,29 +97,36 @@ public class BuyTicketDialogFragment extends BaseDialogFragment {
                     cv.put(Tickets.CITY, city.city);
                     cv.put(Tickets.CITY_ID, city.id);
                     cv.put(Tickets.STATUS, Tickets.STATUS_WAITING);
-                    final Uri uri = c.getContentResolver().insert(Tickets.CONTENT_URI, cv);
+                    final Uri uri = context.getContentResolver().insert(Tickets.CONTENT_URI, cv);
 
                     // send SMS directly
-                    final SmsManager sm = SmsManager.getDefault();
+                    SmsManager sm;
+                    int simId = Integer.parseInt(Preferences.getString(App.getInstance(), Preferences.DUALSIM_SIM, String.valueOf(Preferences
+                        .VALUE_DEFAULT_SIM)));
+                    if (simId == Preferences.VALUE_DEFAULT_SIM) {
+                        sm = SmsManager.getDefault();
+                    } else {
+                        sm = SmsManager.getSmsManagerForSubscriptionId(simId);
+                    }
                     final Intent sentIntent = new Intent(SmsSent.INTENT_SMS_SENT);
                     sentIntent.putExtra("uri", uri);
                     sentIntent.putExtra("NUMBER", city.number);
                     sentIntent.putExtra("MESSAGE", city.request);
-                    final PendingIntent sent = PendingIntent.getBroadcast(c, Constants.BROADCAST_SMS_SENT, sentIntent, PendingIntent.FLAG_ONE_SHOT);
+                    final PendingIntent sent = PendingIntent.getBroadcast(context, Constants.BROADCAST_SMS_SENT, sentIntent, PendingIntent.FLAG_ONE_SHOT);
 
                     final Intent deliveredIntent = new Intent(SmsDelivered.INTENT_SMS_DELIVERED);
                     deliveredIntent.putExtra("uri", uri);
-                    final PendingIntent delivered = PendingIntent.getBroadcast(c, Constants.BROADCAST_SMS_DELIVERED, deliveredIntent,
+                    final PendingIntent delivered = PendingIntent.getBroadcast(context, Constants.BROADCAST_SMS_DELIVERED, deliveredIntent,
                         PendingIntent.FLAG_ONE_SHOT);
                     try {
                         // most sensitive line of the entire app:
                         sm.sendTextMessage(city.number, null, city.request, sent, delivered);
                     } catch (SecurityException e) {
-                        // LG Optimus Black needs READ_PHONE_STATE permission
-                        ((ProjectBaseActivity)c).runOnUiThread(new Runnable() {
+                        Handler handler = new Handler(Looper.getMainLooper());
+                        handler.post(new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(c, R.string.msg_sms_sent_error_generic, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(context, R.string.msg_sms_sent_error_generic, Toast.LENGTH_SHORT).show();
                             }
                         });
                     }
@@ -135,7 +148,7 @@ public class BuyTicketDialogFragment extends BaseDialogFragment {
                 if (isBoughtRecently()) {
                     NotificationUtil.notifyVerification(App.getInstance(), city);
                 } else {
-                    orderNewTicket(city, getActivity(), "buy-ticket-dialog");
+                    orderNewTicket(city, getActivity());
                 }
                 if (!Preferences.getBoolean(App.getInstance(), Preferences.PREFILL_SMS, false)) {
                     startBackActivity(MainActivity.class);

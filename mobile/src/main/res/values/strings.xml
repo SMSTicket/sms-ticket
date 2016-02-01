@@ -145,6 +145,10 @@
     <string name="pref_archived_tickets_restored">Archived tickets restored</string>
     <string name="pref_prefill_sms">Prefill SMS</string>
     <string name="pref_prefill_sms_summary">Don\'t send SMS in this app</string>
+    <string name="sms">SMS</string>
+    <string name="pref_sim_to_use">SIM card to use</string>
+    <string name="sim_default">Default</string>
+    <string name="sim_name">SIM %1$s (%2$s)</string>
 
     <!-- Beta notice -->
     <string name="beta_message">SMS Ticket beta has finished. Please update from Play Store.</string>

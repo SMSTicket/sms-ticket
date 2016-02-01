@@ -50,7 +50,7 @@ public class BuyTicketConfirmationDialogFragment extends BaseDialogFragment {
         builder.setPositiveButton(R.string.cities_buy_ticket, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                BuyTicketDialogFragment.orderNewTicket(city, getActivity(), "buy-ticket-confirmation-dialog");
+                BuyTicketDialogFragment.orderNewTicket(city, getActivity());
                 dismiss();
             }
         });

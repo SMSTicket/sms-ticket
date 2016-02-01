@@ -148,6 +148,10 @@
     <string name="pref_archived_tickets_restored">Archivované jízdenky obnoveny</string>
     <string name="pref_prefill_sms">Předvyplňovat SMS</string>
     <string name="pref_prefill_sms_summary">Neposílat SMS touto aplikací</string>
+    <string name="sms">SMS</string>
+    <string name="pref_sim_to_use">SIM karta pro jízdenky</string>
+    <string name="sim_default">Výchozí</string>
+    <string name="sim_name">SIM %1$s (%2$s)</string>
 
     <!-- Beta notice -->
     <string name="beta_message">Beta program SMS Jízdenky skončil. Prosím aktualizujte z Obchodu Play.</string>

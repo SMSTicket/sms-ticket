@@ -40,9 +40,8 @@
             android:summary="@string/pref_keep_notifications_summary"
             android:title="@string/pref_keep_notifications" />
     </PreferenceCategory>
-    <PreferenceCategory
-        android:key="ticket_category"
-        android:title="@string/pref_cities_category">
+    <PreferenceCategory android:title="@string/sms"
+        android:key="sms_category">
         <CheckBoxPreference
             android:defaultValue="false"
             android:key="keep_in_messaging"
@@ -53,6 +52,13 @@
             android:key="prefill_sms"
             android:summary="@string/pref_prefill_sms_summary"
             android:title="@string/pref_prefill_sms" />
+        <ListPreference
+            android:key="sim"
+            android:title="@string/pref_sim_to_use" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="ticket_category"
+        android:title="@string/pref_cities_category">
         <Preference
             android:key="update_cities"
             android:summary="@string/pref_cities_update_summary" />

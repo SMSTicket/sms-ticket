@@ -37,6 +37,9 @@ public class Preferences {
     public static final String PREFILL_SMS = "prefill_sms";
     public static final String EULA_CONFIRMED = "eula";
     public static final String MESSAGE_READ = "message_read";
+    public static final String DUALSIM_SIM = "sim";
+
+    public static final int VALUE_DEFAULT_SIM = -1;
 
 
     public static int getInt(Context c, String key, int defaultValue) {

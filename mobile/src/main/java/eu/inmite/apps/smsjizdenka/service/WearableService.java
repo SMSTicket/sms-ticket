@@ -16,18 +16,15 @@
 
 package eu.inmite.apps.smsjizdenka.service;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import android.app.PendingIntent;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.telephony.SmsManager;
-import android.text.format.Time;
 
 import com.google.android.gms.wearable.DataMap;
 import com.google.android.gms.wearable.PutDataMapRequest;
@@ -35,15 +32,11 @@ import com.mariux.teleport.lib.TeleportService;
 
 import eu.inmite.apps.smsjizdenka.R;
 import eu.inmite.apps.smsjizdenka.activity.MainActivity;
-import eu.inmite.apps.smsjizdenka.core.Constants;
-import eu.inmite.apps.smsjizdenka.data.Preferences;
-import eu.inmite.apps.smsjizdenka.data.TicketProvider;
 import eu.inmite.apps.smsjizdenka.data.model.City;
 import eu.inmite.apps.smsjizdenka.data.model.CityManager;
 import eu.inmite.apps.smsjizdenka.data.model.Ticket;
+import eu.inmite.apps.smsjizdenka.dialog.BuyTicketDialogFragment;
 import eu.inmite.apps.smsjizdenka.framework.DebugLog;
-import eu.inmite.apps.smsjizdenka.receiver.SmsDelivered;
-import eu.inmite.apps.smsjizdenka.receiver.SmsSent;
 
 /**
  * Service for communication with wear device.
@@ -179,12 +172,9 @@ public class WearableService extends TeleportService {
 
     private void sentTicket(String path) {
         Uri uri = Uri.parse(path);
-        final ArrayList<DataMap> dataCities = new ArrayList<DataMap>();
         long cityId = Long.parseLong(uri.getLastPathSegment());
-
         City city = CityManager.get(getApplicationContext()).getCity(getApplicationContext(), cityId);
-        //addTestingTicket();
-        orderNewTicket(city);
+        BuyTicketDialogFragment.orderNewTicket(city, getApplicationContext());
 
     }
 
@@ -204,91 +194,6 @@ public class WearableService extends TeleportService {
         PutDataMapRequest data = PutDataMapRequest.createWithAutoAppendedId("/notification");
         data.getDataMap().putDataMap("notification", dataMap);
         syncDataItem(data);
-    }
-
-    /**
-     * Order ticket in new thread.
-     */
-    public synchronized void orderNewTicket(final City city) {
-        if (city == null) {
-            return;
-        }
-        // make sure sms cannot be saved twice
-        Preferences.set(getApplication(), Preferences.LAST_ORDER_TIME, System.currentTimeMillis());
-        //SL.get(AnalyticsService.class).trackEvent("order-ticket", analyticsSource, "city", city.city, "price", city.price);
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-
-                Time now = new Time();
-                now.setToNow();
-                now.switchTimezone(Time.getCurrentTimezone());
-
-                final ContentValues cv = new ContentValues();
-                cv.put(TicketProvider.Tickets.ORDERED, now.format3339(false));
-                cv.put(TicketProvider.Tickets.VALID_TO, now.format3339(false));
-                cv.put(TicketProvider.Tickets.VALID_TO_DATE, Long.MAX_VALUE);
-                cv.put(TicketProvider.Tickets.CITY, city.city);
-                cv.put(TicketProvider.Tickets.CITY_ID, city.id);
-                cv.put(TicketProvider.Tickets.STATUS, TicketProvider.Tickets.STATUS_WAITING);
-                final Uri uri = getApplicationContext().getContentResolver().insert(TicketProvider.Tickets.CONTENT_URI, cv);
-
-                // send SMS directly
-                final SmsManager sm = SmsManager.getDefault();
-                final Intent sentIntent = new Intent(SmsSent.INTENT_SMS_SENT);
-                sentIntent.putExtra("uri", uri);
-                sentIntent.putExtra("NUMBER", city.number);
-                sentIntent.putExtra("MESSAGE", city.request);
-                final PendingIntent sent = PendingIntent.getBroadcast(getApplicationContext(), Constants.BROADCAST_SMS_SENT,
-                    sentIntent, PendingIntent.FLAG_ONE_SHOT);
-
-                final Intent deliveredIntent = new Intent(SmsDelivered.INTENT_SMS_DELIVERED);
-                deliveredIntent.putExtra("uri", uri);
-                final PendingIntent delivered = PendingIntent.getBroadcast(getApplicationContext(), Constants.BROADCAST_SMS_DELIVERED,
-                    deliveredIntent,
-                    PendingIntent.FLAG_ONE_SHOT);
-                try {
-                    // most sensitive line of the entire app:
-                    sm.sendTextMessage(city.number, null, city.request, sent, delivered);
-                } catch (SecurityException e) {
-                    // LG Optimus Black needs READ_PHONE_STATE permission
-
-                }
-
-            }
-        }).start();
-    }
-
-    private void addTestingTicket() {
-        Ticket ticket = new Ticket();
-        if (Locale.getDefault().toString().startsWith("en")) {
-            ticket.setCity("Prague");
-        } else {
-            ticket.setCity("Praha");
-        }
-        ticket.setCityId(1);
-        ticket.setHash("bhAJpWP9B / 861418");
-        ticket.setStatus(TicketProvider.Tickets.STATUS_DELIVERED);
-        ticket.setText("DP hl.m.Prahy, a.s., Jizdenka prestupni 32,- Kc, Platnost od: 29.8.11 8:09  do: 29.8.11 9:39. Pouze v pasmu P. WzL9n3JuQ /" +
-            " " +
-            "169605");
-        int second = 1000;
-        int minute = 60 * second;
-        int hour = 60 * minute;
-        int day = 24 * hour;
-        Time time = new Time();
-        time.setToNow();
-        ticket.setOrdered(time);
-        Calendar calendar = new GregorianCalendar();
-        calendar.set(Calendar.SECOND, 0);
-        long nowFullMinute = calendar.getTimeInMillis();
-        time.set(nowFullMinute);
-        ticket.setValidFrom(time);
-        Time time2 = new Time();
-        time2.set(nowFullMinute + 12 * minute);
-        ticket.setValidTo(time2);
-        SmsReceiverService.call(getApplicationContext(), ticket);
     }
 
     private void openTicketInPhone(String path) {
