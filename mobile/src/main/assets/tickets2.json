@@ -716,10 +716,10 @@
       "additionalNumbers": [
         "90206099"
       ],
-      "identification": "DPMB,a.s.",
-      "pDateFrom": "od (.*) ",
-      "pDateTo": "do (.*) ",
-      "pHash": "do .* .* (.*)$",
+      "identification": "DPMB, a\\.s\\.",
+      "pDateFrom": "Od: (.*) ",
+      "pDateTo": "Do: (.*) ",
+      "pHash": "Do: .* .* (.* / .*)$",
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
