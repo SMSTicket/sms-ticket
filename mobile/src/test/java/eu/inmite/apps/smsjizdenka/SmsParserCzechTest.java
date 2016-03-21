@@ -272,13 +272,12 @@ public class SmsParserCzechTest {
 
     @Test
     public void testBrnoD() {
-        /*Ticket ticket = sSmsParser.parse("90206", "???");
+        Ticket ticket = sSmsParser.parse("90206099", "DPMB, a.s. Jizdenka prestupni 99 Kc. Plati v zonach 100+101 mimo vlak. Platnost: Od: 22.12.15 7:44 Do: 23.12.15 7:44 dHBAjDfBf / 214315");
         Assert.assertEquals("Brno", ticket.city);
         Assert.assertEquals(99, ticket.price, 0);
-        Assert.assertEquals("??", ticket.hash);
-        Assert.assertEquals(new Date("??"), ticket.validFrom);
-        Assert.assertEquals(new Date("??"), ticket.validTo);*/
-        new UnsupportedOperationException("Needs new SMS definition");
+        Assert.assertEquals("dHBAjDfBf / 214315", ticket.hash);
+        Assert.assertEquals(new Date("December 22, 2015, 07:44:00"), ticket.validFrom);
+        Assert.assertEquals(new Date("December 23, 2015, 07:44:00"), ticket.validTo);
     }
 
     // ------ Sokolov
