@@ -94,24 +94,24 @@ public class SmsParserCzechTest {
     // ------ Ostrava
     @Test
     public void testOstravaDpo70() {
-        // verified 10.4.2015
-        Ticket ticket = sSmsParser.parse("90230027", "U2-43-89 98-846 DP Ostrava Jizdenka prestupni 27 Kc.Plati od 10.4.2015 15:52h do 10.4.2015 17:02h jen ve spojich DPO.Chcete platit priste kartou? mccz.eu/M1AF");
+        // verified 22.3.2016
+        Ticket ticket = sSmsParser.parse("90230030", "Q1-01-52 70-104 DP Ostrava Jizdenka prestupni 30 Kc.Plati od 9.3.2016 14:57h do 9.3.2016 16:07h jen ve spojich DPO.Chcete platit priste kartou? mccz.eu/VV6R");
         Assert.assertEquals("Ostrava", ticket.city);
-        Assert.assertEquals(27, ticket.price, 0);
-        Assert.assertEquals("U2-43-89 98-846", ticket.hash);
-        Assert.assertEquals(new Date("April 10, 2015, 15:52:00"), ticket.validFrom);
-        Assert.assertEquals(new Date("April 10, 2015, 17:02:00"), ticket.validTo);
+        Assert.assertEquals(30, ticket.price, 0);
+        Assert.assertEquals("Q1-01-52 70-104", ticket.hash);
+        Assert.assertEquals(new Date("March 9, 2016, 14:57:00"), ticket.validFrom);
+        Assert.assertEquals(new Date("March 9, 2016, 16:07:00"), ticket.validTo);
     }
 
     @Test
     public void testOstravaDpo70z() {
-        // verified 10.4.2015
-        Ticket ticket = sSmsParser.parse("90230013", "U2-47-33 65-132 DP Ostrava Jizdenka prestupni zlevnena 13 Kc. Platnost od 10.4.2015 16:12h do 10.4.2015 17:22h. Plati jen ve spojich DP Ostrava.");
+        // verified 22.3.2016
+        Ticket ticket = sSmsParser.parse("90230015", "W0-64-27 36-189 DP Ostrava Jizdenka prestupni zlevnena 30 Kc. Platnost od 22.3.2016 18:02h do 22.3.2016 19:12h. Plati jen ve spojich DP Ostrava.");
         Assert.assertEquals("Ostrava", ticket.city);
-        Assert.assertEquals(13, ticket.price, 0);
-        Assert.assertEquals("U2-47-33 65-132", ticket.hash);
-        Assert.assertEquals(new Date("April 10, 2015, 16:12:00"), ticket.validFrom);
-        Assert.assertEquals(new Date("April 10, 2015, 17:22:00"), ticket.validTo);
+        Assert.assertEquals(15, ticket.price, 0);
+        Assert.assertEquals("W0-64-27 36-189", ticket.hash);
+        Assert.assertEquals(new Date("March 22, 2016, 18:02:00"), ticket.validFrom);
+        Assert.assertEquals(new Date("March 22, 2016, 19:12:00"), ticket.validTo);
     }
 
     // ------ Ceske Budejovice

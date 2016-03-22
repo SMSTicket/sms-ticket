@@ -157,7 +157,7 @@
       "lon": 18.2902483,
       "validity": 70,
       "note": "",
-      "price": 27,
+      "price": 30,
       "currency": "CZK",
       "currency_ces": "Kč",
       "priceNote": " + price for SMS",
@@ -165,7 +165,7 @@
       "request": "DPO70",
       "number": "90230",
       "additionalNumbers": [
-        "90230027"
+        "90230030"
       ],
       "identification": ".* DP Ostrava",
       "pDateFrom": "Plati od (.*)h[; ]+do",
@@ -183,7 +183,7 @@
       "validity": 70,
       "note": "for children from 6 to 15",
       "note_ces": "pro děti od 6 do 15 let",
-      "price": 13,
+      "price": 15,
       "currency": "CZK",
       "currency_ces": "Kč",
       "priceNote": " + price for SMS",
@@ -191,7 +191,7 @@
       "request": "DPO70Z",
       "number": "90230",
       "additionalNumbers": [
-        "90230013"
+        "90230015"
       ],
       "identification": ".* DP Ostrava",
       "pDateFrom": "Platnost od (.*)h[; ]+do",
