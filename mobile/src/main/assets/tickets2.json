@@ -1050,6 +1050,6 @@
       "pDateTo": "do (.*) hod",
       "pHash": "hod\\.[ ]*(.*)$",
       "dateFormat": "dd-MM-yy HH:mm"
-    },
+    }
   ]
 }
