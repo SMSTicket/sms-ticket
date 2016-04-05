@@ -309,7 +309,7 @@
       "lon": 17.1073105,
       "validity": 70,
       "note": "",
-      "price": 1.00,
+      "price": 1.30,
       "currency": "EUR",
       "priceNote": "",
       "request": " ",
@@ -1029,6 +1029,27 @@
       "pDateTo": "do: (.*) ",
       "pHash": "do: .* .* (.* / .*)$",
       "dateFormat": "dd.MM.yy HH:mm"
+    },
+    {
+      "id": 41,
+      "country": "sk",
+      "city": "Bratislava",
+      "lat": 48.1483765,
+      "lon": 17.1073105,
+      "validity": 40,
+      "note": "",
+      "price": 1.00,
+      "currency": "EUR",
+      "priceNote": "",
+      "request": " ",
+      "number": "1140",
+      "additionalNumbers": [
+      ],
+      "identification": "DPB, a\\.s\\.[ ]+Prestupny CL",
+      "pDateFrom": "Platnost od[ ]?(.*) do",
+      "pDateTo": "do (.*) hod",
+      "pHash": "hod\\.[ ]*(.*)$",
+      "dateFormat": "dd-MM-yy HH:mm"
     }
   ]
 }

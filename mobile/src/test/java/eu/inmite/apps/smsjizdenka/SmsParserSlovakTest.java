@@ -39,7 +39,17 @@ public class SmsParserSlovakTest {
     // ------ Bratislava
     @Test
     public void test1100() {
-        Ticket ticket = sSmsParser.parse("1100", "DPB, a.s. Prestupny CL 1,00EUR (30,13Sk) 1EUR=30,1260Sk Platnost od 24-08-2011 18:42 do 19:52 hod. gwyywg4u6bh");
+        Ticket ticket = sSmsParser.parse("1100", "DPB, a.s. Prestupny CL 1,30EUR Platnost od 24-08-2011 18:42 do 19:52 hod. gwyywg4u6bh");
+        Assert.assertEquals("Bratislava", ticket.city);
+        Assert.assertEquals(1.30, ticket.price, 0);
+        Assert.assertEquals("gwyywg4u6bh", ticket.hash);
+        Assert.assertEquals(new Date("August 24, 2011, 18:42:00"), ticket.validFrom);
+        Assert.assertEquals(new Date("August 24, 2011, 19:52:00"), ticket.validTo);
+    }
+
+    @Test
+    public void test1104() {
+        Ticket ticket = sSmsParser.parse("1140", "DPB, a.s. Prestupny CL 1,00EUR Platnost od 24-08-2011 18:42 do 19:52 hod. gwyywg4u6bh");
         Assert.assertEquals("Bratislava", ticket.city);
         Assert.assertEquals(1, ticket.price, 0);
         Assert.assertEquals("gwyywg4u6bh", ticket.hash);
@@ -49,7 +59,7 @@ public class SmsParserSlovakTest {
 
     @Test
     public void test1124() {
-        Ticket ticket = sSmsParser.parse("1124", "DPB, a.s. Prestupny 24 hod CL 3,50EUR (105,44Sk) 1EUR=30,1260Sk Platnost od 26-11-2009 18:55 do 27-11-2009 18:55 hod. nhn1knmtytx");
+        Ticket ticket = sSmsParser.parse("1124", "DPB, a.s. Prestupny 24 hod CL 3,50EUR Platnost od 26-11-2009 18:55 do 27-11-2009 18:55 hod. nhn1knmtytx");
         Assert.assertEquals("Bratislava", ticket.city);
         Assert.assertEquals(4.50, ticket.price, 0.0);
         Assert.assertEquals("nhn1knmtytx", ticket.hash);
