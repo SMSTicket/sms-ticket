@@ -17,6 +17,7 @@
 package eu.inmite.apps.smsjizdenka.adapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import android.content.Context;
 import android.support.wearable.view.CircledImageView;
@@ -42,9 +43,9 @@ public class CitiesAdapter extends WearableListView.Adapter {
     private int mDefaultCircleColor;
     private int mSelectedCircleColor;
     private Context mContext;
-    private ArrayList<City> mCities;
+    private List<City> mCities;
 
-    public CitiesAdapter(Context context, ArrayList<City> items) {
+    public CitiesAdapter(Context context, List<City> items) {
         mContext = context;
         this.mCities = items;
         mDefaultCircleColor = context.getResources().getColor(R.color.medium_gray);

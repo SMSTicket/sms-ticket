@@ -42,7 +42,7 @@ public class CityManager {
         return (CityManager)((Application)context.getApplicationContext()).getSystemService(CITY_MANAGER_SERVICE);
     }
 
-    public ArrayList<City> resolveCity(Context context, String number, String message) {
+    public List<City> resolveCity(Context context, String number, String message) {
         ArrayList<City> cities = null;
         Cursor c = context.getContentResolver().query(Cities.CONTENT_URI, null, Cities.NUMBER + " = ? OR " + Cities.ADDITIONAL_NUMBER_1 + " = ? OR " + Cities.ADDITIONAL_NUMBER_2 + " = ? OR " + Cities.ADDITIONAL_NUMBER_3 + " = ?", new String[]{number, number, number, number}, null);
 

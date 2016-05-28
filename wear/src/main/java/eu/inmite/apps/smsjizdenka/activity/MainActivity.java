@@ -17,6 +17,7 @@
 package eu.inmite.apps.smsjizdenka.activity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import android.os.Bundle;
 import android.support.wearable.view.WearableListView;
@@ -47,7 +48,7 @@ public class MainActivity extends ProjectBaseActivity {
     @InjectView(R.id.txtError)
     TextView vTxtError;
 
-    private ArrayList<City> mCities;
+    private List<City> mCities;
     private CitiesAdapter mCitiesAdapter;
 
     @Override

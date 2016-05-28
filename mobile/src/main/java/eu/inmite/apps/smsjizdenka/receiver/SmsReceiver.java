@@ -18,6 +18,7 @@ package eu.inmite.apps.smsjizdenka.receiver;
 
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.List;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -135,7 +136,7 @@ public class SmsReceiver extends BroadcastReceiver {
 
         DebugLog.i("receiving sms from " + m.getOriginatingAddress() + " with text " + message);
 
-        final ArrayList<City> cities = CityManager.get(c).resolveCity(c, m.getOriginatingAddress(), message);
+        final List<City> cities = CityManager.get(c).resolveCity(c, m.getOriginatingAddress(), message);
         if (cities == null || cities.isEmpty()) {
             DebugLog.w("no city recognized");
             return;
