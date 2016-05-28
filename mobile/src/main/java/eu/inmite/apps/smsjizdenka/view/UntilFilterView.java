@@ -34,13 +34,7 @@ import eu.inmite.apps.smsjizdenka.util.FormatUtil;
  *
  * @author David Vávra (david@inmite.eu)
  */
-public class UntilFilterView extends LinearLayout {
-
-    public static final long FILTER_ALL = -1;
-    Context c;
-    private SelectedChangedListener mListener;
-    private long mSelected = FILTER_ALL;
-    private TextView vSelected;
+public class UntilFilterView extends BaseFilterView {
 
     public UntilFilterView(Context context) {
         super(context);
@@ -61,33 +55,8 @@ public class UntilFilterView extends LinearLayout {
         init();
     }
 
-    private void init() {
-        View view = LayoutInflater.from(c).inflate(R.layout.view_filter, this, true);
-        vSelected = (TextView)view.findViewById(R.id.selected);
-        view.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showDialog();
-            }
-        });
-        update();
-    }
-
-    public long getSelected() {
-        return mSelected;
-
-    }
-
-    public void setSelected(long selected) {
-        mSelected = selected;
-        update();
-    }
-
-    public void setOnSelectedChangedListener(SelectedChangedListener listener) {
-        mListener = listener;
-    }
-
-    private void update() {
+    @Override
+    protected void update() {
         if (mSelected == FILTER_ALL) {
             vSelected.setText(R.string.stats_until_today);
         } else {
@@ -95,27 +64,8 @@ public class UntilFilterView extends LinearLayout {
         }
     }
 
-    private void showDialog() {
-        long millis = mSelected;
-        if (mSelected == FILTER_ALL) {
-            millis = System.currentTimeMillis();
-        }
-        final DateDialogFragment dialogFragment = DateDialogFragment.newInstance(c.getString(R.string.stats_until),
-            millis, false, new DateDialogFragment.DateSelectedListener() {
-                @Override
-                public void onDateSelected(long millis) {
-                    if (mListener != null && mSelected != millis) {
-                        mListener.onSelectedChanged(millis);
-                    }
-                    mSelected = millis;
-                    update();
-                }
-            });
-        dialogFragment.show(((FragmentActivity)c).getSupportFragmentManager(), DateDialogFragment.TAG);
-    }
-
-    public interface SelectedChangedListener {
-        public void onSelectedChanged(long selected);
+    protected void showDialog() {
+        showDialog(c.getString(R.string.stats_until), false);
     }
 
 }
