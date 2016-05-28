@@ -67,6 +67,7 @@ public class Constants {
         new Library("com.github.kovmarci86.android.secure.preferences.SecureSharedPreferences", "Secure Preferences", "Marcell Kovacs", APACHE, "https://github.com/kovmarci86/android-secure-preferences"),
     };
 
+    private Constants() {}
 
     public static class Library {
         public String name;

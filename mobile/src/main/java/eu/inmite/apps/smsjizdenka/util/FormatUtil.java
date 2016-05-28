@@ -36,6 +36,8 @@ import eu.inmite.apps.smsjizdenka.R;
 public class FormatUtil {
 
 
+    private FormatUtil() {}
+
     public static Time timeFrom3339(String s3339) {
         final android.text.format.Time time = new Time();
         if (TextUtils.isEmpty(s3339)) {

@@ -34,4 +34,6 @@ public class Constants {
     public static final int LOADER_CITIES = 2;
     public static final int LOADER_CITY_TICKETS = 3;
     public static final int LOADER_STATISTICS = 4;
+
+    private Constants() {}
 }

@@ -28,6 +28,8 @@ public class LanguageUtil {
 
     private static String cachedCountry;
 
+    private LanguageUtil() {}
+
     public static String getSimCountry(Context c) {
         if (cachedCountry != null) {
             return cachedCountry;

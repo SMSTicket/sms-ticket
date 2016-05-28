@@ -38,6 +38,8 @@ public class LocaleUtils {
      */
     public static boolean sPostFormatCurrency = false;
 
+    private LocaleUtils() {}
+
     /**
      * Format number like 1 123 Kč.
      */

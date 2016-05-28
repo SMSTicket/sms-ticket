@@ -36,6 +36,8 @@ public class AnimationUtil {
 
     public static int NO_ANIMATION = -1;
 
+    private AnimationUtil() {}
+
     public static void addAnimationToView(final View view, final int animation) {
         if (view == null) {
             return;

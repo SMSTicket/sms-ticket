@@ -33,6 +33,8 @@ import eu.inmite.apps.smsjizdenka.framework.interfaces.IGetInstanceInit;
  */
 public class SL {
 
+    private SL() {}
+
     /**
      * Return instance of desired class or object that implement desired interface.
      */
