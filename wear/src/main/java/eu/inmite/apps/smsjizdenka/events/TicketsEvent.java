@@ -17,6 +17,7 @@
 package eu.inmite.apps.smsjizdenka.events;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import eu.inmite.apps.smsjizdenka.model.City;
 
@@ -25,17 +26,17 @@ import eu.inmite.apps.smsjizdenka.model.City;
  */
 public class TicketsEvent {
 
-    ArrayList<City> mCities;
+    List<City> mCities;
 
-    public TicketsEvent(ArrayList<City> cities) {
+    public TicketsEvent(List<City> cities) {
         mCities = cities;
     }
 
-    public ArrayList<City> getCities() {
+    public List<City> getCities() {
         return mCities;
     }
 
-    public void setCities(ArrayList<City> cities) {
+    public void setCities(List<City> cities) {
         mCities = cities;
     }
 
