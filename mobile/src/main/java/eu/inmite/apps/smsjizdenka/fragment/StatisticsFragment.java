@@ -37,6 +37,7 @@ import eu.inmite.apps.smsjizdenka.data.model.CityManager;
 import eu.inmite.apps.smsjizdenka.data.model.Ticket;
 import eu.inmite.apps.smsjizdenka.framework.helper.WrappedAsyncTaskLoader;
 import eu.inmite.apps.smsjizdenka.util.FormatUtil;
+import eu.inmite.apps.smsjizdenka.view.BaseFilterView;
 import eu.inmite.apps.smsjizdenka.view.CityFilterView;
 import eu.inmite.apps.smsjizdenka.view.FromFilterView;
 import eu.inmite.apps.smsjizdenka.view.TypeFilterView;
@@ -84,7 +85,7 @@ public class StatisticsFragment extends ProjectBaseFragment implements LoaderMan
             }
         });
         vUntilFilterView = (UntilFilterView)view.findViewById(R.id.until_filter);
-        vUntilFilterView.setOnSelectedChangedListener(new UntilFilterView.SelectedChangedListener() {
+        vUntilFilterView.setOnSelectedChangedListener(new BaseFilterView.SelectedChangedListener() {
             @Override
             public void onSelectedChanged(long selected) {
                 restartLoader();
