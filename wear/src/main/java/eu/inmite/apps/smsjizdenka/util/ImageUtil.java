@@ -28,6 +28,8 @@ import android.graphics.drawable.Drawable;
  */
 public class ImageUtil {
 
+    private ImageUtil() {}
+
     public static Bitmap combineTwoImages(Context context, int backgroundResource, int color) {
 
         Bitmap bmpBackground = null;

@@ -33,6 +33,8 @@ import eu.inmite.apps.smsjizdenka.framework.DebugLog;
  */
 public class StreamUtils {
 
+    private StreamUtils() {}
+
     public static String streamToString(InputStream is) throws IOException {
         try {
             return streamToString(new InputStreamReader(is, "UTF-8"));

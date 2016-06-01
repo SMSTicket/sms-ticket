@@ -28,6 +28,8 @@ public class DebugLog {
     private static long startTime;
     private static long previousTime;
 
+    private DebugLog() {}
+
     public static void d(Object text) {
         Log.d(DEFAULT_TAG, text.toString());
     }

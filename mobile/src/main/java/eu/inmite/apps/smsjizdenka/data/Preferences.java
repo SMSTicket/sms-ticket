@@ -41,6 +41,7 @@ public class Preferences {
 
     public static final int VALUE_DEFAULT_SIM = -1;
 
+    private Preferences() {}
 
     public static int getInt(Context c, String key, int defaultValue) {
         return PreferenceManager.getDefaultSharedPreferences(c).getInt(key, defaultValue);

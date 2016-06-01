@@ -63,4 +63,5 @@ public class Constants {
         CITIES_BACKGROUND_MAP.put(9L, R.drawable.city_ceskebudejovice);
     }
 
+    private Constants() {}
 }

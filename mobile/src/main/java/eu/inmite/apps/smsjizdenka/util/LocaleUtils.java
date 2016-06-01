@@ -44,6 +44,8 @@ public class LocaleUtils {
 
 	/* public static Locale forceLocale = null; */
 
+    private LocaleUtils() {}
+
     /**
      * Set new default currency for price formatting.
      */

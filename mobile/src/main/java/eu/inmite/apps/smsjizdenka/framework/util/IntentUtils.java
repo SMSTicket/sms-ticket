@@ -33,6 +33,8 @@ import android.text.TextUtils;
 @SuppressWarnings("UnusedDeclaration")
 public class IntentUtils {
 
+    private IntentUtils() {}
+
     /**
      * Opens e-mail client, e.g. Gmail.
      *

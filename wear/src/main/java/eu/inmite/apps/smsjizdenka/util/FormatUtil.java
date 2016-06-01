@@ -35,6 +35,7 @@ import eu.inmite.apps.smsjizdenka.R;
  */
 public class FormatUtil {
 
+    private FormatUtil() {}
 
     public static Time timeFrom3339(String s3339) {
         final Time time = new Time();

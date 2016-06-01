@@ -49,6 +49,8 @@ public class NotificationUtil {
     public static final int NOTIFICATION_VERIFY = 42;
     public static final int NOTIFICATION_MESSAGE = 43;
 
+    private NotificationUtil() {}
+
     /**
      * Posts notification about new sms ticket.
      *

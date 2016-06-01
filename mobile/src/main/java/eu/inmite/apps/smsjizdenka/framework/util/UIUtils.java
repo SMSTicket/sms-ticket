@@ -26,6 +26,8 @@ import android.util.DisplayMetrics;
  */
 public class UIUtils {
 
+    private UIUtils() {}
+
     public static boolean isHoneycomb() {
         // Can use static final constants like HONEYCOMB, declared in later versions
         // of the OS since they are inlined at compile time. This is guaranteed behavior.
