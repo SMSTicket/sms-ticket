@@ -175,7 +175,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             } catch (Exception e) {
                 DebugLog.e("cannot update database. Uninstall and install the app once again");
             }
-            oldVersion = 11;
         }
     }
 
@@ -215,7 +214,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private void createTableCities(SQLiteDatabase db) {
         StringBuffer sql = new StringBuffer();
-        sql = new StringBuffer();
         sql.append("CREATE TABLE ");
         sql.append(CITY_TABLE_NAME);
         sql.append(" (");

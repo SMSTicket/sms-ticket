@@ -234,7 +234,7 @@ public class TicketsAdapter extends CursorAdapter {
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
         final LayoutInflater li = LayoutInflater.from(context);
-        final Time validTo = FormatUtil.timeFrom3339(cursor.getString(iValidTo));
+        FormatUtil.timeFrom3339(cursor.getString(iValidTo));
         View v;
         final ViewHolder h = new ViewHolder();
         if (cursor.getLong(iId) == mActiveId) {
