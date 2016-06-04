@@ -16,6 +16,7 @@
 
 package eu.inmite.apps.smsjizdenka;
 
+import java.lang.String;
 import java.util.Date;
 
 import org.junit.Assert;
@@ -34,6 +35,8 @@ import eu.inmite.apps.smsjizdenka.util.Ticket;
  */
 public class SmsParserCzechTest {
 
+    public static final String PRAHA = "Praha";
+    public static final String NEEDS_NEW_SMS_DEFINITION = "Needs new SMS definition";
     static SmsParser sSmsParser;
 
     @BeforeClass
@@ -48,7 +51,7 @@ public class SmsParserCzechTest {
     @Test
     public void testDpt24() {
         Ticket ticket = sSmsParser.parse("90206024", "DP hl.m.Prahy, a.s., Jizdenka prestupni 24,- Kc, Platnost od: 11.7.11 19:29  do: 11.7.11 19:59. Pouze v pasmu P. bhAJpWP9B / 861418");
-        Assert.assertEquals("Praha", ticket.city);
+        Assert.assertEquals(PRAHA, ticket.city);
         Assert.assertEquals(24, ticket.price, 0);
         Assert.assertEquals("bhAJpWP9B / 861418", ticket.hash);
         Assert.assertEquals(new Date("July 11, 2011, 19:29:00"), ticket.validFrom);
@@ -58,7 +61,7 @@ public class SmsParserCzechTest {
     @Test
     public void testDpt32() {
         Ticket ticket = sSmsParser.parse("90206032", "DP hl.m.Prahy, a.s., Jizdenka prestupni 32,- Kc, Platnost od: 29.8.11 8:09  do: 29.8.11 9:39. Pouze v pasmu P. WzL9n3JuQ / 169605");
-        Assert.assertEquals("Praha", ticket.city);
+        Assert.assertEquals(PRAHA, ticket.city);
         Assert.assertEquals(32, ticket.price, 0);
         Assert.assertEquals("WzL9n3JuQ / 169605", ticket.hash);
         Assert.assertEquals(new Date("August 29, 2011, 8:09:00"), ticket.validFrom);
@@ -68,7 +71,7 @@ public class SmsParserCzechTest {
     @Test
     public void testDpt110() {
         Ticket ticket = sSmsParser.parse("90206110", "DP hl.m.Prahy, a.s., Jizdenka prestupni 110,- Kc, Platnost od: 3.7.11 19:50  do: 4.7.11 19:50. Pouze v pasmu P. yjCNXTCEc / 5892179");
-        Assert.assertEquals("Praha", ticket.city);
+        Assert.assertEquals(PRAHA, ticket.city);
         Assert.assertEquals(110, ticket.price, 0);
         Assert.assertEquals("yjCNXTCEc / 5892179", ticket.hash);
         Assert.assertEquals(new Date("July 3, 2011, 19:50:00"), ticket.validFrom);
@@ -145,7 +148,7 @@ public class SmsParserCzechTest {
         Assert.assertEquals("KMyzC9U7s / 160852", ticket.hash);
         Assert.assertEquals(new Date("January 1, 2012, 10:54:00"), ticket.validFrom);
         Assert.assertEquals(new Date("January 1, 2012, 11:54:00"), ticket.validTo);*/
-        new UnsupportedOperationException("Needs new SMS definition");
+        new UnsupportedOperationException(NEEDS_NEW_SMS_DEFINITION);
     }
 
     // ------ Liberec - Jablonec nad Nisou
@@ -190,7 +193,7 @@ public class SmsParserCzechTest {
         Assert.assertEquals("qii3LqjjE/228335/fWR", ticket.hash);
         Assert.assertEquals(new Date("February 5, 2012, 9:16:00"), ticket.validFrom);
         Assert.assertEquals(new Date("February 5, 2012, 10:01:00"), ticket.validTo);*/
-        new UnsupportedOperationException("Needs new SMS definition");
+        new UnsupportedOperationException(NEEDS_NEW_SMS_DEFINITION);
     }
 
     @Test
@@ -201,7 +204,7 @@ public class SmsParserCzechTest {
         Assert.assertEquals("ArxFyuqHP/669942/MWf", ticket.hash);
         Assert.assertEquals(new Date("February 5, 2012, 9:15:00"), ticket.validFrom);
         Assert.assertEquals(new Date("February 6, 2012, 9:15:00"), ticket.validTo);*/
-        new UnsupportedOperationException("Needs new SMS definition");
+        new UnsupportedOperationException(NEEDS_NEW_SMS_DEFINITION);
     }
 
     // ------ Hradec Kralove

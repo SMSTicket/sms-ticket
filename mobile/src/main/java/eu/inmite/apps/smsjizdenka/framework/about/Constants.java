@@ -30,36 +30,39 @@ public class Constants {
     public static final License ISC = new License("ORM Lite License", "http://ormlite.com/javadoc/ormlite-core/doc-files/ormlite_9.html#License");
     public static final License BSD3 = new License("BSD 3-Clause License", "http://opensource.org/licenses/BSD-3-Clause");
 
+    public static final String JAKE_WHARTON = "Jake Wharton";
+    public static final String SQUARE = "Square";
+    public static final String GOOGLE = "Google";
     /**
      * Add more libraries if you use more than it's in this list.
      */
     public static final Library[] KNOWN_LIBRARIES = {
-        new Library("com.actionbarsherlock.app.ActionBar", "ActionBarSherlock", "Jake Wharton", APACHE, "https://github.com/JakeWharton/ActionBarSherlock"),
-        new Library("com.viewpagerindicator.PagerIndicator", "ViewPagerIndicator", "Jake Wharton", APACHE, "https://github.com/JakeWharton/Android-ViewPagerIndicator"),
-        new Library("com.nineoldandroids.view.ViewHelper", "NineOldAndroids", "Jake Wharton", APACHE, "https://github.com/JakeWharton/NineOldAndroids"),
-        new Library("com.jakewharton.disklrucache.DiskLruCache", "DiskLruCache", "Jake Wharton", APACHE, "https://github.com/JakeWharton/DiskLruCache"),
+        new Library("com.actionbarsherlock.app.ActionBar", "ActionBarSherlock", JAKE_WHARTON, APACHE, "https://github.com/JakeWharton/ActionBarSherlock"),
+        new Library("com.viewpagerindicator.PagerIndicator", "ViewPagerIndicator", JAKE_WHARTON, APACHE, "https://github.com/JakeWharton/Android-ViewPagerIndicator"),
+        new Library("com.nineoldandroids.view.ViewHelper", "NineOldAndroids", JAKE_WHARTON, APACHE, "https://github.com/JakeWharton/NineOldAndroids"),
+        new Library("com.jakewharton.disklrucache.DiskLruCache", "DiskLruCache", JAKE_WHARTON, APACHE, "https://github.com/JakeWharton/DiskLruCache"),
         new Library("com.nostra13.universalimageloader.core.ImageLoader", "Universal Image Loader", "Sergey Tarasevich", APACHE, "https://github.com/nostra13/Android-Universal-Image-Loader"),
         new Library("com.github.kevinsawicki.http.HttpRequest", "Http Request", "Kewin Sawacki", MIT, "https://github.com/kevinsawicki/http-request"),
         new Library("com.fasterxml.jackson.core.JsonParser", "Jackson", "FasterXML, LLC", APACHE, "https://github.com/FasterXML/jackson"),
         new Library("com.integralblue.httpresponsecache.HttpResponseCache", "HttpResponseCache", "Craig", APACHE, "https://github.com/candrews/HttpResponseCache"),
         new Library("com.google.zxing.Reader", "zxing", "zxing team", APACHE, "https://code.google.com/p/zxing/"),
-        new Library("butterknife.ButterKnife", "Butter Knife", "Square", APACHE, "https://github.com/JakeWharton/butterknife"),
-        new Library("com.squareup.picasso.Picasso", "Picasso", "Square", APACHE, "https://github.com/square/picasso"),
-        new Library("com.squareup.okhttp.OkHttpClient", "OK HTTP", "Square", APACHE, "https://github.com/square/okhttp"),
-        new Library("retrofit.RestAdapter", "Retrofit", "Square", APACHE, "https://github.com/square/retrofit"),
-        new Library("com.squareup.otto.Bus", "Otto", "Square", APACHE, "https://github.com/square/otto"),
-        new Library("android.support.v4.app.Fragment", "Android Support Library", "Google", APACHE, "http://developer.android.com/tools/support-library/index.html"),
-        new Library("android.support.v7.app.ActionBar", "Android Appcompat Library", "Google", APACHE, "https://developer.android.com/tools/support-library/features.html#v7-appcompat"),
-        new Library("com.google.gson.Gson", "GSON", "Google", APACHE, "https://code.google.com/p/google-gson/"),
-        new Library("com.google.android.gms.common.GooglePlayServicesUtil", "Play Services", "Google", APACHE_PLAY_SERVICES, "http://developer.android.com/google/play-services/index.html"),
-        new Library("com.android.volley.Request", "Volley", "Google", APACHE, "https://android.googlesource.com/platform/frameworks/volley"),
+        new Library("butterknife.ButterKnife", "Butter Knife", SQUARE, APACHE, "https://github.com/JakeWharton/butterknife"),
+        new Library("com.squareup.picasso.Picasso", "Picasso", SQUARE, APACHE, "https://github.com/square/picasso"),
+        new Library("com.squareup.okhttp.OkHttpClient", "OK HTTP", SQUARE, APACHE, "https://github.com/square/okhttp"),
+        new Library("retrofit.RestAdapter", "Retrofit", SQUARE, APACHE, "https://github.com/square/retrofit"),
+        new Library("com.squareup.otto.Bus", "Otto", SQUARE, APACHE, "https://github.com/square/otto"),
+        new Library("android.support.v4.app.Fragment", "Android Support Library", GOOGLE, APACHE, "http://developer.android.com/tools/support-library/index.html"),
+        new Library("android.support.v7.app.ActionBar", "Android Appcompat Library", GOOGLE, APACHE, "https://developer.android.com/tools/support-library/features.html#v7-appcompat"),
+        new Library("com.google.gson.Gson", "GSON", GOOGLE, APACHE, "https://code.google.com/p/google-gson/"),
+        new Library("com.google.android.gms.common.GooglePlayServicesUtil", "Play Services", GOOGLE, APACHE_PLAY_SERVICES, "http://developer.android.com/google/play-services/index.html"),
+        new Library("com.android.volley.Request", "Volley", GOOGLE, APACHE, "https://android.googlesource.com/platform/frameworks/volley"),
         new Library("com.avast.android.dialogs.core.BaseDialogFragment", "StyledDialogs for Android", "Avast Sofware", APACHE, "https://github.com/inmite/android-styled-dialogs"),
         new Library("pl.mg6.android.maps.extensions.SupportMapFragment", "Android Maps Extensions", "Maciej Górski", APACHE, "https://code.google.com/p/android-maps-extensions/"),
         new Library("com.caldroid.CaldroidFragment", "CalDroid", "Roomorama", MIT, "https://github.com/roomorama/Caldroid"),
         new Library("org.simpleframework.xml.core.Persister", "Simple", "Niall Gallagher", APACHE, "http://simple.sourceforge.net/home.php"),
         new Library("com.j256.ormlite.dao.Dao", "ORM Lite", "Gray Watson", ISC, "http://ormlite.com/"),
         new Library("com.pnikosis.materialishprogress.ProgressWheel", "Material-ish Progress", "Nicolás Hormazál", APACHE, "htps://github.com/pnikosis/materialish-progress"),
-        new Library("com.google.protobuf.Parser", "Protocol Buffers", "Google", BSD3, "https://code.google.com/p/protobuf"),
+        new Library("com.google.protobuf.Parser", "Protocol Buffers", GOOGLE, BSD3, "https://code.google.com/p/protobuf"),
         new Library("com.tonicartos.widget.stickygridheaders.StickyGridHeadersGridView", "StickyGridHeaders", "Tonic Artos", APACHE, "https://github.com/TonicArtos/StickyGridHeaders"),
         new Library("com.tonicartos.superslim.GridSLM", "SuperSLiM", "Tonic Artos", APACHE, "https://github.com/TonicArtos/SuperSLiM"),
         new Library("com.hudomju.swipe.OnItemClickListener", "Swipe to dismiss", "Hugo Doménech Juárez", MIT, "https://github.com/hudomju/android-swipe-to-dismiss-undo"),

@@ -38,12 +38,13 @@ import eu.inmite.apps.smsjizdenka.util.CannotParseException;
  */
 public class City {
 
+    public static final String EUROPE_PRAGUE = "Europe/Prague";
     private static final SimpleDateFormat format3339 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS");
     private static final SimpleDateFormat timezone = new SimpleDateFormat("Z");
 
     static {
-        format3339.setCalendar(Calendar.getInstance(TimeZone.getTimeZone("Europe/Prague"), new Locale("cs", "CZ")));
-        timezone.setCalendar(Calendar.getInstance(TimeZone.getTimeZone("Europe/Prague"), new Locale("cs", "CZ")));
+        format3339.setCalendar(Calendar.getInstance(TimeZone.getTimeZone(EUROPE_PRAGUE), new Locale("cs", "CZ")));
+        timezone.setCalendar(Calendar.getInstance(TimeZone.getTimeZone(EUROPE_PRAGUE), new Locale("cs", "CZ")));
     }
 
     public long id;
@@ -114,12 +115,12 @@ public class City {
         this.confirm = confirm;
 
         this.sdf = new SimpleDateFormat(dateFormat);
-        sdf.setCalendar(Calendar.getInstance(TimeZone.getTimeZone("Europe/Prague"), new Locale("cs", "CZ")));
+        sdf.setCalendar(Calendar.getInstance(TimeZone.getTimeZone(EUROPE_PRAGUE), new Locale("cs", "CZ")));
 
         String[] dateFormatParts = dateFormat.split(" ");
         if (dateFormatParts.length > 1) {
             this.sdfTime = new SimpleDateFormat(dateFormatParts[1]);
-            sdfTime.setCalendar(Calendar.getInstance(TimeZone.getTimeZone("Europe/Prague"), new Locale("cs", "CZ")));
+            sdfTime.setCalendar(Calendar.getInstance(TimeZone.getTimeZone(EUROPE_PRAGUE), new Locale("cs", "CZ")));
         }
     }
 

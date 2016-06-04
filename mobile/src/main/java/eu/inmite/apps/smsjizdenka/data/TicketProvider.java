@@ -38,6 +38,7 @@ import eu.inmite.apps.smsjizdenka.BuildConfig;
 public class TicketProvider extends ContentProvider {
 
     public static final String AUTHORITY = BuildConfig.APPLICATION_ID + ".ticket";
+    public static final String UNKNOWN_URI = "Unknown URI ";
     private static final UriMatcher sUriMatcher;
     private static final int TICKETS = 1;
     private static final int TICKET_ID = 2;
@@ -78,7 +79,7 @@ public class TicketProvider extends ContentProvider {
                 break;
 
             default:
-                throw new IllegalArgumentException("Unknown URI " + uri);
+                throw new IllegalArgumentException(UNKNOWN_URI + uri);
         }
 
         getContext().getContentResolver().notifyChange(uri, null);
@@ -94,7 +95,7 @@ public class TicketProvider extends ContentProvider {
             case TICKET_ID:
                 return Tickets.CONTENT_ITEM_TYPE;
             default:
-                throw new IllegalArgumentException("Unknown URI " + uri);
+                throw new IllegalArgumentException(UNKNOWN_URI + uri);
         }
     }
 
@@ -102,7 +103,7 @@ public class TicketProvider extends ContentProvider {
     public Uri insert(Uri uri, ContentValues initialValues) {
         // Validate the requested uri
         if (sUriMatcher.match(uri) != TICKETS) {
-            throw new IllegalArgumentException("Unknown URI " + uri);
+            throw new IllegalArgumentException(UNKNOWN_URI + uri);
         }
 
         ContentValues values;
@@ -143,7 +144,7 @@ public class TicketProvider extends ContentProvider {
                 qb.appendWhere(Tickets._ID + "=" + uri.getPathSegments().get(1));
                 break;
             default:
-                throw new IllegalArgumentException("Unknown URI " + uri);
+                throw new IllegalArgumentException(UNKNOWN_URI + uri);
         }
 
         // If no sort order is specified use the default
@@ -179,7 +180,7 @@ public class TicketProvider extends ContentProvider {
                 break;
 
             default:
-                throw new IllegalArgumentException("Unknown URI " + uri);
+                throw new IllegalArgumentException(UNKNOWN_URI + uri);
         }
 
         getContext().getContentResolver().notifyChange(uri, null);
