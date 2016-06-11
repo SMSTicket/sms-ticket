@@ -20,6 +20,8 @@ import java.util.List;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.view.LayoutInflater;
@@ -145,7 +147,10 @@ public class CityTicketsFragment extends ProjectBaseFragment implements LoaderMa
 
     private void showBuyTicketDialog(City item) {
         if (isAdded()) {
-            BuyTicketDialogFragment.newInstance(item.id).show(getFragmentManager(), BuyTicketDialogFragment.TAG);
+            DialogFragment dialogFragment = BuyTicketDialogFragment.newInstance(item.id);
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.add(dialogFragment, BuyTicketDialogFragment.TAG);
+            ft.commitAllowingStateLoss();
         }
     }
 }
