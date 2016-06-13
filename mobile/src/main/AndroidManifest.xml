@@ -155,10 +155,6 @@
             </intent-filter>
         </service>
 
-
-        <meta-data
-            android:name="com.crashlytics.ApiKey"
-            android:value="8b94355ff161c5ea345c0acdee83f64992e9e5a9" />
     </application>
 
 </manifest>

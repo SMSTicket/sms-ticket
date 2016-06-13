@@ -53,6 +53,13 @@ RELEASE_KEY_ALIAS=key alias
 RELEASE_KEY_PASSWORD=alias password
 ```
 
+### Crashlytics
+To enable crash reporting via Crashlytics. Add Fabric config file `mobile/fabric.properties` containing:
+```
+apiKey=your api key
+apiSecret=your api secret
+```
+
 Then you should be able to import the project to the latest Android Studio without any problems.
 
 ## What about releases?

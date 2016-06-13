@@ -98,7 +98,7 @@ dependencies {
 
     testCompile 'org.json:json:20151123'
     testCompile 'junit:junit:4.12'
-    compile 'com.crashlytics.sdk.android:crashlytics:2.5.5'
+    compile 'com.crashlytics.sdk.android:crashlytics:2.5.6'
 
 }
 
