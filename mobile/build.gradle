@@ -18,6 +18,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
 apply plugin: 'android-command'
 
+final boolean enableCrashlytics = isFabricConfigPresent()
+
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
@@ -74,6 +76,7 @@ android {
     buildTypes {
         debug {
             applicationIdSuffix ".debug"
+            ext.enableCrashlytics = enableCrashlytics
         }
         release {
             minifyEnabled false
@@ -81,6 +84,8 @@ android {
             zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
+
+            ext.enableCrashlytics = enableCrashlytics
         }
     }
 
@@ -111,3 +116,13 @@ task copyAssetsToClasses(type: Copy) {
 
 assembleDebug.dependsOn(copyAssetsToClasses)
 
+boolean isFabricConfigPresent() {
+    File fabricPropertiesFile = new File("${projectDir}/fabric.properties")
+    boolean present = fabricPropertiesFile.exists()
+    if (present) {
+        logger.info("Fabric config file present, enabling Fabric.")
+    } else {
+        logger.info("Fabric config file missing, disabling Fabric.")
+    }
+    return present
+}
