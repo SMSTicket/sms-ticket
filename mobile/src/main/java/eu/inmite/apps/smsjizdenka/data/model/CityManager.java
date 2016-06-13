@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.ContentUris;
 import android.content.Context;
@@ -37,6 +38,7 @@ public class CityManager {
 
     public static final String CITY_MANAGER_SERVICE = "cityManagerService";
 
+    @SuppressLint("WrongConstant")
     public static CityManager get(Context context) {
         // TODO: It would be better to use Dagger 2 instead of this
         return (CityManager)((Application)context.getApplicationContext()).getSystemService(CITY_MANAGER_SERVICE);

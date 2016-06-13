@@ -18,8 +18,10 @@ package eu.inmite.apps.smsjizdenka.view;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.support.v4.app.FragmentActivity;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -61,6 +63,7 @@ public class TypeFilterView extends LinearLayout {
         init();
     }
 
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public TypeFilterView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         c = context;

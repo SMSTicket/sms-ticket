@@ -105,7 +105,7 @@ public abstract class ProjectBaseActivity extends BaseSinglePaneActivity impleme
     @Override
     protected void onDestroy() {
         SL.get(this, GlobalHandlerService.class).removeListener(this);
-        super.onStop();
+        super.onDestroy();
     }
 
     /* (non-Javadoc)

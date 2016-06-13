@@ -24,8 +24,8 @@ android {
 
     defaultConfig {
         applicationId "eu.inmite.apps.smsjizdenka"
-        minSdkVersion project.MIN_SDK
-        targetSdkVersion project.TARGET_SDK
+        minSdkVersion Integer.parseInt(project.MIN_SDK)
+        targetSdkVersion Integer.parseInt(project.TARGET_SDK)
         versionCode evalVersionCode() + Integer.parseInt(project.INITIAL_VERSION_CODE)
         versionName evalVersionName()
 
