@@ -50,7 +50,7 @@ import eu.inmite.apps.smsjizdenka.framework.util.UIUtils;
  * @author Tomáš Procházka &lt;<a href="mailto:tomas.prochazka@inmite.eu">tomas.prochazka@inmite.eu</a>&gt;
  * @version $Revision: 0$ ($Date: 13.6.2011 10:42:51$)
  */
-public class App extends android.app.Application {
+public abstract class App extends android.app.Application {
 
     private static boolean sIsMavenBuild;
     private static boolean sIsDebugBuild;

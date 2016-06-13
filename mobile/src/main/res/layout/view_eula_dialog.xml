@@ -24,7 +24,6 @@
 
         <RelativeLayout
             style="@style/group.wrap"
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:padding="@dimen/grid_4">
 
             <TextView

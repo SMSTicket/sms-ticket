@@ -48,7 +48,7 @@ import eu.inmite.apps.smsjizdenka.framework.fragment.PreferenceListFragment;
 import eu.inmite.apps.smsjizdenka.service.UpdateService;
 
 /**
- * Fragment for SettingsActivity
+ * Fragment for app settings.
  *
  * @author Michal Mátl (matl)
  */
