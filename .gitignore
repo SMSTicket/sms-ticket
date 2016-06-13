@@ -13,3 +13,4 @@ build
 tmp
 Thumbs.db
 crashlytics.properties
+fabric.properties
