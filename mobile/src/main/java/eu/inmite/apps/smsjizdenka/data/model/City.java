@@ -225,7 +225,7 @@ public class City {
             }
         }
 
-        throw new ParseException("Cannot parse date from the message " + sms, 0);
+        throw new ParseException("Cannot parse date from the message: " + sms, 0);
     }
 
     protected String parseHash(String sms) {
@@ -234,7 +234,7 @@ public class City {
             return m.group(1);
         }
 
-        throw new CannotParseException("Cannot parse hash from the message");
+        throw new CannotParseException("Cannot parse hash from the message: " + sms);
     }
 
     public boolean acceptMessage(String message) {

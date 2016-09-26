@@ -28,6 +28,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.telephony.SmsMessage;
 
+import com.crashlytics.android.Crashlytics;
+
 import eu.inmite.apps.smsjizdenka.data.Preferences;
 import eu.inmite.apps.smsjizdenka.data.TicketProvider;
 import eu.inmite.apps.smsjizdenka.data.model.City;
@@ -35,6 +37,7 @@ import eu.inmite.apps.smsjizdenka.data.model.CityManager;
 import eu.inmite.apps.smsjizdenka.data.model.Ticket;
 import eu.inmite.apps.smsjizdenka.framework.DebugLog;
 import eu.inmite.apps.smsjizdenka.service.SmsReceiverService;
+import eu.inmite.apps.smsjizdenka.util.CannotParseException;
 
 /**
  * Receives system broadcasts about receiving sms <code>android.provider.Telephony.SMS_RECEIVED</code> and checks if
@@ -167,7 +170,13 @@ public class SmsReceiver extends BroadcastReceiver {
 		} */
 
         for (City city : cities) {
-            final Ticket t = city.parseMessage(message);
+            final Ticket t;
+            try {
+                t = city.parseMessage(message);
+            } catch (CannotParseException e) {
+                Crashlytics.log("Cannot parse message: " + message);
+                continue;
+            }
             if (!alreadyProcessed(c, t)) {
                 SmsReceiverService.call(c, t);
                 if (!Preferences.getBoolean(c, Preferences.KEEP_IN_MESSAGING, false)) {
