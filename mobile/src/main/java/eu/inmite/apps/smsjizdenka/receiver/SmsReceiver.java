@@ -104,7 +104,13 @@ public class SmsReceiver extends BroadcastReceiver {
      * @return array of extracted messages. If no messages received, empty array is returned
      */
     public synchronized SmsMessage[] getMessages(Intent intent) {
+        if (intent == null) {
+            return new SmsMessage[0];
+        }
         Bundle bundle = intent.getExtras();
+        if (bundle == null) {
+            return new SmsMessage[0];
+        }
 
         Object messages[] = (Object[]) bundle.get("pdus");
         if (messages != null) {
