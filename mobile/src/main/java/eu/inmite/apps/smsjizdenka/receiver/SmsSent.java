@@ -91,6 +91,8 @@ public class SmsSent extends BroadcastReceiver {
         } else {
             if (uri != null) {
                 context.getContentResolver().delete(uri, null, null);
+            } else {
+                DebugLog.w("Uri is null, something weird is going on");
             }
         }
     }

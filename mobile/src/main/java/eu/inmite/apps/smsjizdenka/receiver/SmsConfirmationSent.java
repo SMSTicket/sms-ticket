@@ -67,7 +67,11 @@ public class SmsConfirmationSent extends BroadcastReceiver {
         }
 
         if (!resultOk) {
-            c.getContentResolver().delete(uri, null, null);
+            if (uri != null) {
+                c.getContentResolver().delete(uri, null, null);
+            } else {
+                DebugLog.w("Uri is null, something weird is going on");
+            }
         }
     }
 }
