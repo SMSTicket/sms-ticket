@@ -89,7 +89,9 @@ public class SmsSent extends BroadcastReceiver {
         if (resultOk) {
             saveMessageToSent(context, intent.getStringExtra("NUMBER"), intent.getStringExtra("MESSAGE"));
         } else {
-            context.getContentResolver().delete(uri, null, null);
+            if (uri != null) {
+                context.getContentResolver().delete(uri, null, null);
+            }
         }
     }
 }
