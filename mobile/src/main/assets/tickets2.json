@@ -417,13 +417,14 @@
       "lon": 15.8326259,
       "validity": 45,
       "note": "",
-      "price": 18,
+      "price": 25,
       "currency": "CZK",
       "currency_ces": "Kč",
       "priceNote": "",
       "request": "HK",
       "number": "90230",
       "additionalNumbers": [
+        "90230025",
         "90230018"
       ],
       "identification": "Kod:",
@@ -441,13 +442,14 @@
       "lon": 15.8326259,
       "validity": 1440,
       "note": "",
-      "price": 55,
+      "price": 80,
       "currency": "CZK",
       "currency_ces": "Kč",
       "priceNote": "",
       "request": "HK24",
       "number": "90230",
       "additionalNumbers": [
+        "90230080",
         "90230055"
       ],
       "identification": "Kod:",
@@ -583,10 +585,10 @@
       "additionalNumbers": [
         "90230025"
       ],
-      "identification": "Kod: ",
+      "identification": "(?:Kod: )?",
       "pDateFrom": "Platna od (.*) do",
       "pDateTo": " do (.*)",
-      "pHash": "Kod: (.*) DPKV ",
+      "pHash": "(?:Kod: )?(.*) DPKV ",
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
@@ -610,10 +612,10 @@
       "additionalNumbers": [
         "90230012"
       ],
-      "identification": "Kod: ",
+      "identification": "(?:Kod: )?",
       "pDateFrom": "Platna od (.*) do",
       "pDateTo": " do (.*)",
-      "pHash": "Kod: (.*) DPKV ",
+      "pHash": "(?:Kod: )?(.*) DPKV ",
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {

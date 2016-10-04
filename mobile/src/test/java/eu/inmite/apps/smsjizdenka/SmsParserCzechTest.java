@@ -207,33 +207,33 @@ public class SmsParserCzechTest {
     // ------ Hradec Kralove
     @Test
     public void testHk() {
-        Ticket ticket = sSmsParser.parse("90230018", "Kod: 32-52-78 25-519 DPMHK a.s. - SMS jizdenka prestupni. Cena 18 Kc vc. DPH. Platna od 16.1.2012 10:12 do 16.1.2012 10:57.");
+        Ticket ticket = sSmsParser.parse("90230025", "Kod: 86-40-69 66-621 DPMHK a.s. - SMS jizdenka prestupni. Cena 25 Kc vc. DPH. Platna od 4.10.2016 11:48 do 4.10.2016 12:33.");
         Assert.assertEquals("Hradec Králové", ticket.city);
-        Assert.assertEquals(18, ticket.price, 0);
-        Assert.assertEquals("32-52-78 25-519", ticket.hash);
-        Assert.assertEquals(new Date("January 16, 2012, 10:12:00"), ticket.validFrom);
-        Assert.assertEquals(new Date("January 16, 2012, 10:57:00"), ticket.validTo);
+        Assert.assertEquals(25, ticket.price, 0);
+        Assert.assertEquals("86-40-69 66-621", ticket.hash);
+        Assert.assertEquals(new Date("October 4, 2016, 11:48:00"), ticket.validFrom);
+        Assert.assertEquals(new Date("October 4, 2016, 12:33:00"), ticket.validTo);
     }
 
     @Test
     public void testHk24() {
-        Ticket ticket = sSmsParser.parse("90230055", "Kod: 32-52-78 25-519 DPMHK a.s. - SMS jizdenka prestupni. Cena 55 Kc vc. DPH. Platna od 16.1.2012 10:12 do 16.1.2012 10:57.");
+        Ticket ticket = sSmsParser.parse("90230080", "Kod: 32-52-78 25-519 DPMHK a.s. - SMS jizdenka prestupni. Cena 80 Kc vc. DPH. Platna od 16.1.2012 10:12 do 17.1.2012 10:12.");
         Assert.assertEquals("Hradec Králové", ticket.city);
-        Assert.assertEquals(55, ticket.price, 0);
+        Assert.assertEquals(80, ticket.price, 0);
         Assert.assertEquals("32-52-78 25-519", ticket.hash);
         Assert.assertEquals(new Date("January 16, 2012, 10:12:00"), ticket.validFrom);
-        Assert.assertEquals(new Date("January 16, 2012, 10:57:00"), ticket.validTo);
+        Assert.assertEquals(new Date("January 17, 2012, 10:12:00"), ticket.validTo);
     }
 
     // ------ Karlovy Vary
     @Test
     public void testJvk25() {
-        Ticket ticket = sSmsParser.parse("90230025", "Kod: 98-816 67-93-35 DPKV a.s. - SMS jizdenka prestupni. Cena 25 Kc vc. DPH. Platna od 30.6.2013 21:57 do 30.6.2013 22:57");
+        Ticket ticket = sSmsParser.parse("90230025", "68-702 65-56-36 DPKV a.s.-SMS jizdenka prestupni.Cena 25 Kc vc.DPH.Platna od 4.10.2016 12:54 do 4.10.2016 13:54.Platba kartou https://kj.maternacz.com/aaaa");
         Assert.assertEquals("Karlovy Vary", ticket.city);
         Assert.assertEquals(25, ticket.price, 0);
-        Assert.assertEquals("98-816 67-93-35", ticket.hash);
-        Assert.assertEquals(new Date("Jun 30, 2013, 21:57:00"), ticket.validFrom);
-        Assert.assertEquals(new Date("Jun 30, 2013, 22:57:00"), ticket.validTo);
+        Assert.assertEquals("68-702 65-56-36", ticket.hash);
+        Assert.assertEquals(new Date("October 4, 2016, 12:54:00"), ticket.validFrom);
+        Assert.assertEquals(new Date("October 4, 2016, 13:54:00"), ticket.validTo);
     }
 
     @Test
