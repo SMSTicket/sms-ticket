@@ -127,7 +127,7 @@ public class TicketsAdapter extends CursorAdapter {
     @Override
     public long getItemId(int position) {
         Cursor cursor = getCursor();
-        if (cursor == null) {
+        if (cursor == null || cursor == null) {
             return -1;
         }
         try {
@@ -419,7 +419,7 @@ public class TicketsAdapter extends CursorAdapter {
      */
     public Pair<Long, Integer> archiveTicket(int position) {
         Cursor cursor = getCursor();
-        if (cursor.isClosed()) {
+        if (cursor == null || cursor.isClosed()) {
             return null;
         }
         cursor.moveToPosition(position);
@@ -448,7 +448,7 @@ public class TicketsAdapter extends CursorAdapter {
     private void deleteTicket(int position) {
         //SL.get(AnalyticsService.class).trackEvent("delete", "my-tickets");
         Cursor cursor = getCursor();
-        if (cursor.isClosed()) {
+        if (cursor == null || cursor.isClosed()) {
             return;
         }
         cursor.moveToPosition(position);
@@ -477,7 +477,7 @@ public class TicketsAdapter extends CursorAdapter {
     public void showSms(int position) {
         //SL.get(AnalyticsService.class).trackEvent("show-sms", "my-tickets");
         Cursor cursor = getCursor();
-        if (cursor.isClosed()) {
+        if (cursor == null || cursor.isClosed()) {
             return;
         }
         cursor.moveToPosition(position);

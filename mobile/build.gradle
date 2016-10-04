@@ -114,7 +114,9 @@ task copyAssetsToClasses(type: Copy) {
     into "${buildDir}/intermediates/classes/test/debug/assets"
 }
 
-assembleDebug.dependsOn(copyAssetsToClasses)
+afterEvaluate {
+    tasks.findByName("assembleDebug").dependsOn(copyAssetsToClasses)
+}
 
 boolean isFabricConfigPresent() {
     File fabricPropertiesFile = new File("${projectDir}/fabric.properties")
