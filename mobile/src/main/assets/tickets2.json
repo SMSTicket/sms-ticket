@@ -853,7 +853,7 @@
       ],
       "identification": ".*DP m\\. Usti n/L",
       "pDateFrom": "od: (.*)[; ]+do:",
-      "pDateTo": "do: (.*)\\.",
+      "pDateTo": "do: (.*) Plati",
       "pHash": "^(.*) DP",
       "dateFormat": "dd.MM.yy HH:mm"
     },
