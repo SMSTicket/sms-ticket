@@ -64,8 +64,8 @@ Then you should be able to import the project to the latest Android Studio witho
 
 ## What about releases?
 
-Avast will still maintain release process, QA and deploying new versions of data (they are independent of version of the app). Therefore you can focus on playing with the code and leave the boring stuff to us!
+The app wasn't updated as frequently as users would wish, so there are not going to be any further releases by Avast and the official app was removed from the Google Play store. The sources are going to stay on GitHub so that you can contribute and compile your app locally. Thanks to all who contributed to the app or used it.
 
 ## License
 
-The app and data are released under [Apache 2 License](LICENSE.txt). That means that your work based on this app doesn't have to be open-source, but please give us attribution. Put a link to this repo to your About screen and [let us know](mailto:vavra@avast.com).
+The app and data are released under [Apache 2 License](LICENSE.txt). That means that your work based on this app doesn't have to be open-source, but please give us attribution. Put a link to this repo to your About screen and [let us know](mailto:cadek@avast.com).
