@@ -4,10 +4,6 @@
  ![Screenshot of the app](meta/screenshots/screenshot-small.png)
  ![Screenshot of the app](meta/screenshots/screenshot-wear.png)
 
-Install it:
-
-<a href="https://play.google.com/store/apps/details?id=eu.inmite.apps.smsjizdenka&hl=en"><img src="http://www.android.com/images/brand/get_it_on_play_logo_small.png" alt="Get it on Google Play" /></a>
-
 Features:
 
 - up-to-date database of tickets for many cities supporting SMS tickets
