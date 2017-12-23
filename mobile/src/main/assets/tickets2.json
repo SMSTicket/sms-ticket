@@ -151,57 +151,6 @@
     {
       "id": 6,
       "country": "cz",
-      "city": "Ostrava",
-      "city_pubtran": "Ostrava",
-      "lat": 49.8412715,
-      "lon": 18.2902483,
-      "validity": 70,
-      "note": "",
-      "price": 30,
-      "currency": "CZK",
-      "currency_ces": "Kč",
-      "priceNote": " + price for SMS",
-      "priceNote_ces": " + cena SMS",
-      "request": "DPO70",
-      "number": "90230",
-      "additionalNumbers": [
-        "90230030"
-      ],
-      "identification": ".* DP Ostrava",
-      "pDateFrom": "Plati od (.*)h[; ]+do",
-      "pDateTo": "h do (.*)h",
-      "pHash": "(.*) DP Ostrava Jizdenka.*$",
-      "dateFormat": "dd.MM.yyyy HH:mm"
-    },
-    {
-      "id": 7,
-      "country": "cz",
-      "city": "Ostrava",
-      "city_pubtran": "Ostrava",
-      "lat": 49.8412715,
-      "lon": 18.2902483,
-      "validity": 70,
-      "note": "for children from 6 to 15",
-      "note_ces": "pro děti od 6 do 15 let",
-      "price": 15,
-      "currency": "CZK",
-      "currency_ces": "Kč",
-      "priceNote": " + price for SMS",
-      "priceNote_ces": " + cena SMS",
-      "request": "DPO70Z",
-      "number": "90230",
-      "additionalNumbers": [
-        "90230015"
-      ],
-      "identification": ".* DP Ostrava",
-      "pDateFrom": "Platnost od (.*)h[; ]+do",
-      "pDateTo": "h do (.*)h\\.",
-      "pHash": "(.*) DP Ostrava Jizdenka.*$",
-      "dateFormat": "dd.MM.yy HH:mm"
-    },
-    {
-      "id": 8,
-      "country": "cz",
       "city": "České Budějovice",
       "city_pubtran": "CeskeBudejovice",
       "lat": 48.97387,
@@ -225,7 +174,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 9,
+      "id": 7,
       "country": "cz",
       "city": "České Budějovice",
       "city_pubtran": "CeskeBudejovice",
@@ -250,7 +199,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 10,
+      "id": 8,
       "country": "cz",
       "city": "Liberec",
       "city_pubtran": "Liberec",
@@ -275,7 +224,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 11,
+      "id": 9,
       "country": "cz",
       "city": "Pilsen",
       "city_ces": "Plzeň",
@@ -302,7 +251,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 12,
+      "id": 10,
       "country": "sk",
       "city": "Bratislava",
       "lat": 48.1483765,
@@ -323,7 +272,7 @@
       "dateFormat": "dd-MM-yy HH:mm"
     },
     {
-      "id": 13,
+      "id": 11,
       "country": "sk",
       "city": "Bratislava",
       "lat": 48.1483765,
@@ -344,7 +293,7 @@
       "dateFormat": "dd-MM-yy HH:mm"
     },
     {
-      "id": 14,
+      "id": 12,
       "country": "sk",
       "city": "Košice",
       "lat": 48.7209956,
@@ -365,7 +314,7 @@
       "dateFormat": "dd-MM-yy HH:mm"
     },
     {
-      "id": 15,
+      "id": 13,
       "country": "sk",
       "city": "Žilina",
       "lat": 49.2167,
@@ -386,7 +335,7 @@
       "dateFormat": "dd-MM-yy HH:mm"
     },
     {
-      "id": 16,
+      "id": 14,
       "country": "sk",
       "city": "Prešov",
       "lat": 48.9969,
@@ -409,7 +358,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 17,
+      "id": 15,
       "country": "cz",
       "city": "Hradec Králové",
       "city_pubtran": "HradecKralove",
@@ -434,7 +383,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 18,
+      "id": 16,
       "country": "cz",
       "city": "Hradec Králové",
       "city_pubtran": "HradecKralove",
@@ -459,7 +408,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 19,
+      "id": 17,
       "country": "cz",
       "city": "Pilsen",
       "city_ces": "Plzeň",
@@ -486,7 +435,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 20,
+      "id": 18,
       "country": "cz",
       "city": "Olomouc",
       "city_ces": "Olomouc",
@@ -513,7 +462,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 21,
+      "id": 19,
       "country": "cz",
       "city": "Pardubice",
       "city_ces": "Pardubice",
@@ -540,7 +489,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 22,
+      "id": 20,
       "country": "cz",
       "city": "Pardubice",
       "city_ces": "Pardubice",
@@ -566,7 +515,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 23,
+      "id": 21,
       "country": "cz",
       "city": "Karlovy Vary",
       "city_ces": "Karlovy Vary",
@@ -592,7 +541,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 24,
+      "id": 22,
       "country": "cz",
       "city": "Karlovy Vary",
       "city_ces": "Karlovy Vary",
@@ -619,7 +568,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 25,
+      "id": 23,
       "country": "cz",
       "city": "Ostrava",
       "city_pubtran": "Ostrava",
@@ -645,7 +594,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 26,
+      "id": 24,
       "country": "cz",
       "city": "Ostrava",
       "city_pubtran": "Ostrava",
@@ -671,7 +620,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 27,
+      "id": 25,
       "country": "cz",
       "city": "Ostrava",
       "city_pubtran": "Ostrava",
@@ -697,7 +646,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 28,
+      "id": 26,
       "country": "cz",
       "city": "Ostrava",
       "city_pubtran": "Ostrava",
@@ -723,7 +672,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 29,
+      "id": 27,
       "country": "cz",
       "city": "Brno",
       "city_ces": "Brno",
@@ -750,7 +699,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 30,
+      "id": 28,
       "country": "cz",
       "city": "Brno",
       "city_ces": "Brno",
@@ -777,7 +726,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 31,
+      "id": 29,
       "country": "cz",
       "city": "Pilsen",
       "city_ces": "Plzeň",
@@ -804,7 +753,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 32,
+      "id": 30,
       "country": "cz",
       "city": "Pilsen",
       "city_ces": "Plzeň",
@@ -831,7 +780,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 33,
+      "id": 31,
       "country": "cz",
       "city": "Brno",
       "city_ces": "Brno",
@@ -858,7 +807,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 34,
+      "id": 32,
       "country": "cz",
       "city": "Ústí nad Labem",
       "city_pubtran": "UstiNadLabem",
@@ -884,7 +833,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 35,
+      "id": 33,
       "country": "cz",
       "city": "Ústí nad Labem",
       "city_pubtran": "UstiNadLabem",
@@ -910,7 +859,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 36,
+      "id": 34,
       "country": "cz",
       "city": "Zlín a Otrokovice",
       "city_pubtran": "Zlin",
@@ -935,7 +884,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 37,
+      "id": 35,
       "country": "cz",
       "city": "Zlín a Otrokovice",
       "city_pubtran": "Zlin",
@@ -960,7 +909,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 38,
+      "id": 36,
       "country": "cz",
       "city": "Zlín a Otrokovice",
       "city_pubtran": "Zlin",
@@ -985,7 +934,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 39,
+      "id": 37,
       "country": "cz",
       "city": "Sokolov",
       "city_pubtran": "Sokolov",
@@ -1010,7 +959,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 40,
+      "id": 38,
       "country": "cz",
       "city": "Liberec",
       "city_pubtran": "Liberec",
@@ -1035,7 +984,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 41,
+      "id": 39,
       "country": "cz",
       "city": "Tábor",
       "city_pubtran": "Tabor",
@@ -1060,7 +1009,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 42,
+      "id": 40,
       "country": "cz",
       "city": "Tábor",
       "city_pubtran": "Tabor",
@@ -1085,7 +1034,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 43,
+      "id": 41,
       "country": "sk",
       "city": "Bratislava",
       "lat": 48.1483765,
