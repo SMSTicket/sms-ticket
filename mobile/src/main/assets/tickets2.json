@@ -549,7 +549,7 @@
       "lon": 15.7811994,
       "validity": 1440,
       "note": "",
-      "price": 65,
+      "price": 50,
       "currency": "CZK",
       "currency_ces": "Kč",
       "priceNote": " + price for SMS",
@@ -585,10 +585,10 @@
       "additionalNumbers": [
         "90230025"
       ],
-      "identification": "(?:Kod: )?",
+      "identification": "(.*) DPKV",
       "pDateFrom": "Platna od (.*) do",
       "pDateTo": " do (.*)",
-      "pHash": "(?:Kod: )?(.*) DPKV ",
+      "pHash": "(.*) DPKV ",
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
@@ -612,14 +612,66 @@
       "additionalNumbers": [
         "90230012"
       ],
-      "identification": "(?:Kod: )?",
+      "identification": "(.*) DPKV",
       "pDateFrom": "Platna od (.*) do",
       "pDateTo": " do (.*)",
-      "pHash": "(?:Kod: )?(.*) DPKV ",
+      "pHash": "(.*) DPKV ",
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
       "id": 25,
+      "country": "cz",
+      "city": "Ostrava",
+      "city_pubtran": "Ostrava",
+      "lat": 49.8412715,
+      "lon": 18.2902483,
+      "validity": 70,
+      "note": "",
+      "note_ces": "",
+      "price": 30,
+      "priceNote": " + price for SMS",
+      "priceNote_ces": " + cena SMS",
+      "currency": "CZK",
+      "currency_ces": "Kč",
+      "request": "DPO24",
+      "number": "90230",
+      "additionalNumbers": [
+        "90230075"
+      ],
+      "identification": ".* DP Ostrava",
+      "pDateFrom": "Plati od (.*)h[; ]+do",
+      "pDateTo": "h do (.*)h\\.",
+      "pHash": "(.*) DP Ostrava",
+      "dateFormat": "dd.MM.yy HH:mm"
+    },
+    {
+      "id": 26,
+      "country": "cz",
+      "city": "Ostrava",
+      "city_pubtran": "Ostrava",
+      "lat": 49.8412715,
+      "lon": 18.2902483,
+      "validity": 70,
+      "note": "",
+      "note_ces": "",
+      "price": 15,
+      "priceNote": " + price for SMS",
+      "priceNote_ces": " + cena SMS",
+      "currency": "CZK",
+      "currency_ces": "Kč",
+      "request": "DPO24",
+      "number": "90230",
+      "additionalNumbers": [
+        "90230075"
+      ],
+      "identification": ".* DP Ostrava",
+      "pDateFrom": "Plati od (.*)h[; ]+do",
+      "pDateTo": "h do (.*)h\\.",
+      "pHash": "(.*) DP Ostrava",
+      "dateFormat": "dd.MM.yy HH:mm"
+    },
+    {
+      "id": 27,
       "country": "cz",
       "city": "Ostrava",
       "city_pubtran": "Ostrava",
@@ -639,13 +691,13 @@
         "90230075"
       ],
       "identification": ".* DP Ostrava",
-      "pDateFrom": "Platnost od (.*)h[; ]+do",
+      "pDateFrom": "Plati od (.*)h[; ]+do",
       "pDateTo": "h do (.*)h\\.",
-      "pHash": "(.*) DP Ostrava Jizdenka.*$",
+      "pHash": "(.*) DP Ostrava",
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 26,
+      "id": 28,
       "country": "cz",
       "city": "Ostrava",
       "city_pubtran": "Ostrava",
@@ -667,11 +719,11 @@
       "identification": ".* DP Ostrava",
       "pDateFrom": "Platnost:od (.*)h[; ]+do",
       "pDateTo": "h do (.*)h\\.",
-      "pHash": "(.*) DP Ostrava Jizdenka.*$",
+      "pHash": "(.*) DP Ostrava",
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 27,
+      "id": 29,
       "country": "cz",
       "city": "Brno",
       "city_ces": "Brno",
@@ -698,7 +750,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 28,
+      "id": 30,
       "country": "cz",
       "city": "Brno",
       "city_ces": "Brno",
@@ -725,7 +777,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 29,
+      "id": 31,
       "country": "cz",
       "city": "Pilsen",
       "city_ces": "Plzeň",
@@ -752,7 +804,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 30,
+      "id": 32,
       "country": "cz",
       "city": "Pilsen",
       "city_ces": "Plzeň",
@@ -779,7 +831,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 31,
+      "id": 33,
       "country": "cz",
       "city": "Brno",
       "city_ces": "Brno",
@@ -806,7 +858,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 32,
+      "id": 34,
       "country": "cz",
       "city": "Ústí nad Labem",
       "city_pubtran": "UstiNadLabem",
@@ -827,12 +879,12 @@
       ],
       "identification": ".*DP m\\. Usti n/L",
       "pDateFrom": "od: (.*)[; ]+do:",
-      "pDateTo": "do: (.*)\\.",
+      "pDateTo": "do: (.*) Plati",
       "pHash": "^(.*) DP",
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 33,
+      "id": 35,
       "country": "cz",
       "city": "Ústí nad Labem",
       "city_pubtran": "UstiNadLabem",
@@ -858,7 +910,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 34,
+      "id": 36,
       "country": "cz",
       "city": "Zlín a Otrokovice",
       "city_pubtran": "Zlin",
@@ -879,11 +931,11 @@
       "identification": ".*DSZO,",
       "pDateFrom": "od: (.*)[; ]+do:",
       "pDateTo": "do: (.*)\\.",
-      "pHash": "do: .* .* (.*)$",
+      "pHash": "fbf / (.*) DSZO",
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 35,
+      "id": 37,
       "country": "cz",
       "city": "Zlín a Otrokovice",
       "city_pubtran": "Zlin",
@@ -904,11 +956,11 @@
       "identification": ".*DSZO,",
       "pDateFrom": "od: (.*)[; ]+do:",
       "pDateTo": "do: (.*)\\.",
-      "pHash": "do: .* .* (.*)$",
+      "pHash": "fbf / (.*)  DSZO",
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 36,
+      "id": 38,
       "country": "cz",
       "city": "Zlín a Otrokovice",
       "city_pubtran": "Zlin",
@@ -929,11 +981,11 @@
       "identification": ".*DSZO,",
       "pDateFrom": "od: (.*)[; ]+do:",
       "pDateTo": "do: (.*)\\.",
-      "pHash": "do: .* .* (.*)$",
+      "pHash": "fbf / (.*)  DSZO",
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 37,
+      "id": 39,
       "country": "cz",
       "city": "Sokolov",
       "city_pubtran": "Sokolov",
@@ -958,7 +1010,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 38,
+      "id": 40,
       "country": "cz",
       "city": "Liberec",
       "city_pubtran": "Liberec",
@@ -983,7 +1035,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 39,
+      "id": 41,
       "country": "cz",
       "city": "Tábor",
       "city_pubtran": "Tabor",
@@ -1008,7 +1060,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 40,
+      "id": 42,
       "country": "cz",
       "city": "Tábor",
       "city_pubtran": "Tabor",
@@ -1033,7 +1085,7 @@
       "dateFormat": "dd.MM.yy HH:mm"
     },
     {
-      "id": 41,
+      "id": 43,
       "country": "sk",
       "city": "Bratislava",
       "lat": 48.1483765,
