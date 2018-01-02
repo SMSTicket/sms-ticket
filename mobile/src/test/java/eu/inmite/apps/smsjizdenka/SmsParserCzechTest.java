@@ -95,7 +95,7 @@ public class SmsParserCzechTest {
     @Test
     public void testOstravaDpo70() {
         // verified 22.3.2016
-        Ticket ticket = sSmsParser.parse("90230030", "Q1-01-52 70-104 DP Ostrava Jizdenka prestupni 30 Kc. Plati od 9.3.2016 14:57h do 9.3.2016 16:07h jen ve spojich DPO.Chcete priste kartou? mccz.eu/VV6R");
+        Ticket ticket = sSmsParser.parse("90230030", "Q1-01-52 70-104 DP Ostrava Jizdenka prestupni 30 Kc.Plati od 9.3.2016 14:57h do 9.3.2016 16:07h jen ve spojich DPO.Chcete platit priste kartou? mccz.eu/VV6R");
         Assert.assertEquals("Ostrava", ticket.city);
         Assert.assertEquals(30, ticket.price, 0);
         Assert.assertEquals("Q1-01-52 70-104", ticket.hash);
