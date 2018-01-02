@@ -582,10 +582,10 @@
       "priceNote_ces": " + cena SMS",
       "currency": "CZK",
       "currency_ces": "Kč",
-      "request": "DPO24",
+      "request": "DPO70",
       "number": "90230",
       "additionalNumbers": [
-        "90230075"
+        "90230030"
       ],
       "identification": ".* DP Ostrava",
       "pDateFrom": "Plati od (.*)h[; ]+do",
@@ -608,10 +608,10 @@
       "priceNote_ces": " + cena SMS",
       "currency": "CZK",
       "currency_ces": "Kč",
-      "request": "DPO24",
+      "request": "DPO70Z",
       "number": "90230",
       "additionalNumbers": [
-        "90230075"
+        "90230015"
       ],
       "identification": ".* DP Ostrava",
       "pDateFrom": "Plati od (.*)h[; ]+do",

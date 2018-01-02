@@ -238,7 +238,7 @@ public class SmsParserCzechTest {
 
     @Test
     public void testJvk12() {
-        Ticket ticket = sSmsParser.parse("90230012", "Kod: 77-362 67-15-28 DPKV a.s. - SMS jizdenka prestupni zlevnena. Cena 12 Kc vc. DPH. Platna od 30.6.2013 21:53 do 30.6.2013 22:53");
+        Ticket ticket = sSmsParser.parse("90230012", "77-362 67-15-28 DPKV a.s. - SMS jizdenka prestupni zlevnena. Cena 12 Kc vc. DPH. Platna od 30.6.2013 21:53 do 30.6.2013 22:53");
         Assert.assertEquals("Karlovy Vary", ticket.city);
         Assert.assertEquals(12, ticket.price, 0);
         Assert.assertEquals("77-362 67-15-28", ticket.hash);
