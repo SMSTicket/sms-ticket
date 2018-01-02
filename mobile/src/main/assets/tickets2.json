@@ -588,7 +588,7 @@
         "90230030"
       ],
       "identification": ".* DP Ostrava",
-      "pDateFrom": "Plati od (.*)h do",
+      "pDateFrom": "Plati od (.*)h[; ]+do",
       "pDateTo": "h do (.*)h\\.",
       "pHash": "(.*) DP Ostrava",
       "dateFormat": "dd.MM.yy HH:mm"
