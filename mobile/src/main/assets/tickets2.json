@@ -582,7 +582,7 @@
       "priceNote_ces": " + cena SMS",
       "currency": "CZK",
       "currency_ces": "Kč",
-      "request": "DPO24",
+      "request": "DPO70",
       "number": "90230",
       "additionalNumbers": [
         "90230075"
@@ -608,7 +608,7 @@
       "priceNote_ces": " + cena SMS",
       "currency": "CZK",
       "currency_ces": "Kč",
-      "request": "DPO24",
+      "request": "DPO70Z",
       "number": "90230",
       "additionalNumbers": [
         "90230075"
