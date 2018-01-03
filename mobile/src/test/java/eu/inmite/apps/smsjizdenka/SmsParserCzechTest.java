@@ -106,12 +106,12 @@ public class SmsParserCzechTest {
     @Test
     public void testOstravaDpo70z() {
         // verified 22.3.2016
-        Ticket ticket = sSmsParser.parse("90230015", "W0-64-27 36-189 DP Ostrava Jizdenka prestupni zlevnena 30 Kc. Platnost od 22.3.2016 18:02h do 22.3.2016 19:12h. Plati jen ve spojich DP Ostrava.");
+        Ticket ticket = sSmsParser.parse("90230015", "Q1-01-52 70-104 DP Ostrava Jizdenka prestupni 15 Kc.Plati od 9.3.2016 14:57h do 9.3.2016 16:07h jen ve spojich DPO.Chcete priste platit kartou? mccz.eu/VV6R");
         Assert.assertEquals("Ostrava", ticket.city);
         Assert.assertEquals(15, ticket.price, 0);
-        Assert.assertEquals("W0-64-27 36-189", ticket.hash);
-        Assert.assertEquals(new Date("March 22, 2016, 18:02:00"), ticket.validFrom);
-        Assert.assertEquals(new Date("March 22, 2016, 19:12:00"), ticket.validTo);
+        Assert.assertEquals("Q1-01-52 70-104", ticket.hash);
+        Assert.assertEquals(new Date("March 9, 2016, 14:57:00"), ticket.validFrom);
+        Assert.assertEquals(new Date("March 9, 2016, 16:07:00"), ticket.validTo);
     }
 
     // ------ Ceske Budejovice
