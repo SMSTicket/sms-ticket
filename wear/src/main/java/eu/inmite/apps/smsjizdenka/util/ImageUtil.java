@@ -33,7 +33,7 @@ public class ImageUtil {
     public static Bitmap combineTwoImages(Context context, int backgroundResource, int color) {
 
         Bitmap bmpBackground = null;
-        Bitmap big = null;
+        Bitmap big;
         if (backgroundResource == 0) {
             big = Bitmap.createBitmap(400, 400, Bitmap.Config.ARGB_8888);
         } else {

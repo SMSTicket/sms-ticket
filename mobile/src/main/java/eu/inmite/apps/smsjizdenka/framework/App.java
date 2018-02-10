@@ -237,14 +237,14 @@ public abstract class App extends android.app.Application {
                 return mServicesInstances.get(name);
             } else {
                 try {
-                    Class<?> clazz = null;
+                    Class<?> clazz;
                     if (mServicesImplementationsMapping.containsKey(name)) {
                         clazz = mServicesImplementationsMapping.get(name);
                     } else {
                         clazz = Class.forName(name);
                     }
 
-                    Object serviceInstance = null;
+                    Object serviceInstance;
                     try {
                         Constructor<?> constructor = clazz.getConstructor(Context.class);
                         serviceInstance = constructor.newInstance(getApplicationContext());

@@ -204,7 +204,7 @@ public class MainActivity extends ProjectBaseActivity {
         if (intent.hasExtra(EXTRA_AREA)) {
             City city = CityManager.get(c).getCityByPubtranCity(c, intent.getStringExtra(EXTRA_AREA));
             if (city != null) {
-                int minutes = intent.getIntExtra(EXTRA_MINUTES, 0);
+                intent.getIntExtra(EXTRA_MINUTES, 0);
                 //SL.get(AnalyticsService.class).trackEvent("pubtran", "on-start", "city", city.city, "minutes", String.valueOf(minutes));
                 Intent i = new Intent(c, CityTicketsActivity.class);
                 i.putExtra(CityTicketsActivity.EXTRA_CITY, city.city);

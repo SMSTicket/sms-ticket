@@ -255,7 +255,7 @@ public class UpdateService extends IntentService {
     private String readResult(InputStream is) throws IOException {
         StringBuilder sb = new StringBuilder();
         BufferedReader r = new BufferedReader(new InputStreamReader(is, "utf-8"), 1000);
-        String l = null;
+        String l;
         while ((l = r.readLine()) != null) {
             sb.append(l);
         }
