@@ -36,6 +36,12 @@ import eu.inmite.apps.smsjizdenka.framework.DebugLog;
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
+    public static final String TEXT = " TEXT;";
+    public static final String ADD = " ADD ";
+    public static final String ALTER_TABLE = "ALTER TABLE ";
+    public static final String INTEGER = " INTEGER;";
+    public static final String TEXT_COMMA = " text,";
+    public static final String INTEGER_COMMA = " integer,";
     public static final String DATABASE_HELPER_SERVICE = "databaseHelperService";
     public static final String TICKET_TABLE_NAME = "ticket";
     public static final String CITY_TABLE_NAME = "city";
@@ -111,7 +117,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         if (oldVersion == 8) {
             try {
-                db.execSQL("ALTER TABLE " + TICKET_TABLE_NAME + " ADD " + TicketProvider.Tickets.SMS_URI + " TEXT;");
+                db.execSQL(ALTER_TABLE + TICKET_TABLE_NAME + ADD + TicketProvider.Tickets.SMS_URI + TEXT);
             } catch (SQLiteException sqle) {
                 // Maybe the table was altered already... Shouldn't be an issue.
             }
@@ -119,8 +125,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         if (oldVersion == 9) {
             try {
-                db.execSQL("ALTER TABLE " + TICKET_TABLE_NAME + " ADD " + TicketProvider.Tickets.CITY_ID + " INTEGER;");
-                db.execSQL("ALTER TABLE " + TICKET_TABLE_NAME + " ADD " + TicketProvider.Tickets.TEXT + " TEXT;");
+                db.execSQL(ALTER_TABLE + TICKET_TABLE_NAME + ADD + TicketProvider.Tickets.CITY_ID + INTEGER);
+                db.execSQL(ALTER_TABLE + TICKET_TABLE_NAME + ADD + TicketProvider.Tickets.TEXT + TEXT);
                 db.execSQL("UPDATE " + TICKET_TABLE_NAME + " SET " + TicketProvider.Tickets.CITY_ID + " = 1");
             } catch (SQLiteException sqle) {
                 // Maybe the table was altered already... Shouldn't be an issue.
@@ -129,10 +135,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         if (oldVersion == 10) {
             try {
-                db.execSQL("ALTER TABLE " + TICKET_TABLE_NAME + " ADD " + TicketProvider.Tickets.ORDERED + " TEXT;");
-                db.execSQL("ALTER TABLE " + TICKET_TABLE_NAME + " ADD " + TicketProvider.Tickets.CITY + " TEXT;");
-                db.execSQL("ALTER TABLE " + TICKET_TABLE_NAME + " ADD " + TicketProvider.Tickets.STATUS + " INTEGER;");
-                db.execSQL("ALTER TABLE " + TICKET_TABLE_NAME + " ADD " + TicketProvider.Tickets.NOTIFICATION_ID + " INTEGER;");
+                db.execSQL(ALTER_TABLE + TICKET_TABLE_NAME + ADD + TicketProvider.Tickets.ORDERED + TEXT);
+                db.execSQL(ALTER_TABLE + TICKET_TABLE_NAME + ADD + TicketProvider.Tickets.CITY + TEXT);
+                db.execSQL(ALTER_TABLE + TICKET_TABLE_NAME + ADD + TicketProvider.Tickets.STATUS + INTEGER);
+                db.execSQL(ALTER_TABLE + TICKET_TABLE_NAME + ADD + TicketProvider.Tickets.NOTIFICATION_ID + INTEGER);
 
                 createTableCities(db);
 
@@ -188,23 +194,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sql.append(Tickets._ID);
         sql.append(" integer primary key autoincrement,");
         sql.append(Tickets.ORDERED);
-        sql.append(" text,");
+        sql.append(TEXT_COMMA);
         sql.append(Tickets.VALID_FROM);
-        sql.append(" text,");
+        sql.append(TEXT_COMMA);
         sql.append(Tickets.VALID_TO);
-        sql.append(" text,");
+        sql.append(TEXT_COMMA);
         sql.append(Tickets.VALID_TO_DATE);
-        sql.append(" integer,");
+        sql.append(INTEGER_COMMA);
         sql.append(Tickets.HASH);
-        sql.append(" text,");
+        sql.append(TEXT_COMMA);
         sql.append(Tickets.CITY_ID);
-        sql.append(" integer,");
+        sql.append(INTEGER_COMMA);
         sql.append(Tickets.TEXT);
-        sql.append(" text,");
+        sql.append(TEXT_COMMA);
         sql.append(Tickets.CITY);
-        sql.append(" text,");
+        sql.append(TEXT_COMMA);
         sql.append(Tickets.STATUS);
-        sql.append(" integer,");
+        sql.append(INTEGER_COMMA);
         sql.append(Tickets.NOTIFICATION_ID);
         sql.append(" integer");
         sql.append(");");
@@ -222,47 +228,47 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sql.append(Cities._ID);
         sql.append(" integer primary key,");
         sql.append(Cities.ADDITIONAL_NUMBER_1);
-        sql.append(" text,");
+        sql.append(TEXT_COMMA);
         sql.append(Cities.ADDITIONAL_NUMBER_2);
-        sql.append(" text,");
+        sql.append(TEXT_COMMA);
         sql.append(Cities.ADDITIONAL_NUMBER_3);
-        sql.append(" text,");
+        sql.append(TEXT_COMMA);
         sql.append(Cities.CITY);
-        sql.append(" text,");
+        sql.append(TEXT_COMMA);
         sql.append(Cities.CITY_PUBTRAN);
-        sql.append(" text,");
+        sql.append(TEXT_COMMA);
         sql.append(Cities.COUNTRY);
-        sql.append(" text,");
+        sql.append(TEXT_COMMA);
         sql.append(Cities.CURRENCY);
-        sql.append(" text,");
+        sql.append(TEXT_COMMA);
         sql.append(Cities.IDENTIFICATION);
-        sql.append(" text,");
+        sql.append(TEXT_COMMA);
         sql.append(Cities.LAT);
         sql.append(" double,");
         sql.append(Cities.LON);
         sql.append(" double,");
         sql.append(Cities.NOTE);
-        sql.append(" text,");
+        sql.append(TEXT_COMMA);
         sql.append(Cities.NUMBER);
-        sql.append(" text,");
+        sql.append(TEXT_COMMA);
         sql.append(Cities.P_DATE_FROM);
-        sql.append(" text,");
+        sql.append(TEXT_COMMA);
         sql.append(Cities.P_DATE_TO);
-        sql.append(" text,");
+        sql.append(TEXT_COMMA);
         sql.append(Cities.P_HASH);
-        sql.append(" text,");
+        sql.append(TEXT_COMMA);
         sql.append(Cities.PRICE);
-        sql.append(" text,");
+        sql.append(TEXT_COMMA);
         sql.append(Cities.PRICE_NOTE);
-        sql.append(" text,");
+        sql.append(TEXT_COMMA);
         sql.append(Cities.REQUEST);
-        sql.append(" text,");
+        sql.append(TEXT_COMMA);
         sql.append(Cities.VALIDITY);
-        sql.append(" integer,");
+        sql.append(INTEGER_COMMA);
         sql.append(Cities.DATE_FORMAT);
-        sql.append(" text,");
+        sql.append(TEXT_COMMA);
         sql.append(Cities.CONFIRM_REQ);
-        sql.append(" text,");
+        sql.append(TEXT_COMMA);
         sql.append(Cities.CONFIRM);
         sql.append(" text");
         sql.append(");");

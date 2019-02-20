@@ -33,19 +33,21 @@ import eu.inmite.apps.smsjizdenka.framework.DebugLog;
  */
 public class StreamUtils {
 
+    public static final String STREAM_UTILS_STREAM_TO_STRING_FAILED = "StreamUtils.streamToString() failed";
+
     private StreamUtils() {}
 
     public static String streamToString(InputStream is) throws IOException {
         try {
             return streamToString(new InputStreamReader(is, "UTF-8"));
         } catch (UnsupportedEncodingException e) {
-            DebugLog.e("StreamUtils.streamToString() failed", e);
+            DebugLog.e(STREAM_UTILS_STREAM_TO_STRING_FAILED, e);
             return "";
         } finally {
             try {
                 is.close();
             } catch (IOException e) {
-                DebugLog.e("StreamUtils.streamToString() failed", e);
+                DebugLog.e(STREAM_UTILS_STREAM_TO_STRING_FAILED, e);
             }
         }
     }
@@ -62,12 +64,12 @@ public class StreamUtils {
                     writer.write(buffer, 0, n);
                 }
             } catch (UnsupportedEncodingException e) {
-                DebugLog.e("StreamUtils.streamToString() failed", e);
+                DebugLog.e(STREAM_UTILS_STREAM_TO_STRING_FAILED, e);
             } finally {
                 try {
                     isr.close();
                 } catch (IOException e) {
-                    DebugLog.e("StreamUtils.streamToString() failed", e);
+                    DebugLog.e(STREAM_UTILS_STREAM_TO_STRING_FAILED, e);
                 }
             }
             return writer.toString();

@@ -54,6 +54,7 @@ import eu.inmite.apps.smsjizdenka.service.UpdateService;
  */
 public class SettingsFragment extends PreferenceListFragment {
 
+    public static final String SMS_CATEGORY = "sms_category";
     private Context mContext;
     SharedPreferences.OnSharedPreferenceChangeListener listener = new SharedPreferences
         .OnSharedPreferenceChangeListener() {
@@ -114,12 +115,12 @@ public class SettingsFragment extends PreferenceListFragment {
         updateDataVersion(preferenceScreen);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            PreferenceCategory pref = (PreferenceCategory) preferenceScreen.findPreference("sms_category");
+            PreferenceCategory pref = (PreferenceCategory) preferenceScreen.findPreference(SMS_CATEGORY);
             pref.removePreference(pref.findPreference(Preferences.KEEP_IN_MESSAGING));
         }
         boolean dualSim = Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1 && SubscriptionManager.from(getActivity()).getActiveSubscriptionInfoCount() >= 2;
         if (!dualSim) {
-            PreferenceCategory pref = (PreferenceCategory) preferenceScreen.findPreference("sms_category");
+            PreferenceCategory pref = (PreferenceCategory) preferenceScreen.findPreference(SMS_CATEGORY);
             pref.removePreference(pref.findPreference(Preferences.DUALSIM_SIM));
         } else {
             fillDualSimList(preferenceScreen);
@@ -128,7 +129,7 @@ public class SettingsFragment extends PreferenceListFragment {
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP_MR1)
     private void fillDualSimList(PreferenceScreen preferenceScreen) {
-        PreferenceCategory category = (PreferenceCategory) preferenceScreen.findPreference("sms_category");
+        PreferenceCategory category = (PreferenceCategory) preferenceScreen.findPreference(SMS_CATEGORY);
         ListPreference preference = (ListPreference) category.findPreference(Preferences.DUALSIM_SIM);
         List<String> simIds = new ArrayList<>();
         List<String> simNames = new ArrayList<>();

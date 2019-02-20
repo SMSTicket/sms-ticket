@@ -49,6 +49,8 @@ import eu.inmite.apps.smsjizdenka.util.ImageUtil;
  */
 public class ListenerService extends TeleportService {
 
+    public static final String TICKET = "ticket";
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -65,7 +67,7 @@ public class ListenerService extends TeleportService {
 
         if (intent != null && intent.getAction() != null) {
             if ("open_ticket".equals(intent.getAction())) {
-                final Ticket t = (Ticket)intent.getExtras().getSerializable("ticket");
+                final Ticket t = (Ticket)intent.getExtras().getSerializable(TICKET);
                 sendMessage("openTicket/" + t.getId(), null);
 
                 Intent confirmationIntent = new Intent(this, ConfirmationActivity.class);
@@ -138,7 +140,7 @@ public class ListenerService extends TeleportService {
         ticket.setNotificationId(dataMap1.getLong("notification_id"));
 
         Intent notificationIntent = new Intent(this, NotificationActivity.class);
-        notificationIntent.putExtra("ticket", ticket);
+        notificationIntent.putExtra(TICKET, ticket);
         PendingIntent notificationPendingIntent = PendingIntent.getActivity(this, 0, notificationIntent,
             PendingIntent.FLAG_UPDATE_CURRENT);
 
@@ -164,7 +166,7 @@ public class ListenerService extends TeleportService {
 
         Intent intent = new Intent(this, OpenPhoneReceiver.class);
         intent.setAction("eu.inmite.apps.smsjizdenka.openphone");
-        intent.putExtra("ticket", ticket);
+        intent.putExtra(TICKET, ticket);
         PendingIntent openPhonePendingIntent = PendingIntent.getBroadcast(this, 0, intent,
             PendingIntent.FLAG_UPDATE_CURRENT);
 

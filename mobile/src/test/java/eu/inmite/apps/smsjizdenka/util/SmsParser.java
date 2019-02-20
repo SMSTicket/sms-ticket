@@ -20,6 +20,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.String;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -38,6 +39,7 @@ import org.json.JSONObject;
  */
 public class SmsParser {
 
+    public static final String JSON_PARSING_ERROR = "JSON Parsing Error";
     private List<City> mCities;
 
     public SmsParser(String lang) {
@@ -92,14 +94,14 @@ public class SmsParser {
                 mCities.add(city);
             }
         } catch (IOException | JSONException e) {
-            throw new RuntimeException("JSON Parsing Error");
+            throw new RuntimeException(JSON_PARSING_ERROR);
         } finally {
             try {
                 if (is != null) {
                     is.close();
                 }
             } catch (IOException e) {
-                throw new RuntimeException("JSON Parsing Error");
+                throw new RuntimeException(JSON_PARSING_ERROR);
             }
         }
     }
@@ -212,7 +214,7 @@ public class SmsParser {
                 value = json.getString(key);
             }
         } catch (JSONException je) {
-            throw new RuntimeException("JSON Parsing Error");
+            throw new RuntimeException(JSON_PARSING_ERROR);
         }
 
         return value;

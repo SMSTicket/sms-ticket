@@ -29,12 +29,13 @@ import eu.inmite.apps.smsjizdenka.R;
  */
 public class MessageDialogFragment extends BaseDialogFragment {
 
-    public static String TAG = "message";
+    public static final String MESSAGE = "message";
+    public static String TAG = MESSAGE;
 
     public static MessageDialogFragment newInstance(String message) {
         MessageDialogFragment dialog = new MessageDialogFragment();
         Bundle args = new Bundle();
-        args.putString("message", message);
+        args.putString(MESSAGE, message);
         dialog.setArguments(args);
         return dialog;
     }
@@ -52,6 +53,6 @@ public class MessageDialogFragment extends BaseDialogFragment {
     }
 
     private String getMessage() {
-        return getArguments().getString("message");
+        return getArguments().getString(MESSAGE);
     }
 }
